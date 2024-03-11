@@ -1,292 +1,451 @@
-2024-03-08 13:23:03:956 [Appium] Welcome to Appium v2.5.1
-2024-03-08 13:23:03:958 [Appium] Non-default server args:
-2024-03-08 13:23:03:959 [Appium] { address: '127.0.0.1', localTimezone: true }
-2024-03-08 13:23:03:959 [Appium] The autodetected Appium home path: /home/arun-qa/.appium
-2024-03-08 13:23:03:959 [Appium] Attempting to load driver uiautomator2...
-2024-03-08 13:23:03:960 [Appium] Attempting to load driver xcuitest...
-2024-03-08 13:23:03:960 [Appium] Requiring driver at /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/build/index.js
-2024-03-08 13:23:03:962 [Appium] Requiring driver at /home/arun-qa/.appium/node_modules/appium-xcuitest-driver/build/index.js
-2024-03-08 13:23:04:455 [Appium] AndroidUiautomator2Driver has been successfully loaded in 0.495s
-2024-03-08 13:23:04:455 [Appium] XCUITestDriver has been successfully loaded in 0.495s
-2024-03-08 13:23:04:495 [Appium] Appium REST http interface listener started on http://127.0.0.1:4723
-2024-03-08 13:23:04:496 [Appium] Available drivers:
-2024-03-08 13:23:04:496 [Appium]   - uiautomator2@3.0.1 (automationName 'UiAutomator2')
-2024-03-08 13:23:04:496 [Appium]   - xcuitest@7.2.0 (automationName 'XCUITest')
-2024-03-08 13:23:04:496 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
-2024-03-08 13:23:04:804 [HTTP] --> GET /status
-2024-03-08 13:23:04:804 [HTTP] {}
-2024-03-08 13:23:04:805 [AppiumDriver@f753] Calling AppiumDriver.getStatus() with args: []
-2024-03-08 13:23:04:805 [AppiumDriver@f753] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"2.5.1"}}
-2024-03-08 13:23:04:808 [HTTP] <-- GET /status 200 3 ms - 110
-2024-03-08 13:23:04:808 [HTTP] 
-2024-03-08 13:23:04:809 [HTTP] --> GET /status
-2024-03-08 13:23:04:809 [HTTP] {}
-2024-03-08 13:23:04:809 [AppiumDriver@f753] Calling AppiumDriver.getStatus() with args: []
-2024-03-08 13:23:04:810 [AppiumDriver@f753] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"2.5.1"}}
-2024-03-08 13:23:04:810 [HTTP] <-- GET /status 200 1 ms - 110
-2024-03-08 13:23:04:810 [HTTP] 
-2024-03-08 13:23:19:819 [HTTP] Request idempotency key: 362ce041-f707-4012-bcb3-aa967bba2e64
-2024-03-08 13:23:19:823 [HTTP] --> POST /session
-2024-03-08 13:23:19:823 [HTTP] {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appium:appWaitForLaunch":false,"appium:automationName":"UiAutomator2","appium:deviceName":"Android Emulator1","appium:fullReset":false,"appium:noSign":true,"appium:platformVersion":"14.0","appium:–session-override":true,"platformName":"ANDROID"}}}
-2024-03-08 13:23:19:824 [AppiumDriver@f753] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appium:appWaitForLaunch":false,"appium:automationName":"UiAutomator2","appium:deviceName":"Android Emulator1","appium:fullReset":false,"appium:noSign":true,"appium:platformVersion":"14.0","appium:–session-override":true,"platformName":"ANDROID"}}]
-2024-03-08 13:23:19:824 [AppiumDriver@f753] Event 'newSessionRequested' logged at 1709884399824 (13:23:19 GMT+0530 (India Standard Time))
-2024-03-08 13:23:19:826 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'ANDROID'
-2024-03-08 13:23:19:826 [Appium] The 'uiautomator2' driver was installed and matched caps.
-2024-03-08 13:23:19:826 [Appium] Will require it at /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver
-2024-03-08 13:23:19:826 [Appium] Requiring driver at /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/build/index.js
-2024-03-08 13:23:19:827 [AppiumDriver@f753] Appium v2.5.1 creating new AndroidUiautomator2Driver (v3.0.1) session
-2024-03-08 13:23:19:827 [AppiumDriver@f753] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
-2024-03-08 13:23:19:827 [AppiumDriver@f753] Appium's BaseDriver version is 9.5.2
-2024-03-08 13:23:19:827 [AppiumDriver@f753] AndroidUiautomator2Driver's BaseDriver version is 9.5.2
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237] Creating session with W3C capabilities: {
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]   "alwaysMatch": {
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "platformName": "ANDROID",
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:app": "/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk",
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:appWaitForLaunch": false,
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:automationName": "UiAutomator2",
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:deviceName": "Android Emulator1",
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:fullReset": false,
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:noSign": true,
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:platformVersion": "14.0",
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     "appium:–session-override": true
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]   },
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]   "firstMatch": [
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]     {}
-2024-03-08 13:23:19:829 [AndroidUiautomator2Driver@7237]   ]
-2024-03-08 13:23:19:830 [AndroidUiautomator2Driver@7237] }
-2024-03-08 13:23:19:833 [AndroidUiautomator2Driver@7237] The following provided capabilities were not recognized by this driver:
-2024-03-08 13:23:19:833 [AndroidUiautomator2Driver@7237]   –session-override
-2024-03-08 13:23:19:833 [AndroidUiautomator2Driver@7237 (ec19715a)] Session created with session id: ec19715a-c161-481d-882b-1ec0cdf9dda8
-2024-03-08 13:23:19:838 [ADB] Found 1 'build-tools' folders under '/home/arun-qa/Android/Sdk' (newest first):
-2024-03-08 13:23:19:838 [ADB]     /home/arun-qa/Android/Sdk/build-tools/34.0.0
-2024-03-08 13:23:19:838 [ADB] Using 'adb' from '/home/arun-qa/Android/Sdk/platform-tools/adb'
-2024-03-08 13:23:19:839 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 start-server'
-2024-03-08 13:23:19:842 [AndroidUiautomator2Driver@7237 (ec19715a)] Retrieving device list
-2024-03-08 13:23:19:842 [ADB] Trying to find connected Android devices
-2024-03-08 13:23:19:843 [ADB] Getting connected devices
-2024-03-08 13:23:19:846 [ADB] Connected devices: [{"udid":"emulator-5554","state":"device"},{"udid":"emulator-5556","state":"device"}]
-2024-03-08 13:23:19:846 [AndroidUiautomator2Driver@7237 (ec19715a)] Looking for a device with Android '14.0.0'
-2024-03-08 13:23:19:846 [ADB] Setting device id to emulator-5554
-2024-03-08 13:23:19:846 [ADB] Getting device platform version
-2024-03-08 13:23:19:846 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
-2024-03-08 13:23:19:863 [ADB] Current device property 'ro.build.version.release': 14
-2024-03-08 13:23:19:864 [AndroidUiautomator2Driver@7237 (ec19715a)] Using device: emulator-5554
-2024-03-08 13:23:19:864 [ADB] Using 'adb' from '/home/arun-qa/Android/Sdk/platform-tools/adb'
-2024-03-08 13:23:19:864 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 start-server'
-2024-03-08 13:23:19:867 [ADB] Setting device id to emulator-5554
-2024-03-08 13:23:19:868 [BaseDriver] Using local app '/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk'
-2024-03-08 13:23:20:001 [AndroidUiautomator2Driver@7237 (ec19715a)] Checking whether app is actually present
-2024-03-08 13:23:20:001 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
-2024-03-08 13:23:20:112 [ADB] Current device property 'ro.build.version.sdk': 34
-2024-03-08 13:23:20:114 [ADB] Getting device platform version
-2024-03-08 13:23:20:114 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
-2024-03-08 13:23:20:297 [ADB] Current device property 'ro.build.version.release': 14
-2024-03-08 13:23:20:298 [ADB] Device API level: 34
-2024-03-08 13:23:20:299 [AndroidUiautomator2Driver@7237 (ec19715a)] Relaxing hidden api policy
-2024-03-08 13:23:20:302 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
-2024-03-08 13:23:20:318 [AndroidUiautomator2Driver@7237 (ec19715a)] Parsing package and activity from app manifest
-2024-03-08 13:23:20:325 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
-2024-03-08 13:23:20:360 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
-2024-03-08 13:23:20:489 [ADB] Package name: 'com.makemytrip'
-2024-03-08 13:23:20:490 [ADB] Main activity name: 'com.mmt.travel.app.home.ui.SplashActivity'
-2024-03-08 13:23:20:491 [AndroidUiautomator2Driver@7237 (ec19715a)] Parsed package and activity are: com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity
-2024-03-08 13:23:20:496 [AndroidUiautomator2Driver@7237 (ec19715a)] Pushing settings apk to the device...
-2024-03-08 13:23:20:500 [ADB] Getting package info for 'io.appium.settings'
-2024-03-08 13:23:20:500 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
-2024-03-08 13:23:20:695 [ADB] The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('5.7.5' >= '5.7.5')
-2024-03-08 13:23:20:696 [ADB] There is no need to install/upgrade '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
-2024-03-08 13:23:20:696 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
-2024-03-08 13:23:20:722 [AndroidUiautomator2Driver@7237 (ec19715a)] io.appium.settings is already running. There is no need to reset its permissions.
-2024-03-08 13:23:20:723 [Logcat] Starting logs capture with command: /home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
-2024-03-08 13:23:20:757 [AndroidUiautomator2Driver@7237 (ec19715a)] Forwarding UiAutomator2 Server port 6790 to local port 8202
-2024-03-08 13:23:20:758 [ADB] Forwarding system: 8202 to device: 6790
-2024-03-08 13:23:20:758 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8202 tcp:6790'
-2024-03-08 13:23:20:764 [ADB] Getting package info for 'com.makemytrip'
-2024-03-08 13:23:20:764 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.makemytrip'
-2024-03-08 13:23:20:768 [ADB] Checking app cert for /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk
-2024-03-08 13:23:20:768 [ADB] Checking app cert for /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk
-2024-03-08 13:23:20:773 [ADB] Using 'apksigner.jar' from '/home/arun-qa/Android/Sdk/build-tools/34.0.0/lib/apksigner.jar'
-2024-03-08 13:23:20:774 [ADB] Starting apksigner: /usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx1024M -Xss1m -jar /home/arun-qa/Android/Sdk/build-tools/34.0.0/lib/apksigner.jar verify --print-certs /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk
-2024-03-08 13:23:20:829 [ADB] The version name of the installed 'com.makemytrip' is greater or equal to the application version name ('9.1.0' >= '9.1.0')
-2024-03-08 13:23:20:829 [ADB] There is no need to install/upgrade '/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk'
-2024-03-08 13:23:20:829 [AndroidUiautomator2Driver@7237 (ec19715a)] Performing fast reset on 'com.makemytrip'
-2024-03-08 13:23:20:829 [ADB] Getting install status for com.makemytrip
-2024-03-08 13:23:20:829 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm path com.makemytrip'
-2024-03-08 13:23:20:844 [ADB] Starting apksigner: /usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx1024M -Xss1m -jar /home/arun-qa/Android/Sdk/build-tools/34.0.0/lib/apksigner.jar verify --print-certs /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk
-2024-03-08 13:23:20:870 [ADB] 'com.makemytrip' is installed
-2024-03-08 13:23:20:870 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop com.makemytrip'
-2024-03-08 13:23:20:958 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm clear com.makemytrip'
-2024-03-08 13:23:21:055 [ADB] apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
-2024-03-08 13:23:21:055 [ADB] Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
-2024-03-08 13:23:21:055 [ADB] Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
-2024-03-08 13:23:21:055 [ADB] Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
-2024-03-08 13:23:21:055 [ADB] 
-2024-03-08 13:23:21:055 [ADB] sha256 hash did match for 'appium-uiautomator2-server-debug-androidTest.apk'
-2024-03-08 13:23:21:055 [ADB] '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk' is signed with the default certificate
-2024-03-08 13:23:21:055 [ADB] Getting install status for io.appium.uiautomator2.server.test
-2024-03-08 13:23:21:056 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm path io.appium.uiautomator2.server.test'
-2024-03-08 13:23:21:081 [AndroidUiautomator2Driver@7237 (ec19715a)] Performed fast reset on the installed 'com.makemytrip' application (stop and clear)
-2024-03-08 13:23:21:110 [ADB] 'io.appium.uiautomator2.server.test' is installed
-2024-03-08 13:23:21:515 [ADB] apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
-2024-03-08 13:23:21:515 [ADB] Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
-2024-03-08 13:23:21:515 [ADB] Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
-2024-03-08 13:23:21:515 [ADB] Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
-2024-03-08 13:23:21:515 [ADB] 
-2024-03-08 13:23:21:516 [ADB] sha256 hash did match for 'appium-uiautomator2-server-v7.0.1.apk'
-2024-03-08 13:23:21:516 [ADB] '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk' is signed with the default certificate
-2024-03-08 13:23:21:516 [ADB] Getting package info for 'io.appium.uiautomator2.server'
-2024-03-08 13:23:21:516 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
-2024-03-08 13:23:21:568 [ADB] The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('7.0.1' >= '7.0.1')
-2024-03-08 13:23:21:569 [AndroidUiautomator2Driver@7237 (ec19715a)] Server packages status: [{"wasSigned":true,"installState":"sameVersionInstalled","appPath":"/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk","appId":"io.appium.uiautomator2.server"},{"wasSigned":true,"installState":"sameVersionInstalled","appPath":"/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk","appId":"io.appium.uiautomator2.server.test"}]
-2024-03-08 13:23:21:569 [AndroidUiautomator2Driver@7237 (ec19715a)] Server packages are not going to be (re)installed
-2024-03-08 13:23:21:570 [AndroidUiautomator2Driver@7237 (ec19715a)] Waiting up to 30000ms for services to be available
-2024-03-08 13:23:21:570 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
-2024-03-08 13:23:21:590 [AndroidUiautomator2Driver@7237 (ec19715a)] Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
-2024-03-08 13:23:21:591 [ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
-2024-03-08 13:23:21:591 [ADB] Got the following command chunks to execute: [["dumpsys","deviceidle","whitelist","+io.appium.settings",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server.test",";"]]
-2024-03-08 13:23:21:591 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
-2024-03-08 13:23:21:623 [AndroidUiautomator2Driver@7237 (ec19715a)] Performing shallow cleanup of automation leftovers
-2024-03-08 13:23:21:674 [AndroidUiautomator2Driver@7237 (ec19715a)] No obsolete sessions have been detected (socket hang up)
-2024-03-08 13:23:21:674 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
-2024-03-08 13:23:21:702 [AndroidUiautomator2Driver@7237 (ec19715a)] Starting UIAutomator2 server 7.0.1
-2024-03-08 13:23:21:703 [AndroidUiautomator2Driver@7237 (ec19715a)] Using UIAutomator2 server from '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk' and test from '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
-2024-03-08 13:23:21:703 [AndroidUiautomator2Driver@7237 (ec19715a)] Waiting up to 30000ms for UiAutomator2 to be online...
-2024-03-08 13:23:21:703 [ADB] Creating ADB subprocess with args: ["-P","5037","-s","emulator-5554","shell","am","instrument","-w","-e","disableAnalytics","true","io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
-2024-03-08 13:23:21:706 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/status' to command name 'getStatus'
-2024-03-08 13:23:21:707 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /status] to [GET http://127.0.0.1:8202/status] with no body
-2024-03-08 13:23:21:729 [AndroidUiautomator2Driver@7237 (ec19715a)] socket hang up
-2024-03-08 13:23:22:251 [Instrumentation] io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:
-2024-03-08 13:23:22:729 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/status' to command name 'getStatus'
-2024-03-08 13:23:22:730 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /status] to [GET http://127.0.0.1:8202/status] with no body
-2024-03-08 13:23:22:734 [AndroidUiautomator2Driver@7237 (ec19715a)] socket hang up
-2024-03-08 13:23:23:734 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/status' to command name 'getStatus'
-2024-03-08 13:23:23:734 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /status] to [GET http://127.0.0.1:8202/status] with no body
-2024-03-08 13:23:23:762 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"None","value":{"message":"UiAutomator2 Server is ready to accept commands","ready":true}}
-2024-03-08 13:23:23:762 [AndroidUiautomator2Driver@7237 (ec19715a)] The initialization of the instrumentation process took 2059ms
-2024-03-08 13:23:23:762 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/session' to command name 'createSession'
-2024-03-08 13:23:23:762 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [POST /session] to [POST http://127.0.0.1:8202/session] with body: {"capabilities":{"firstMatch":[{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"emulator-5554","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"Android Emulator1","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true},"deviceUDID":"emulator-5554","appPackage":"com.makemytrip"}],"alwaysMatch":{}}}
-2024-03-08 13:23:23:786 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":{"capabilities":{"firstMatch":[{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"emulator-5554","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"Android Emulator1","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true},"deviceUDID":"emulator-5554","appPackage":"com.makemytrip"}],"alwaysMatch":{}},"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae"}}
-2024-03-08 13:23:23:786 [AndroidUiautomator2Driver@7237 (ec19715a)] Determined the downstream protocol as 'W3C'
-2024-03-08 13:23:23:791 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/appium/device/pixel_ratio] with no body
-2024-03-08 13:23:23:792 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/appium/device/system_bars' to command name 'getSystemBars'
-2024-03-08 13:23:23:792 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/appium/device/system_bars] with no body
-2024-03-08 13:23:23:792 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/window/current/size' to command name 'getWindowSize'
-2024-03-08 13:23:23:792 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/window/current/size] with no body
-2024-03-08 13:23:23:793 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/appium/device/info] with no body
-2024-03-08 13:23:23:794 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
-2024-03-08 13:23:23:805 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":2.625}
-2024-03-08 13:23:23:809 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":{"statusBar":128}}
-2024-03-08 13:23:23:811 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":{"height":2400,"width":1080}}
-2024-03-08 13:23:23:842 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":{"androidId":"9be1c31aa9023bba","apiVersion":"34","bluetooth":{"state":"ON"},"brand":"google","carrierName":"T-Mobile","displayDensity":420,"locale":"en_US","manufacturer":"Google","model":"sdk_gphone64_x86_64","networks":[{"capabilities":{"SSID":null,"linkDownBandwidthKbps":4300,"linkUpstreamBandwidthKbps":1800,"networkCapabilities":"NET_CAPABILITY_MMS,NET_CAPABILITY_SUPL,NET_CAPABILITY_DUN,NET_CAPABILITY_FOTA,NET_CAPABILITY_IMS,NET_CAPABILITY_CBS,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED,NET_CAPABILITY_NOT_ROAMING,NET_CAPABILITY_NOT_CONGESTED,NET_CAPABILITY_NOT_SUSPENDED","signalStrength":-2147483648,"transportTypes":"TRANSPORT_CELLULAR"},"detailedState":"CONNECTED","extraInfo":"epc.tmobile.com","isAvailable":true,"isConnected":true,"isFailover":false,"isRoaming":false,"state":"CONNECTED","subtype":2,"subtypeName":"EDGE","type":0,"typeName":"MOBILE"},{"capabilitie...
-2024-03-08 13:23:23:845 [AndroidUiautomator2Driver@7237 (ec19715a)] Screen already unlocked, doing nothing
-2024-03-08 13:23:23:845 [AndroidUiautomator2Driver@7237 (ec19715a)] Starting 'com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity and waiting for 'com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity'
-2024-03-08 13:23:23:845 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start -n com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000'
-2024-03-08 13:23:24:135 [ADB] Waiting up to 20000ms for activity matching pkg: 'com.makemytrip' and activity: 'com.mmt.travel.app.home.ui.SplashActivity' to be focused
-2024-03-08 13:23:24:135 [ADB] Possible activities, to be checked: 'com.mmt.travel.app.home.ui.SplashActivity', 'com.makemytrip.com.mmt.travel.app.home.ui.SplashActivity'
-2024-03-08 13:23:24:136 [ADB] Getting focused package and activity
-2024-03-08 13:23:24:136 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window displays'
-2024-03-08 13:23:24:195 [ADB] Found package: 'com.google.android.apps.nexuslauncher' and fully qualified activity name : 'com.google.android.apps.nexuslauncher.NexusLauncherActivity'
-2024-03-08 13:23:24:195 [ADB] Incorrect package and activity. Retrying.
-2024-03-08 13:23:24:700 [ADB] Getting focused package and activity
-2024-03-08 13:23:24:700 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window displays'
-2024-03-08 13:23:24:735 [ADB] Found package: 'com.makemytrip' and fully qualified activity name : 'com.mmt.travel.app.home.ui.SplashActivity'
-2024-03-08 13:23:24:735 [AppiumDriver@f753] New AndroidUiautomator2Driver session created successfully, session ec19715a-c161-481d-882b-1ec0cdf9dda8 added to master session list
-2024-03-08 13:23:24:736 [AppiumDriver@f753] Event 'newSessionStarted' logged at 1709884404736 (13:23:24 GMT+0530 (India Standard Time))
-2024-03-08 13:23:24:736 [AndroidUiautomator2Driver@7237 (ec19715a)] Cached the protocol value 'W3C' for the new session ec19715a-c161-481d-882b-1ec0cdf9dda8
-2024-03-08 13:23:24:736 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.createSession() result: {"capabilities":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"emulator-5554","fullReset":false,"noSign":true,"platformVersion":"14","–session-override":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"Android Emulator1","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true},"deviceUDID":"emulator-5554","appPackage":"com.makemytrip","pixelRatio":"2.625","statBarHeight":128,"viewportRect":{"left":0,"top":128,"width":1080,"height":2272},"deviceApiLevel":34,"deviceManufacturer":"Google","devi...
-2024-03-08 13:23:24:737 [HTTP] <-- POST /session 200 4913 ms - 1175
-2024-03-08 13:23:24:737 [HTTP] 
-2024-03-08 13:23:24:750 [HTTP] --> POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/timeouts
-2024-03-08 13:23:24:750 [HTTP] {"implicit":40000}
-2024-03-08 13:23:24:753 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.timeouts() with args: [null,null,null,null,40000,"ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:24:754 [AndroidUiautomator2Driver@7237 (ec19715a)] W3C timeout argument: {"implicit":40000}}
-2024-03-08 13:23:24:755 [AndroidUiautomator2Driver@7237 (ec19715a)] Set implicit wait to 40000ms
-2024-03-08 13:23:24:755 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.timeouts() result: null
-2024-03-08 13:23:24:757 [HTTP] <-- POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/timeouts 200 6 ms - 14
-2024-03-08 13:23:24:757 [HTTP] 
-2024-03-08 13:23:29:761 [HTTP] --> POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element
-2024-03-08 13:23:29:761 [HTTP] {"using":"id","value":"com.makemytrip:id/continueButton"}
-2024-03-08 13:23:29:763 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.findElement() with args: ["id","com.makemytrip:id/continueButton","ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:29:763 [AndroidUiautomator2Driver@7237 (ec19715a)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
-2024-03-08 13:23:29:763 [AndroidUiautomator2Driver@7237 (ec19715a)] Waiting up to 40000 ms for condition
-2024-03-08 13:23:29:764 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/element' to command name 'findElement'
-2024-03-08 13:23:29:764 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [POST /element] to [POST http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/element] with body: {"strategy":"id","selector":"com.makemytrip:id/continueButton","context":"","multiple":false}
-2024-03-08 13:23:29:803 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":{"ELEMENT":"00000000-0000-004f-ffff-ffff00000030","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-004f-ffff-ffff00000030"}}
-2024-03-08 13:23:29:804 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-004f-ffff-ffff00000030","ELEMENT":"00000000-0000-004f-ffff-ffff00000030"}
-2024-03-08 13:23:29:804 [HTTP] <-- POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element 200 43 ms - 137
-2024-03-08 13:23:29:805 [HTTP] 
-2024-03-08 13:23:29:807 [HTTP] --> GET /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element/00000000-0000-004f-ffff-ffff00000030/enabled
-2024-03-08 13:23:29:807 [HTTP] {}
-2024-03-08 13:23:29:808 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.elementEnabled() with args: ["00000000-0000-004f-ffff-ffff00000030","ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:29:808 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/element/00000000-0000-004f-ffff-ffff00000030/attribute/enabled' to command name 'getAttribute'
-2024-03-08 13:23:29:808 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /element/00000000-0000-004f-ffff-ffff00000030/attribute/enabled] to [GET http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/element/00000000-0000-004f-ffff-ffff00000030/attribute/enabled] with no body
-2024-03-08 13:23:29:815 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":"true"}
-2024-03-08 13:23:29:815 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.elementEnabled() result: true
-2024-03-08 13:23:29:816 [HTTP] <-- GET /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element/00000000-0000-004f-ffff-ffff00000030/enabled 200 9 ms - 14
-2024-03-08 13:23:29:816 [HTTP] 
-2024-03-08 13:23:29:819 [HTTP] --> GET /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/screenshot
-2024-03-08 13:23:29:819 [HTTP] {}
-2024-03-08 13:23:29:820 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.getScreenshot() with args: ["ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:29:820 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/screenshot' to command name 'getScreenshot'
-2024-03-08 13:23:29:820 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /screenshot] to [GET http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/screenshot] with no body
-2024-03-08 13:23:30:283 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":"iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic7J15gBxF3f6fmtlNspuQLAGSgJBAAgg5AAO+csopt4IgxIAiKCCJIoL6Cu/h8aqI1w/U14DCi4hyK2eCHAIvEAL4cicc4QwJIVwJ2SXk2N2Z+v3RV3V1VXf1NdM98/1o2J7urru6uuqpb1WzEcPHcOSMKgDnHGeae5jeAwaAcfWt7u/cUxUDTRrlPFDd00owO3VWcjkALpSVeM2717vix5dnbv4yywfuHFfs3wz+WlIBUBd9cwLVhKY6b8U/6Ebt3k0X9/8WnTForkH9vHAWXV8q3O+f+NxwKSBfKlSRgBigKrZMcZ94SZOHqhiwgj0JXE6vrrSctCszMDnMySu3Jlj/mK7uORXFqfviM8Akf1R/Cw5zUsSErM44z7Vw9w8HF5svolE0tfzLDtVfos0JtB/UdhBlwWqsud1wl679ZmJPNK/nz8qQSsa+EgRBEARBEARBEARBNJzSCRyFs84gjPDPd9vWGlx1h+63h9a6IA2hztNVONl6o4ikj1paBbbAmVPk2R31wxDXkwz8IAiCIAiCIAg9jepxduTlcVgCjIyiFScdcSPMlD8RUR4lKY0Q8/+0XhsEl6nfov/J/eTeEhXdqgQhFP+CFe7915dQ5ppnudfcAybeZttzOeek5Sna8g9dXKW9R+WddmmKwgvnZ2T95gALWaaiqxMMCZZFBZZoiMeKkFRrcAK/C7osQisamLQ8dqGAZyQ+2H6GXmZ2BZMbHV340jIX03AIgiAIgiAIouDkInBEDebFZfwmXWq3m84DQ1f9vaZExMFdHpSg72+UDyn334jKizRDFmY4eNfHggt3iOKG39+ga3kDFgauMH/w16eIvQ8CIoft0nd72GBPMRgPxInH...
-2024-03-08 13:23:30:284 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic7J15gBxF3f6fmtlNspuQLAGSgJBAAgg5AAO+csopt4IgxIAiKCCJIoL6Cu/h8aqI1w/U14DCi4hyK2eCHAIvEAL4cicc4QwJIVwJ2SXk2N2Z+v3RV3V1VXf1NdM98/1o2J7urru6uuqpb1WzEcPHcOSMKgDnHGeae5jeAwaAcfWt7u/cUxUDTRrlPFDd00owO3VWcjkALpSVeM2717vix5dnbv4yywfuHFfs3wz+WlIBUBd9cwLVhKY6b8U/6Ebt3k0X9/8WnTForkH9vHAWXV8q3O+f+NxwKSBfKlSRgBigKrZMcZ94SZOHqhiwgj0JXE6vrrSctCszMDnMySu3Jlj/mK7uORXFqfviM8Akf1R/Cw5zUsSErM44z7Vw9w8HF5svolE0tfzLDtVfos0JtB/UdhBlwWqsud1wl679ZmJPNK/nz8qQSsa+EgRBEARBEARBEARBNJzSCRyFs84gjPDPd9vWGlx1h+63h9a6IA2hztNVONl6o4ikj1paBbbAmVPk2R31wxDXkwz8IAiCIAiCIAg9jepxduTlcVgCjIyiFScdcSPMlD8RUR4lKY0Q8/+0XhsEl6nfov/J/eTeEhXdqgQhFP+CFe7915dQ5ppnudfcAybeZttzOeek5Sna8g9dXKW9R+WddmmKwgvnZ2T95gALWaaiqxMMCZZFBZZoiMeKkFRrcAK/C7osQisamLQ8dqGAZyQ+2H6GXmZ2BZMbHV340jIX03AIgiAIgiAIouDkInBEDebFZfwmXWq3m84DQ1f9vaZExMFdHpSg72+UDyn334jKizRDFmY4eNfHggt3iOKG39+ga3kDFgauMH/w16eIvQ8CIoft0nd72GBPMRgPxInHEzek/SwUsVOWgeiKc28dm/pO7veXhacyGEIwnuEDfTkFwfgUelAdKm6YSquK...
-2024-03-08 13:23:30:286 [HTTP] <-- GET /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/screenshot 200 467 ms - 450432
-2024-03-08 13:23:30:286 [HTTP] 
-2024-03-08 13:23:30:302 [HTTP] --> POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element
-2024-03-08 13:23:30:302 [HTTP] {"using":"id","value":"com.makemytrip:id/continueButton"}
-2024-03-08 13:23:30:302 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.findElement() with args: ["id","com.makemytrip:id/continueButton","ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:30:303 [AndroidUiautomator2Driver@7237 (ec19715a)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
-2024-03-08 13:23:30:303 [AndroidUiautomator2Driver@7237 (ec19715a)] Waiting up to 40000 ms for condition
-2024-03-08 13:23:30:303 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/element' to command name 'findElement'
-2024-03-08 13:23:30:303 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [POST /element] to [POST http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/element] with body: {"strategy":"id","selector":"com.makemytrip:id/continueButton","context":"","multiple":false}
-2024-03-08 13:23:30:331 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":{"ELEMENT":"00000000-0000-004f-ffff-ffff00000030","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-004f-ffff-ffff00000030"}}
-2024-03-08 13:23:30:332 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-004f-ffff-ffff00000030","ELEMENT":"00000000-0000-004f-ffff-ffff00000030"}
-2024-03-08 13:23:30:332 [HTTP] <-- POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element 200 30 ms - 137
-2024-03-08 13:23:30:333 [HTTP] 
-2024-03-08 13:23:30:335 [HTTP] --> POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element/00000000-0000-004f-ffff-ffff00000030/click
-2024-03-08 13:23:30:335 [HTTP] {"id":"00000000-0000-004f-ffff-ffff00000030"}
-2024-03-08 13:23:30:336 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.click() with args: ["00000000-0000-004f-ffff-ffff00000030","ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:30:336 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/element/00000000-0000-004f-ffff-ffff00000030/click' to command name 'click'
-2024-03-08 13:23:30:336 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [POST /element/00000000-0000-004f-ffff-ffff00000030/click] to [POST http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/element/00000000-0000-004f-ffff-ffff00000030/click] with body: {"element":"00000000-0000-004f-ffff-ffff00000030"}
-2024-03-08 13:23:30:404 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":null}
-2024-03-08 13:23:30:405 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.click() result: null
-2024-03-08 13:23:30:406 [HTTP] <-- POST /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/element/00000000-0000-004f-ffff-ffff00000030/click 200 70 ms - 14
-2024-03-08 13:23:30:406 [HTTP] 
-2024-03-08 13:23:40:410 [HTTP] --> GET /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/screenshot
-2024-03-08 13:23:40:410 [HTTP] {}
-2024-03-08 13:23:40:410 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.getScreenshot() with args: ["ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:40:411 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/screenshot' to command name 'getScreenshot'
-2024-03-08 13:23:40:412 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [GET /screenshot] to [GET http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae/screenshot] with no body
-2024-03-08 13:23:41:112 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":"iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic5L3dkiQ5jx14AJLuEZlVLdnO7Nru7b7/U610J2l21F2ZEe4kgb0AQNIjs/obmW7WNN4WlZ2REf5Dgvg5OADp7f/+vxRQrAcRzZ9kP5kYDPJP2OdVdbxEBaoCIiAlBjMt5wPABOJ5XiJCSgnMPM4FBQQKHeeW5RqXWxzXFChU7DMAkFIa543/FxF06ZAuaK2htYacEnIuyCmNa7VW8fx84DieyDmhlIycE1K289iwKADF2/sb7m93lK2A2Z5HRCFdoArs247bviPnjEQJTIzzOHGeJ56PB379+Qt//fkXjscT9TzRzgoCQAByzrhtO27bhsRpfP8yoGQ/lWAvAF0UvavNGROIGbkU5JyXnxm9ddRW0Wob41FbRW0NrXd0EXQfW2L265E9OS1zAIWKAKLIKaOUjJILSs4oOSMxD9mptaK1ht6ajZOo/Y0ZzGxzKDLmqPcGgHxsl2e/yMD8qQBEbUyI7NlD5lb5ZWYk/4x2u96QDxGXwxA2evn5/aHxEQKIAbCPfyJQYoAURIqUGPebywUzkn0UBWQvImRiFCKwKFg6sgK3UrCXAoig1hOtVagKAAUzYbtt2G4bGjrOfqJqQ7nvKG87ylZMlnPCPRW854K3VJAAJADa+5iX5/OJ4zjQere1kctYR8xsY+jyoCGsJYNKQSPgz49f+PPXLyjUZKEU7PuO/XZDzmUMFhEPHSDi4987ztPWR84FW9nBzKi1oVaTy9YFvQv++vULf/36heOo2PYdZdvQu/rfgbJtyNsGJoZ2gXYFzg48G1BlrLPbfsP7+w+8//iBx3HgcRz4fDzw//7rf8eff/1CShnbdkMuG7rLrMJki5ix33Zstw0pJdRaUavPiy0X...
-2024-03-08 13:23:41:114 [AndroidUiautomator2Driver@7237 (ec19715a)] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic5L3dkiQ5jx14AJLuEZlVLdnO7Nru7b7/U610J2l21F2ZEe4kgb0AQNIjs/obmW7WNN4WlZ2REf5Dgvg5OADp7f/+vxRQrAcRzZ9kP5kYDPJP2OdVdbxEBaoCIiAlBjMt5wPABOJ5XiJCSgnMPM4FBQQKHeeW5RqXWxzXFChU7DMAkFIa543/FxF06ZAuaK2htYacEnIuyCmNa7VW8fx84DieyDmhlIycE1K289iwKADF2/sb7m93lK2A2Z5HRCFdoArs247bviPnjEQJTIzzOHGeJ56PB379+Qt//fkXjscT9TzRzgoCQAByzrhtO27bhsRpfP8yoGQ/lWAvAF0UvavNGROIGbkU5JyXnxm9ddRW0Wob41FbRW0NrXd0EXQfW2L265E9OS1zAIWKAKLIKaOUjJILSs4oOSMxD9mptaK1ht6ajZOo/Y0ZzGxzKDLmqPcGgHxsl2e/yMD8qQBEbUyI7NlD5lb5ZWYk/4x2u96QDxGXwxA2evn5/aHxEQKIAbCPfyJQYoAURIqUGPebywUzkn0UBWQvImRiFCKwKFg6sgK3UrCXAoig1hOtVagKAAUzYbtt2G4bGjrOfqJqQ7nvKG87ylZMlnPCPRW854K3VJAAJADa+5iX5/OJ4zjQere1kctYR8xsY+jyoCGsJYNKQSPgz49f+PPXLyjUZKEU7PuO/XZDzmUMFhEPHSDi4987ztPWR84FW9nBzKi1oVaTy9YFvQv++vULf/36heOo2PYdZdvQu/rfgbJtyNsGJoZ2gXYFzg48G1BlrLPbfsP7+w+8//iBx3HgcRz4fDzw//7rf8eff/1CShnbdkMuG7rLrMJki5ix33Zstw0pJdRaUavPiy0XlJKxbQUppaE3bN2daL35GiXkknG73bDvO7qorcFuY9J7d5m2a8Yc1VqnOvBx...
-2024-03-08 13:23:41:118 [HTTP] <-- GET /session/ec19715a-c161-481d-882b-1ec0cdf9dda8/screenshot 200 708 ms - 1151632
-2024-03-08 13:23:41:118 [HTTP] 
-2024-03-08 13:23:41:157 [HTTP] --> DELETE /session/ec19715a-c161-481d-882b-1ec0cdf9dda8
-2024-03-08 13:23:41:157 [HTTP] {}
-2024-03-08 13:23:41:158 [AndroidUiautomator2Driver@7237 (ec19715a)] Calling AppiumDriver.deleteSession() with args: ["ec19715a-c161-481d-882b-1ec0cdf9dda8"]
-2024-03-08 13:23:41:158 [AppiumDriver@f753] Event 'quitSessionRequested' logged at 1709884421158 (13:23:41 GMT+0530 (India Standard Time))
-2024-03-08 13:23:41:158 [AppiumDriver@f753] Removing session ec19715a-c161-481d-882b-1ec0cdf9dda8 from our master session list
-2024-03-08 13:23:41:158 [AndroidUiautomator2Driver@7237 (ec19715a)] Deleting UiAutomator2 session
-2024-03-08 13:23:41:159 [AndroidUiautomator2Driver@7237 (ec19715a)] Deleting UiAutomator2 server session
-2024-03-08 13:23:41:159 [AndroidUiautomator2Driver@7237 (ec19715a)] Matched '/' to command name 'deleteSession'
-2024-03-08 13:23:41:159 [AndroidUiautomator2Driver@7237 (ec19715a)] Proxying [DELETE /] to [DELETE http://127.0.0.1:8202/session/e4085df0-f500-476d-9ce9-c0af1512baae] with no body
-2024-03-08 13:23:41:168 [AndroidUiautomator2Driver@7237 (ec19715a)] Got response with status 200: {"sessionId":"e4085df0-f500-476d-9ce9-c0af1512baae","value":null}
-2024-03-08 13:23:41:169 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings/.recorder.RecorderService'
-2024-03-08 13:23:41:171 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop com.makemytrip'
-2024-03-08 13:23:41:236 [Logcat] Stopping logcat capture
-2024-03-08 13:23:41:237 [ADB] Removing forwarded port socket connection: 8202 
-2024-03-08 13:23:41:237 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 forward --remove tcp:8202'
-2024-03-08 13:23:41:242 [AndroidUiautomator2Driver@7237 (ec19715a)] Restoring hidden api policy to the device default configuration
-2024-03-08 13:23:41:242 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy''
-2024-03-08 13:23:41:281 [Instrumentation] .
-2024-03-08 13:23:41:392 [AppiumDriver@f753] Event 'quitSessionFinished' logged at 1709884421392 (13:23:41 GMT+0530 (India Standard Time))
-2024-03-08 13:23:41:392 [AppiumDriver@f753] Received response: null
-2024-03-08 13:23:41:392 [AppiumDriver@f753] But deleting session, so not returning
-2024-03-08 13:23:41:392 [AppiumDriver@f753] Responding to client with driver.deleteSession() result: null
-2024-03-08 13:23:41:394 [HTTP] <-- DELETE /session/ec19715a-c161-481d-882b-1ec0cdf9dda8 200 236 ms - 14
-2024-03-08 13:23:41:394 [HTTP] 
-2024-03-08 13:23:41:407 [Instrumentation] Time: 19.053
-2024-03-08 13:23:41:407 [Instrumentation] 
-2024-03-08 13:23:41:407 [Instrumentation] OK (1 test)
-2024-03-08 13:23:41:433 [Appium] Received SIGTERM - shutting down
+2024-03-11 11:48:35:891 [Appium] Welcome to Appium v2.5.1
+2024-03-11 11:48:35:893 [Appium] Non-default server args:
+2024-03-11 11:48:35:894 [Appium] { address: '127.0.0.1', localTimezone: true }
+2024-03-11 11:48:35:894 [Appium] The autodetected Appium home path: /home/arun-qa/.appium
+2024-03-11 11:48:35:895 [Appium] Attempting to load driver uiautomator2...
+2024-03-11 11:48:35:896 [Appium] Attempting to load driver xcuitest...
+2024-03-11 11:48:35:899 [Appium] Requiring driver at /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-03-11 11:48:35:902 [Appium] Requiring driver at /home/arun-qa/.appium/node_modules/appium-xcuitest-driver/build/index.js
+2024-03-11 11:48:36:384 [Appium] AndroidUiautomator2Driver has been successfully loaded in 0.488s
+2024-03-11 11:48:36:384 [Appium] XCUITestDriver has been successfully loaded in 0.488s
+2024-03-11 11:48:36:419 [Appium] Appium REST http interface listener started on http://127.0.0.1:4723
+2024-03-11 11:48:36:419 [Appium] Available drivers:
+2024-03-11 11:48:36:419 [Appium]   - uiautomator2@3.0.1 (automationName 'UiAutomator2')
+2024-03-11 11:48:36:420 [Appium]   - xcuitest@7.2.0 (automationName 'XCUITest')
+2024-03-11 11:48:36:420 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2024-03-11 11:48:36:688 [HTTP] --> GET /status
+2024-03-11 11:48:36:688 [HTTP] {}
+2024-03-11 11:48:36:689 [AppiumDriver@af3c] Calling AppiumDriver.getStatus() with args: []
+2024-03-11 11:48:36:690 [AppiumDriver@af3c] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"2.5.1"}}
+2024-03-11 11:48:36:692 [HTTP] <-- GET /status 200 3 ms - 110
+2024-03-11 11:48:36:692 [HTTP] 
+2024-03-11 11:48:36:693 [HTTP] --> GET /status
+2024-03-11 11:48:36:693 [HTTP] {}
+2024-03-11 11:48:36:694 [AppiumDriver@af3c] Calling AppiumDriver.getStatus() with args: []
+2024-03-11 11:48:36:694 [AppiumDriver@af3c] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"2.5.1"}}
+2024-03-11 11:48:36:694 [HTTP] <-- GET /status 200 1 ms - 110
+2024-03-11 11:48:36:694 [HTTP] 
+2024-03-11 11:48:51:704 [HTTP] Request idempotency key: 562e517f-3c02-4d76-aca1-c289d9b056ce
+2024-03-11 11:48:51:711 [HTTP] --> POST /session
+2024-03-11 11:48:51:711 [HTTP] {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appium:appWaitForLaunch":false,"appium:automationName":"UiAutomator2","appium:deviceName":"Android Emulator1","appium:fullReset":false,"appium:noSign":true,"appium:platformVersion":"14.0","appium:–session-override":true,"platformName":"ANDROID"}}}
+2024-03-11 11:48:51:712 [AppiumDriver@af3c] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appium:appWaitForLaunch":false,"appium:automationName":"UiAutomator2","appium:deviceName":"Android Emulator1","appium:fullReset":false,"appium:noSign":true,"appium:platformVersion":"14.0","appium:–session-override":true,"platformName":"ANDROID"}}]
+2024-03-11 11:48:51:712 [AppiumDriver@af3c] Event 'newSessionRequested' logged at 1710137931712 (11:48:51 GMT+0530 (India Standard Time))
+2024-03-11 11:48:51:714 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'ANDROID'
+2024-03-11 11:48:51:714 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2024-03-11 11:48:51:714 [Appium] Will require it at /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver
+2024-03-11 11:48:51:715 [Appium] Requiring driver at /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-03-11 11:48:51:715 [AppiumDriver@af3c] Appium v2.5.1 creating new AndroidUiautomator2Driver (v3.0.1) session
+2024-03-11 11:48:51:716 [AppiumDriver@af3c] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2024-03-11 11:48:51:716 [AppiumDriver@af3c] Appium's BaseDriver version is 9.5.2
+2024-03-11 11:48:51:716 [AppiumDriver@af3c] AndroidUiautomator2Driver's BaseDriver version is 9.5.2
+2024-03-11 11:48:51:719 [AndroidUiautomator2Driver@c160] Creating session with W3C capabilities: {
+2024-03-11 11:48:51:719 [AndroidUiautomator2Driver@c160]   "alwaysMatch": {
+2024-03-11 11:48:51:719 [AndroidUiautomator2Driver@c160]     "platformName": "ANDROID",
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:app": "/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk",
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:appWaitForLaunch": false,
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:automationName": "UiAutomator2",
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:deviceName": "Android Emulator1",
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:fullReset": false,
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:noSign": true,
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:platformVersion": "14.0",
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     "appium:–session-override": true
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]   },
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]   "firstMatch": [
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]     {}
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160]   ]
+2024-03-11 11:48:51:720 [AndroidUiautomator2Driver@c160] }
+2024-03-11 11:48:51:724 [AndroidUiautomator2Driver@c160] The following provided capabilities were not recognized by this driver:
+2024-03-11 11:48:51:724 [AndroidUiautomator2Driver@c160]   –session-override
+2024-03-11 11:48:51:724 [AndroidUiautomator2Driver@c160 (eb930041)] Session created with session id: eb930041-adee-4b38-be76-13d0b51bfbc8
+2024-03-11 11:48:51:730 [ADB] Found 1 'build-tools' folders under '/home/arun-qa/Android/Sdk' (newest first):
+2024-03-11 11:48:51:730 [ADB]     /home/arun-qa/Android/Sdk/build-tools/34.0.0
+2024-03-11 11:48:51:730 [ADB] Using 'adb' from '/home/arun-qa/Android/Sdk/platform-tools/adb'
+2024-03-11 11:48:51:730 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 start-server'
+2024-03-11 11:48:51:734 [AndroidUiautomator2Driver@c160 (eb930041)] Retrieving device list
+2024-03-11 11:48:51:734 [ADB] Trying to find connected Android devices
+2024-03-11 11:48:51:734 [ADB] Getting connected devices
+2024-03-11 11:48:51:738 [ADB] Connected devices: [{"udid":"emulator-5554","state":"device"},{"udid":"emulator-5556","state":"device"}]
+2024-03-11 11:48:51:738 [AndroidUiautomator2Driver@c160 (eb930041)] Looking for a device with Android '14.0.0'
+2024-03-11 11:48:51:738 [ADB] Setting device id to emulator-5554
+2024-03-11 11:48:51:738 [ADB] Getting device platform version
+2024-03-11 11:48:51:738 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2024-03-11 11:48:51:752 [ADB] Current device property 'ro.build.version.release': 14
+2024-03-11 11:48:51:752 [AndroidUiautomator2Driver@c160 (eb930041)] Using device: emulator-5554
+2024-03-11 11:48:51:753 [ADB] Using 'adb' from '/home/arun-qa/Android/Sdk/platform-tools/adb'
+2024-03-11 11:48:51:753 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 start-server'
+2024-03-11 11:48:51:756 [ADB] Setting device id to emulator-5554
+2024-03-11 11:48:51:757 [BaseDriver] Using local app '/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk'
+2024-03-11 11:48:51:879 [AndroidUiautomator2Driver@c160 (eb930041)] Checking whether app is actually present
+2024-03-11 11:48:51:880 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
+2024-03-11 11:48:51:893 [ADB] Current device property 'ro.build.version.sdk': 34
+2024-03-11 11:48:51:894 [ADB] Getting device platform version
+2024-03-11 11:48:51:894 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2024-03-11 11:48:51:907 [ADB] Current device property 'ro.build.version.release': 14
+2024-03-11 11:48:51:907 [ADB] Device API level: 34
+2024-03-11 11:48:51:907 [AndroidUiautomator2Driver@c160 (eb930041)] Relaxing hidden api policy
+2024-03-11 11:48:51:907 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
+2024-03-11 11:48:51:910 [AndroidUiautomator2Driver@c160 (eb930041)] Parsing package and activity from app manifest
+2024-03-11 11:48:51:911 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
+2024-03-11 11:48:51:916 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
+2024-03-11 11:48:51:939 [ADB] Package name: 'com.makemytrip'
+2024-03-11 11:48:51:939 [ADB] Main activity name: 'com.mmt.travel.app.home.ui.SplashActivity'
+2024-03-11 11:48:51:939 [AndroidUiautomator2Driver@c160 (eb930041)] Parsed package and activity are: com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity
+2024-03-11 11:48:51:940 [AndroidUiautomator2Driver@c160 (eb930041)] Pushing settings apk to the device...
+2024-03-11 11:48:51:941 [ADB] Getting package info for 'io.appium.settings'
+2024-03-11 11:48:51:941 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+2024-03-11 11:48:52:060 [ADB] The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('5.7.5' >= '5.7.5')
+2024-03-11 11:48:52:061 [ADB] There is no need to install/upgrade '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2024-03-11 11:48:52:061 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-03-11 11:48:52:083 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd notification allow_listener io.appium.settings/.NLService'
+2024-03-11 11:48:52:085 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell appops set io.appium.settings PROJECT_MEDIA allow'
+2024-03-11 11:48:52:106 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-03-11 11:48:52:133 [SettingsApp] Starting Appium Settings app
+2024-03-11 11:48:52:134 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start -n io.appium.settings/.Settings -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
+2024-03-11 11:48:52:197 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-03-11 11:48:52:618 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-03-11 11:48:52:995 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-03-11 11:48:53:066 [Logcat] Starting logs capture with command: /home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
+2024-03-11 11:48:53:168 [AndroidUiautomator2Driver@c160 (eb930041)] Forwarding UiAutomator2 Server port 6790 to local port 8200
+2024-03-11 11:48:53:173 [ADB] Forwarding system: 8200 to device: 6790
+2024-03-11 11:48:53:173 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8200 tcp:6790'
+2024-03-11 11:48:53:183 [ADB] Getting package info for 'com.makemytrip'
+2024-03-11 11:48:53:183 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package com.makemytrip'
+2024-03-11 11:48:53:187 [ADB] Checking app cert for /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk
+2024-03-11 11:48:53:187 [ADB] Checking app cert for /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk
+2024-03-11 11:48:53:189 [ADB] Using 'apksigner.jar' from '/home/arun-qa/Android/Sdk/build-tools/34.0.0/lib/apksigner.jar'
+2024-03-11 11:48:53:191 [ADB] Starting apksigner: /usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx1024M -Xss1m -jar /home/arun-qa/Android/Sdk/build-tools/34.0.0/lib/apksigner.jar verify --print-certs /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk
+2024-03-11 11:48:53:230 [ADB] Starting apksigner: /usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx1024M -Xss1m -jar /home/arun-qa/Android/Sdk/build-tools/34.0.0/lib/apksigner.jar verify --print-certs /home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk
+2024-03-11 11:48:53:558 [ADB] apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
+2024-03-11 11:48:53:558 [ADB] Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
+2024-03-11 11:48:53:558 [ADB] Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
+2024-03-11 11:48:53:558 [ADB] Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
+2024-03-11 11:48:53:558 [ADB] 
+2024-03-11 11:48:53:559 [ADB] sha256 hash did match for 'appium-uiautomator2-server-debug-androidTest.apk'
+2024-03-11 11:48:53:559 [ADB] '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk' is signed with the default certificate
+2024-03-11 11:48:53:559 [ADB] Getting install status for io.appium.uiautomator2.server.test
+2024-03-11 11:48:53:559 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm path io.appium.uiautomator2.server.test'
+2024-03-11 11:48:53:648 [ADB] The version name of the installed 'com.makemytrip' is greater or equal to the application version name ('9.1.0' >= '9.1.0')
+2024-03-11 11:48:53:648 [ADB] There is no need to install/upgrade '/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk'
+2024-03-11 11:48:53:648 [AndroidUiautomator2Driver@c160 (eb930041)] Performing fast reset on 'com.makemytrip'
+2024-03-11 11:48:53:649 [ADB] Getting install status for com.makemytrip
+2024-03-11 11:48:53:649 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm path com.makemytrip'
+2024-03-11 11:48:54:017 [ADB] 'io.appium.uiautomator2.server.test' is installed
+2024-03-11 11:48:54:021 [ADB] 'com.makemytrip' is installed
+2024-03-11 11:48:54:037 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop com.makemytrip'
+2024-03-11 11:48:54:434 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm clear com.makemytrip'
+2024-03-11 11:48:54:688 [ADB] apksigner stdout: Signer #1 certificate DN: EMAILADDRESS=android@android.com, CN=Android, OU=Android, O=Android, L=Mountain View, ST=California, C=US
+2024-03-11 11:48:54:688 [ADB] Signer #1 certificate SHA-256 digest: a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc
+2024-03-11 11:48:54:689 [ADB] Signer #1 certificate SHA-1 digest: 61ed377e85d386a8dfee6b864bd85b0bfaa5af81
+2024-03-11 11:48:54:689 [ADB] Signer #1 certificate MD5 digest: e89b158e4bcf988ebd09eb83f5378e87
+2024-03-11 11:48:54:689 [ADB] 
+2024-03-11 11:48:54:689 [ADB] sha256 hash did match for 'appium-uiautomator2-server-v7.0.1.apk'
+2024-03-11 11:48:54:689 [ADB] '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk' is signed with the default certificate
+2024-03-11 11:48:54:689 [ADB] Getting package info for 'io.appium.uiautomator2.server'
+2024-03-11 11:48:54:689 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+2024-03-11 11:48:54:884 [ADB] The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('7.0.1' >= '7.0.1')
+2024-03-11 11:48:54:884 [AndroidUiautomator2Driver@c160 (eb930041)] Server packages status: [{"wasSigned":true,"installState":"sameVersionInstalled","appPath":"/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk","appId":"io.appium.uiautomator2.server"},{"wasSigned":true,"installState":"sameVersionInstalled","appPath":"/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk","appId":"io.appium.uiautomator2.server.test"}]
+2024-03-11 11:48:54:885 [AndroidUiautomator2Driver@c160 (eb930041)] Server packages are not going to be (re)installed
+2024-03-11 11:48:54:886 [AndroidUiautomator2Driver@c160 (eb930041)] Waiting up to 30000ms for services to be available
+2024-03-11 11:48:54:886 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
+2024-03-11 11:48:54:937 [AndroidUiautomator2Driver@c160 (eb930041)] Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+2024-03-11 11:48:54:939 [ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
+2024-03-11 11:48:54:940 [ADB] Got the following command chunks to execute: [["dumpsys","deviceidle","whitelist","+io.appium.settings",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server.test",";"]]
+2024-03-11 11:48:54:940 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
+2024-03-11 11:48:55:015 [AndroidUiautomator2Driver@c160 (eb930041)] Performed fast reset on the installed 'com.makemytrip' application (stop and clear)
+2024-03-11 11:48:55:139 [AndroidUiautomator2Driver@c160 (eb930041)] Performing shallow cleanup of automation leftovers
+2024-03-11 11:48:55:276 [AndroidUiautomator2Driver@c160 (eb930041)] No obsolete sessions have been detected (socket hang up)
+2024-03-11 11:48:55:276 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2024-03-11 11:48:55:348 [AndroidUiautomator2Driver@c160 (eb930041)] Starting UIAutomator2 server 7.0.1
+2024-03-11 11:48:55:348 [AndroidUiautomator2Driver@c160 (eb930041)] Using UIAutomator2 server from '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.1.apk' and test from '/home/arun-qa/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+2024-03-11 11:48:55:349 [AndroidUiautomator2Driver@c160 (eb930041)] Waiting up to 30000ms for UiAutomator2 to be online...
+2024-03-11 11:48:55:349 [ADB] Creating ADB subprocess with args: ["-P","5037","-s","emulator-5554","shell","am","instrument","-w","-e","disableAnalytics","true","io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
+2024-03-11 11:48:55:355 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/status' to command name 'getStatus'
+2024-03-11 11:48:55:356 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-03-11 11:48:55:394 [AndroidUiautomator2Driver@c160 (eb930041)] socket hang up
+2024-03-11 11:48:56:395 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/status' to command name 'getStatus'
+2024-03-11 11:48:56:396 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-03-11 11:48:56:400 [AndroidUiautomator2Driver@c160 (eb930041)] socket hang up
+2024-03-11 11:48:56:898 [Instrumentation] io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:
+2024-03-11 11:48:57:402 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/status' to command name 'getStatus'
+2024-03-11 11:48:57:402 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-03-11 11:48:57:410 [AndroidUiautomator2Driver@c160 (eb930041)] socket hang up
+2024-03-11 11:48:58:411 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/status' to command name 'getStatus'
+2024-03-11 11:48:58:412 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-03-11 11:48:58:517 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"None","value":{"message":"UiAutomator2 Server is ready to accept commands","ready":true}}
+2024-03-11 11:48:58:517 [AndroidUiautomator2Driver@c160 (eb930041)] The initialization of the instrumentation process took 3168ms
+2024-03-11 11:48:58:517 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/session' to command name 'createSession'
+2024-03-11 11:48:58:517 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [POST /session] to [POST http://127.0.0.1:8200/session] with body: {"capabilities":{"firstMatch":[{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"emulator-5554","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"Android Emulator1","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true},"deviceUDID":"emulator-5554","appPackage":"com.makemytrip"}],"alwaysMatch":{}}}
+2024-03-11 11:48:58:569 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":{"capabilities":{"firstMatch":[{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"emulator-5554","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"Android Emulator1","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true},"deviceUDID":"emulator-5554","appPackage":"com.makemytrip"}],"alwaysMatch":{}},"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de"}}
+2024-03-11 11:48:58:570 [AndroidUiautomator2Driver@c160 (eb930041)] Determined the downstream protocol as 'W3C'
+2024-03-11 11:48:58:584 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/appium/device/pixel_ratio] with no body
+2024-03-11 11:48:58:586 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/appium/device/system_bars' to command name 'getSystemBars'
+2024-03-11 11:48:58:586 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/appium/device/system_bars] with no body
+2024-03-11 11:48:58:588 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/window/current/size' to command name 'getWindowSize'
+2024-03-11 11:48:58:588 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/window/current/size] with no body
+2024-03-11 11:48:58:590 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/appium/device/info] with no body
+2024-03-11 11:48:58:591 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
+2024-03-11 11:48:58:632 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":2.625}
+2024-03-11 11:48:58:636 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":{"statusBar":128}}
+2024-03-11 11:48:58:645 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":{"height":2400,"width":1080}}
+2024-03-11 11:48:58:692 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":{"androidId":"9be1c31aa9023bba","apiVersion":"34","bluetooth":{"state":"ON"},"brand":"google","carrierName":"T-Mobile","displayDensity":420,"locale":"en_US","manufacturer":"Google","model":"sdk_gphone64_x86_64","networks":[{"capabilities":{"SSID":null,"linkDownBandwidthKbps":4300,"linkUpstreamBandwidthKbps":1800,"networkCapabilities":"NET_CAPABILITY_MMS,NET_CAPABILITY_SUPL,NET_CAPABILITY_DUN,NET_CAPABILITY_FOTA,NET_CAPABILITY_IMS,NET_CAPABILITY_CBS,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED,NET_CAPABILITY_NOT_ROAMING,NET_CAPABILITY_NOT_CONGESTED,NET_CAPABILITY_NOT_SUSPENDED","signalStrength":-2147483648,"transportTypes":"TRANSPORT_CELLULAR"},"detailedState":"CONNECTED","extraInfo":"epc.tmobile.com","isAvailable":true,"isConnected":true,"isFailover":false,"isRoaming":false,"state":"CONNECTED","subtype":10,"subtypeName":"HSPA","type":0,"typeName":"MOBILE"},{"capabiliti...
+2024-03-11 11:48:58:736 [AndroidUiautomator2Driver@c160 (eb930041)] Screen already unlocked, doing nothing
+2024-03-11 11:48:58:737 [AndroidUiautomator2Driver@c160 (eb930041)] Starting 'com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity and waiting for 'com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity'
+2024-03-11 11:48:58:737 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start -n com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000'
+2024-03-11 11:48:59:061 [ADB] Waiting up to 20000ms for activity matching pkg: 'com.makemytrip' and activity: 'com.mmt.travel.app.home.ui.SplashActivity' to be focused
+2024-03-11 11:48:59:062 [ADB] Possible activities, to be checked: 'com.mmt.travel.app.home.ui.SplashActivity', 'com.makemytrip.com.mmt.travel.app.home.ui.SplashActivity'
+2024-03-11 11:48:59:062 [ADB] Getting focused package and activity
+2024-03-11 11:48:59:062 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window displays'
+2024-03-11 11:48:59:139 [ADB] Found package: 'com.google.android.apps.nexuslauncher' and fully qualified activity name : 'com.google.android.apps.nexuslauncher.NexusLauncherActivity'
+2024-03-11 11:48:59:139 [ADB] Incorrect package and activity. Retrying.
+2024-03-11 11:48:59:639 [ADB] Getting focused package and activity
+2024-03-11 11:48:59:640 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window displays'
+2024-03-11 11:48:59:679 [ADB] Found package: 'com.makemytrip' and fully qualified activity name : 'com.mmt.travel.app.home.ui.SplashActivity'
+2024-03-11 11:48:59:681 [AppiumDriver@af3c] New AndroidUiautomator2Driver session created successfully, session eb930041-adee-4b38-be76-13d0b51bfbc8 added to master session list
+2024-03-11 11:48:59:682 [AppiumDriver@af3c] Event 'newSessionStarted' logged at 1710137939682 (11:48:59 GMT+0530 (India Standard Time))
+2024-03-11 11:48:59:683 [AndroidUiautomator2Driver@c160 (eb930041)] Cached the protocol value 'W3C' for the new session eb930041-adee-4b38-be76-13d0b51bfbc8
+2024-03-11 11:48:59:683 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.createSession() result: {"capabilities":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"emulator-5554","fullReset":false,"noSign":true,"platformVersion":"14","–session-override":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"ANDROID","app":"/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk","appWaitForLaunch":false,"automationName":"UiAutomator2","deviceName":"Android Emulator1","fullReset":false,"noSign":true,"platformVersion":"14.0","–session-override":true},"deviceUDID":"emulator-5554","appPackage":"com.makemytrip","pixelRatio":"2.625","statBarHeight":128,"viewportRect":{"left":0,"top":128,"width":1080,"height":2272},"deviceApiLevel":34,"deviceManufacturer":"Google","devi...
+2024-03-11 11:48:59:687 [HTTP] <-- POST /session 200 7974 ms - 1175
+2024-03-11 11:48:59:687 [HTTP] 
+2024-03-11 11:48:59:705 [HTTP] --> POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/timeouts
+2024-03-11 11:48:59:705 [HTTP] {"implicit":40000}
+2024-03-11 11:48:59:707 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.timeouts() with args: [null,null,null,null,40000,"eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:48:59:708 [AndroidUiautomator2Driver@c160 (eb930041)] W3C timeout argument: {"implicit":40000}}
+2024-03-11 11:48:59:708 [AndroidUiautomator2Driver@c160 (eb930041)] Set implicit wait to 40000ms
+2024-03-11 11:48:59:709 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.timeouts() result: null
+2024-03-11 11:48:59:710 [HTTP] <-- POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/timeouts 200 5 ms - 14
+2024-03-11 11:48:59:710 [HTTP] 
+2024-03-11 11:49:04:716 [HTTP] --> POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element
+2024-03-11 11:49:04:716 [HTTP] {"using":"id","value":"com.makemytrip:id/continueButton"}
+2024-03-11 11:49:04:718 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.findElement() with args: ["id","com.makemytrip:id/continueButton","eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:49:04:718 [AndroidUiautomator2Driver@c160 (eb930041)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2024-03-11 11:49:04:719 [AndroidUiautomator2Driver@c160 (eb930041)] Waiting up to 40000 ms for condition
+2024-03-11 11:49:04:720 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/element' to command name 'findElement'
+2024-03-11 11:49:04:720 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/element] with body: {"strategy":"id","selector":"com.makemytrip:id/continueButton","context":"","multiple":false}
+2024-03-11 11:49:05:470 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":{"ELEMENT":"00000000-0000-0013-ffff-ffff00000030","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-0013-ffff-ffff00000030"}}
+2024-03-11 11:49:05:470 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-0013-ffff-ffff00000030","ELEMENT":"00000000-0000-0013-ffff-ffff00000030"}
+2024-03-11 11:49:05:471 [HTTP] <-- POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element 200 755 ms - 137
+2024-03-11 11:49:05:471 [HTTP] 
+2024-03-11 11:49:05:475 [HTTP] --> GET /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element/00000000-0000-0013-ffff-ffff00000030/enabled
+2024-03-11 11:49:05:475 [HTTP] {}
+2024-03-11 11:49:05:477 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.elementEnabled() with args: ["00000000-0000-0013-ffff-ffff00000030","eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:49:05:477 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/element/00000000-0000-0013-ffff-ffff00000030/attribute/enabled' to command name 'getAttribute'
+2024-03-11 11:49:05:478 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /element/00000000-0000-0013-ffff-ffff00000030/attribute/enabled] to [GET http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/element/00000000-0000-0013-ffff-ffff00000030/attribute/enabled] with no body
+2024-03-11 11:49:05:529 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":"true"}
+2024-03-11 11:49:05:529 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.elementEnabled() result: true
+2024-03-11 11:49:05:530 [HTTP] <-- GET /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element/00000000-0000-0013-ffff-ffff00000030/enabled 200 55 ms - 14
+2024-03-11 11:49:05:531 [HTTP] 
+2024-03-11 11:49:05:534 [HTTP] --> GET /session/eb930041-adee-4b38-be76-13d0b51bfbc8/screenshot
+2024-03-11 11:49:05:534 [HTTP] {}
+2024-03-11 11:49:05:534 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.getScreenshot() with args: ["eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:49:05:535 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/screenshot' to command name 'getScreenshot'
+2024-03-11 11:49:05:535 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /screenshot] to [GET http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/screenshot] with no body
+2024-03-11 11:49:06:267 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":"iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic7J13vBXF2cd/c869l0u7ICCooIBYkKZYEAuWWECIiRpjwdgSNWISMZYI5o3RaCxRo/E1qFHzauwaUbGE2BIFNJYoiigCSpOqtEu75Zyd949ts7OzfU+9z5fP5Zyzu9NnZ2d++8wM69SxJ0eBUQVgHuPM4xrm7QEDwLj6Uut3wVMVAY80ynmguqaaYEbq9ORyAFwoK/Gcfa19xokjz6z8ZboP3PyeMX4zOGtJBoAm+mYG6hGa6rgef7cbtXsrXdz5W3TG4HEO6vuFs+D6kuFO/8T7hksBOVKhigTEAFWxZYrrxFMeeaiKASuzO4HL6fUqLTPtygyMDzPzyqoJ+h/zqntmRTHrvngPMMkf1WeZw8wUMSGrU85zT7j1wcHF5osoFiUt/0qH6i/RxnG1H9R2EJWC3lhzo+GuuPabiT3RQt1/eoZkUvaVIAiCIAiCIAiCIAii6FScwFF21hlEKJzvuw1rDa66wuu3jad1QRJ8nSercLL1RjmSPGpJFdgyzpxyfrujvhmiepKCHwRBEARBEAThTbF6nDWF8tgvAaGMohUHTXHDz5Q/FkEexSkNH/P/pF6HCC5Vv0X/4/vJ7SkqXrMShFCcE1a4/b8jocwyz7LOWV+YeJlhz2Uek6aneJa/7+Qqz2tU3nlOTVF4Yf4MrN8cYD7TVLzqBEOMaVGuKRrid0VIqjk4rt9lOi3CUzQI0/IYhQKekvhg+Ol7mhkVTG50vMKXprmEDYcgCIIgCIIgypyCCBxBg3lxGn+YLrXVTeeuoav3tWEJiIM1PShG3z9UPiRcfyMoL5IMWVjIwbt3LLhwhShuOP11u5YXYGHgCvMHZ30KWPvAJXIYLh2X+w32FINxV5x4...
+2024-03-11 11:49:06:268 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic7J13vBXF2cd/c869l0u7ICCooIBYkKZYEAuWWECIiRpjwdgSNWISMZYI5o3RaCxRo/E1qFHzauwaUbGE2BIFNJYoiigCSpOqtEu75Zyd949ts7OzfU+9z5fP5Zyzu9NnZ2d++8wM69SxJ0eBUQVgHuPM4xrm7QEDwLj6Uut3wVMVAY80ynmguqaaYEbq9ORyAFwoK/Gcfa19xokjz6z8ZboP3PyeMX4zOGtJBoAm+mYG6hGa6rgef7cbtXsrXdz5W3TG4HEO6vuFs+D6kuFO/8T7hksBOVKhigTEAFWxZYrrxFMeeaiKASuzO4HL6fUqLTPtygyMDzPzyqoJ+h/zqntmRTHrvngPMMkf1WeZw8wUMSGrU85zT7j1wcHF5osoFiUt/0qH6i/RxnG1H9R2EJWC3lhzo+GuuPabiT3RQt1/eoZkUvaVIAiCIAiCIAiCIAii6FScwFF21hlEKJzvuw1rDa66wuu3jad1QRJ8nSercLL1RjmSPGpJFdgyzpxyfrujvhmiepKCHwRBEARBEAThTbF6nDWF8tgvAaGMohUHTXHDz5Q/FkEexSkNH/P/pF6HCC5Vv0X/4/vJ7SkqXrMShFCcE1a4/b8jocwyz7LOWV+YeJlhz2Uek6aneJa/7+Qqz2tU3nlOTVF4Yf4MrN8cYD7TVLzqBEOMaVGuKRrid0VIqjk4rt9lOi3CUzQI0/IYhQKekvhg+Ol7mhkVTG50vMKXprmEDYcgCIIgCIIgypyCCBxBg3lxGn+YLrXVTeeuoav3tWEJiIM1PShG3z9UPiRcfyMoL5IMWVjIwbt3LLhwhShuOP11u5YXYGHgCvMHZ30KWPvAJXIYLh2X+w32FINxV5x4NHFDWs9CETtlGYiuOLfnsamv5E5/mX8q3SG44+k/0JdT4I5PWQ+qfcWNsNKq...
+2024-03-11 11:49:06:271 [HTTP] <-- GET /session/eb930041-adee-4b38-be76-13d0b51bfbc8/screenshot 200 737 ms - 464316
+2024-03-11 11:49:06:272 [HTTP] 
+2024-03-11 11:49:06:291 [HTTP] --> POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element
+2024-03-11 11:49:06:291 [HTTP] {"using":"id","value":"com.makemytrip:id/continueButton"}
+2024-03-11 11:49:06:291 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.findElement() with args: ["id","com.makemytrip:id/continueButton","eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:49:06:291 [AndroidUiautomator2Driver@c160 (eb930041)] Valid locator strategies for this request: xpath, id, class name, accessibility id, css selector, -android uiautomator
+2024-03-11 11:49:06:291 [AndroidUiautomator2Driver@c160 (eb930041)] Waiting up to 40000 ms for condition
+2024-03-11 11:49:06:292 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/element' to command name 'findElement'
+2024-03-11 11:49:06:292 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [POST /element] to [POST http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/element] with body: {"strategy":"id","selector":"com.makemytrip:id/continueButton","context":"","multiple":false}
+2024-03-11 11:49:06:376 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":{"ELEMENT":"00000000-0000-0013-ffff-ffff00000030","element-6066-11e4-a52e-4f735466cecf":"00000000-0000-0013-ffff-ffff00000030"}}
+2024-03-11 11:49:06:376 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.findElement() result: {"element-6066-11e4-a52e-4f735466cecf":"00000000-0000-0013-ffff-ffff00000030","ELEMENT":"00000000-0000-0013-ffff-ffff00000030"}
+2024-03-11 11:49:06:377 [HTTP] <-- POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element 200 86 ms - 137
+2024-03-11 11:49:06:377 [HTTP] 
+2024-03-11 11:49:06:380 [HTTP] --> POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element/00000000-0000-0013-ffff-ffff00000030/click
+2024-03-11 11:49:06:380 [HTTP] {"id":"00000000-0000-0013-ffff-ffff00000030"}
+2024-03-11 11:49:06:381 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.click() with args: ["00000000-0000-0013-ffff-ffff00000030","eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:49:06:383 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/element/00000000-0000-0013-ffff-ffff00000030/click' to command name 'click'
+2024-03-11 11:49:06:383 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [POST /element/00000000-0000-0013-ffff-ffff00000030/click] to [POST http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/element/00000000-0000-0013-ffff-ffff00000030/click] with body: {"element":"00000000-0000-0013-ffff-ffff00000030"}
+2024-03-11 11:49:06:912 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":null}
+2024-03-11 11:49:06:912 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.click() result: null
+2024-03-11 11:49:06:913 [HTTP] <-- POST /session/eb930041-adee-4b38-be76-13d0b51bfbc8/element/00000000-0000-0013-ffff-ffff00000030/click 200 533 ms - 14
+2024-03-11 11:49:06:913 [HTTP] 
+2024-03-11 11:49:16:919 [HTTP] --> GET /session/eb930041-adee-4b38-be76-13d0b51bfbc8/screenshot
+2024-03-11 11:49:16:919 [HTTP] {}
+2024-03-11 11:49:16:920 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.getScreenshot() with args: ["eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:49:16:923 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/screenshot' to command name 'getScreenshot'
+2024-03-11 11:49:16:924 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [GET /screenshot] to [GET http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de/screenshot] with no body
+2024-03-11 11:49:17:546 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":"iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic5L3dkiQ5jx14AJLuEZlVLdnO7Nru7b7/U610J2l21F2ZEe4kgb0AQNIjs/obmW7WNN4WlZ2REf5Dgvg5OADp7f/+vxRQrAcRzZ9kP5kYDPJP2OdVdbxEBaoCIiAlBjMt5wPABOJ5XiJCSgnMPM4FBQQKHeeW5RqXWxzXFChU7DMAkFIa543/FxF06ZAuaK2htYacEnIuyCmNa7VW8fx84DieyDmhlIycE1K289iwKADF2/sb7m93lK2A2Z5HRCFdoArs247bviPnjEQJTIzzOHGeJ56PB379+Qt//fkXjscT9TzRzgoCQAByzrhtO27bhsRpfP8yoGQ/lWAvAF0UvavNGROIGbkU5JyXnxm9ddRW0Wob41FbRW0NrXd0EXQfW2L265E9OS1zAIWKAKLIKaOUjJILSs4oOSMxD9mptaK1ht6ajZOo/Y0ZzGxzKDLmqPcGgHxsl2e/yMD8qQBEbUyI7NlD5lb5ZWYk/4x2u96QDxGXwxA2evn5/aHxEQKIAbCPfyJQYoAURIqUGPebywUzkn0UBWQvImRiFCKwKFg6sgK3UrCXAoig1hOtVagKAAUzYbtt2G4bGjrOfqJqQ7nvKG87ylZMlnPCPRW854K3VJAAJADa+5iX5/OJ4zjQere1kctYR8xsY+jyoCGsJYNKQSPgz49f+PPXLyjUZKEU7PuO/XZDzmUMFhEPHSDi4987ztPWR84FW9nBzKi1oVaTy9YFvQv++vULf/36heOo2PYdZdvQu/rfgbJtyNsGJoZ2gXYFzg48G1BlrLPbfsP7+w+8//iBx3HgcRz4fDzw//7rf8eff/1CShnbdkMuG7rLrMJki5ix33Zstw0pJdRaUavPiy0X...
+2024-03-11 11:49:17:549 [AndroidUiautomator2Driver@c160 (eb930041)] Responding to client with driver.getScreenshot() result: "iVBORw0KGgoAAAANSUhEUgAABDgAAAlgCAYAAABtGofVAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAACAASURBVHic5L3dkiQ5jx14AJLuEZlVLdnO7Nru7b7/U610J2l21F2ZEe4kgb0AQNIjs/obmW7WNN4WlZ2REf5Dgvg5OADp7f/+vxRQrAcRzZ9kP5kYDPJP2OdVdbxEBaoCIiAlBjMt5wPABOJ5XiJCSgnMPM4FBQQKHeeW5RqXWxzXFChU7DMAkFIa543/FxF06ZAuaK2htYacEnIuyCmNa7VW8fx84DieyDmhlIycE1K289iwKADF2/sb7m93lK2A2Z5HRCFdoArs247bviPnjEQJTIzzOHGeJ56PB379+Qt//fkXjscT9TzRzgoCQAByzrhtO27bhsRpfP8yoGQ/lWAvAF0UvavNGROIGbkU5JyXnxm9ddRW0Wob41FbRW0NrXd0EXQfW2L265E9OS1zAIWKAKLIKaOUjJILSs4oOSMxD9mptaK1ht6ajZOo/Y0ZzGxzKDLmqPcGgHxsl2e/yMD8qQBEbUyI7NlD5lb5ZWYk/4x2u96QDxGXwxA2evn5/aHxEQKIAbCPfyJQYoAURIqUGPebywUzkn0UBWQvImRiFCKwKFg6sgK3UrCXAoig1hOtVagKAAUzYbtt2G4bGjrOfqJqQ7nvKG87ylZMlnPCPRW854K3VJAAJADa+5iX5/OJ4zjQere1kctYR8xsY+jyoCGsJYNKQSPgz49f+PPXLyjUZKEU7PuO/XZDzmUMFhEPHSDi4987ztPWR84FW9nBzKi1oVaTy9YFvQv++vULf/36heOo2PYdZdvQu/rfgbJtyNsGJoZ2gXYFzg48G1BlrLPbfsP7+w+8//iBx3HgcRz4fDzw//7rf8eff/1CShnbdkMuG7rLrMJki5ix33Zstw0pJdRaUavPiy0XlJKxbQUppaE3bN2daL35GiXkknG73bDvO7qorcFuY9J7d5m2a8Yc1VqnOvBx...
+2024-03-11 11:49:17:553 [HTTP] <-- GET /session/eb930041-adee-4b38-be76-13d0b51bfbc8/screenshot 200 634 ms - 1163888
+2024-03-11 11:49:17:553 [HTTP] 
+2024-03-11 11:49:17:589 [HTTP] --> DELETE /session/eb930041-adee-4b38-be76-13d0b51bfbc8
+2024-03-11 11:49:17:589 [HTTP] {}
+2024-03-11 11:49:17:589 [AndroidUiautomator2Driver@c160 (eb930041)] Calling AppiumDriver.deleteSession() with args: ["eb930041-adee-4b38-be76-13d0b51bfbc8"]
+2024-03-11 11:49:17:589 [AppiumDriver@af3c] Event 'quitSessionRequested' logged at 1710137957589 (11:49:17 GMT+0530 (India Standard Time))
+2024-03-11 11:49:17:589 [AppiumDriver@af3c] Removing session eb930041-adee-4b38-be76-13d0b51bfbc8 from our master session list
+2024-03-11 11:49:17:590 [AndroidUiautomator2Driver@c160 (eb930041)] Deleting UiAutomator2 session
+2024-03-11 11:49:17:590 [AndroidUiautomator2Driver@c160 (eb930041)] Deleting UiAutomator2 server session
+2024-03-11 11:49:17:590 [AndroidUiautomator2Driver@c160 (eb930041)] Matched '/' to command name 'deleteSession'
+2024-03-11 11:49:17:590 [AndroidUiautomator2Driver@c160 (eb930041)] Proxying [DELETE /] to [DELETE http://127.0.0.1:8200/session/f33db605-6d13-4750-8f2e-1bc41a1185de] with no body
+2024-03-11 11:49:17:600 [AndroidUiautomator2Driver@c160 (eb930041)] Got response with status 200: {"sessionId":"f33db605-6d13-4750-8f2e-1bc41a1185de","value":null}
+2024-03-11 11:49:17:601 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings/.recorder.RecorderService'
+2024-03-11 11:49:17:603 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop com.makemytrip'
+2024-03-11 11:49:17:701 [Logcat] Stopping logcat capture
+2024-03-11 11:49:17:711 [ADB] Removing forwarded port socket connection: 8200 
+2024-03-11 11:49:17:712 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 forward --remove tcp:8200'
+2024-03-11 11:49:17:716 [AndroidUiautomator2Driver@c160 (eb930041)] Restoring hidden api policy to the device default configuration
+2024-03-11 11:49:17:717 [ADB] Running '/home/arun-qa/Android/Sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy''
+2024-03-11 11:49:17:875 [AppiumDriver@af3c] Event 'quitSessionFinished' logged at 1710137957875 (11:49:17 GMT+0530 (India Standard Time))
+2024-03-11 11:49:17:876 [AppiumDriver@af3c] Received response: null
+2024-03-11 11:49:17:876 [AppiumDriver@af3c] But deleting session, so not returning
+2024-03-11 11:49:17:876 [AppiumDriver@af3c] Responding to client with driver.deleteSession() result: null
+2024-03-11 11:49:17:877 [HTTP] <-- DELETE /session/eb930041-adee-4b38-be76-13d0b51bfbc8 200 288 ms - 14
+2024-03-11 11:49:17:877 [HTTP] 
+2024-03-11 11:49:17:898 [Appium] Received SIGTERM - shutting down
+2024-03-11 11:49:17:903 [AppiumDriver@af3c] There are no active sessions for cleanup
+2024-03-11 11:49:17:907 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:952:11)
+    at Socket._write (node:net:964:8)
+    at writeOrBuffer (node:internal/streams/writable:399:12)
+    at _write (node:internal/streams/writable:340:10)
+    at Socket.Writable.write (node:internal/streams/writable:344:10)
+    at Console.log (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/usr/lib/node_modules/appium/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.<computed> [as debug] (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/create-logger.js:81:14)
+    at EventEmitter.<anonymous> (/usr/lib/node_modules/appium/lib/logsink.js:220:22)
+    at EventEmitter.emit (node:events:514:28)
+    at EventEmitter.<anonymous> (/usr/lib/node_modules/appium/node_modules/npmlog/lib/log.js:247:8)
+2024-03-11 11:49:17:909 [HTTP] Waiting until the server is closed
+2024-03-11 11:49:17:910 [HTTP] Received server close event
+2024-03-11 11:49:17:911 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:952:11)
+    at Socket._write (node:net:964:8)
+    at writeOrBuffer (node:internal/streams/writable:399:12)
+    at _write (node:internal/streams/writable:340:10)
+    at Socket.Writable.write (node:internal/streams/writable:344:10)
+    at Console.log (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/usr/lib/node_modules/appium/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.<computed> [as info] (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/create-logger.js:81:14)
+    at EventEmitter.<anonymous> (/usr/lib/node_modules/appium/lib/logsink.js:220:22)
+    at EventEmitter.emit (node:events:514:28)
+    at EventEmitter.<anonymous> (/usr/lib/node_modules/appium/node_modules/npmlog/lib/log.js:247:8)
+2024-03-11 11:49:17:912 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:952:11)
+    at Socket._write (node:net:964:8)
+    at writeOrBuffer (node:internal/streams/writable:399:12)
+    at _write (node:internal/streams/writable:340:10)
+    at Socket.Writable.write (node:internal/streams/writable:344:10)
+    at Console.log (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/usr/lib/node_modules/appium/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.<computed> [as info] (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/create-logger.js:81:14)
+    at EventEmitter.<anonymous> (/usr/lib/node_modules/appium/lib/logsink.js:220:22)
+    at EventEmitter.emit (node:events:514:28)
+    at EventEmitter.<anonymous> (/usr/lib/node_modules/appium/node_modules/npmlog/lib/log.js:247:8)
+2024-03-11 11:49:17:912 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:952:11)
+    at Socket._write (node:net:964:8)
+    at writeOrBuffer (node:internal/streams/writable:399:12)
+    at _write (node:internal/streams/writable:340:10)
+    at Socket.Writable.write (node:internal/streams/writable:344:10)
+    at Console.log (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/lib/node_modules/appium/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:514:28)
+    at processEmit (/usr/lib/node_modules/appium/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)
+2024-03-11 11:49:17:913 uncaughtException: write EPIPE
+Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at Socket._writeGeneric (node:net:952:11)
+    at Socket._write (node:net:964:8)
+    at writeOrBuffer (node:internal/streams/writable:399:12)
+    at _write (node:internal/streams/writable:340:10)
+    at Socket.Writable.write (node:internal/streams/writable:344:10)
+    at Console.log (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/transports/console.js:51:25)
+    at Console._write (/usr/lib/node_modules/appium/node_modules/winston-transport/modern.js:103:17)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at Console.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.ondata (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:629:20)
+    at DerivedLogger.emit (node:events:526:35)
+    at addChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:279:12)
+    at readableAddChunk (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:262:11)
+    at DerivedLogger.Readable.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_readable.js:228:10)
+    at DerivedLogger.Transform.push (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:132:32)
+    at DerivedLogger._transform (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:313:12)
+    at DerivedLogger.Transform._read (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:166:10)
+    at DerivedLogger.Transform._write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_transform.js:155:83)
+    at doWrite (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:390:139)
+    at writeOrBuffer (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:381:5)
+    at DerivedLogger.Writable.write (/usr/lib/node_modules/appium/node_modules/readable-stream/lib/_stream_writable.js:302:11)
+    at DerivedLogger.log (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/logger.js:216:12)
+    at ExceptionHandler._uncaughtException (/usr/lib/node_modules/appium/node_modules/winston/lib/winston/exception-handler.js:220:17)
+    at process.emit (node:events:514:28)
+    at processEmit (/usr/lib/node_modules/appium/node_modules/lockfile/node_modules/signal-exit/index.js:199:34)

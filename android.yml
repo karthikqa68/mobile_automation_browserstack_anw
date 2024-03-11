@@ -3,4 +3,29 @@ name: run android tests in gitlab runner
 on: push
 
 jobs:
-  run-mobile-tests
+  runs-mobile-tests:
+    runs-on: macos-latest
+
+    steps:
+      - name: setup java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: pull the project in to the runner
+        uses: actions/checkout@v3
+
+      - name: setup appium
+        run :
+          npm install  -g appium@v1.22
+          appium -v
+          appium &>/dev/null &
+
+      - name: run appium tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          script: mvn clean test -Pandroid
+
+
