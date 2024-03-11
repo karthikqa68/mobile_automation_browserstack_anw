@@ -1,29 +1,23 @@
+---
 on: push
-
 jobs:
   runs-mobile-tests:
     runs-on: macos-latest
-
     steps:
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '11'
-
+          distribution: temurin
+          java-version: "11"
       - name: Pull the project into the runner
         uses: actions/checkout@v3
-
       - name: Install Maven
         run: |
           brew install maven  # Adjust for Linux runners if needed
-
+      - name: Accept SDK Licenses
+        run: yes | sdkmanager --licenses
       - name: Setup Appium
-        run:
-          npm install -g appium@1.22
-          appium -v
-          appium &>/dev/null &
-
+        run: npm install -g appium@1.22 appium -v appium &>/dev/null &
       - name: Run Appium tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
