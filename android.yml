@@ -26,6 +26,8 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
-          script: mvn clean test -Pandroid
+          script: |
+                cd android/
+                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
 
 
