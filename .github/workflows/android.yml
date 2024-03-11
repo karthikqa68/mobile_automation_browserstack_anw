@@ -19,19 +19,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y curl unzip
 
-      - name: Install curl
-        run: |
-          sudo apt-get install -y curl
-
       - name: Install Android SDK
         run: |
           /bin/mkdir -p $HOME/android-sdk
           curl -o $HOME/android-sdk/commandlinetools-linux.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
           cd $HOME/android-sdk/
           unzip commandlinetools-linux.zip
-        env:
-          ANDROID_HOME: $HOME/android-sdk
-          PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
+          env:
+            ANDROID_HOME: $HOME/android-sdk
+            PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
 
       - name: Accept SDK Licenses
         run: yes | sdkmanager --licenses
