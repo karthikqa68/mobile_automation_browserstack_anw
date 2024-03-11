@@ -5,14 +5,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout project (clear cache)  # Added for potential caching issues
+        uses: actions/checkout@v3
+        with:
+          clean: true  # Ensures latest changes are downloaded
+
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '11'
-
-      - name: Pull the project into the runner
-        uses: actions/checkout@v3
 
       - name: Install basic utilities
         run: |
@@ -25,8 +27,8 @@ jobs:
           curl -o $HOME/android-sdk/commandlinetools-linux.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
           cd $HOME/android-sdk/
           unzip commandlinetools-linux.zip
-          # Corrected line(s) for setting environment variables
-          ANDROID_HOME: $HOME/android-sdk  # Option 1 (remove env::)
+          # Corrected line for setting environment variable
+          ANDROID_HOME: $HOME/android-sdk
           PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
 
       - name: Accept SDK Licenses
