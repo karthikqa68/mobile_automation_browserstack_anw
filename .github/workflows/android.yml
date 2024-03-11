@@ -27,8 +27,6 @@ jobs:
           unzip commandlinetools-linux.zip
           # Corrected line(s) for setting environment variables
           ANDROID_HOME: $HOME/android-sdk  # Option 1 (remove env::)
-          # OR
-          export ANDROID_HOME=$HOME/android-sdk  # Option 2 (use export)
           PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
 
       - name: Accept SDK Licenses
