@@ -17,17 +17,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: setup appium
-        run :
-          npm install  -g appium@v1.22
+        run:
+          npm install -g appium@v1.22
           appium -v
           appium &>/dev/null &
 
       - name: run appium tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 29
           script: |
-                cd android/
-                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
+            # Option 1: Specify the exact path (replace with your actual path)
+            mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f ./android/pom.xml
 
-
+            # Option 2: Navigate to android directory and run Maven command
+            #cd android && mvn clean test -Dsurefire.suiteXmlFiles=regression.xml
