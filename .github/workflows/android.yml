@@ -1,5 +1,3 @@
-name: run android tests in gitlab runner
-
 on: push
 
 jobs:
@@ -7,27 +5,29 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: setup java
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: pull the project in to the runner
+      - name: Pull the project into the runner
         uses: actions/checkout@v3
 
-      - name: setup appium
-        run :
-          npm install  -g appium@v1.22
+      - name: Install Maven
+        run: |
+          brew install maven  # Adjust for Linux runners if needed
+
+      - name: Setup Appium
+        run:
+          npm install -g appium@1.22
           appium -v
           appium &>/dev/null &
 
-      - name: run appium tests
+      - name: Run Appium tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
           script: |
-                cd android/
-                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
-
-
+            cd android/
+            mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
