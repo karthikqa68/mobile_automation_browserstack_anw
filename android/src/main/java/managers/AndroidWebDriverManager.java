@@ -72,10 +72,10 @@ public class AndroidWebDriverManager {
 	public void openapp(String deviceName) {
          UiAutomator2Options options = new UiAutomator2Options();
 		//File appPath = new File(prop.getProperty("apkPath"));
-		if(deviceName.equals("android11")){
-			options.setDeviceName(prop.getProperty("android11DeviceName"));
-			options.setPlatformName(prop.getProperty("android11PlatformName"));
-			options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
+		if(deviceName.equals("android10")){
+			options.setDeviceName(prop.getProperty("android10DeviceName"));
+			options.setPlatformName(prop.getProperty("android10PlatformName"));
+			options.setPlatformVersion(prop.getProperty("android10PlatformVersion"));
 			options.setApp("/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk");
 			options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
