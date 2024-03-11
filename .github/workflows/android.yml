@@ -2,7 +2,7 @@ on: push
 
 jobs:
   runs-mobile-tests:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Setup Java
@@ -17,10 +17,10 @@ jobs:
       - name: Install Android SDK
         run: |
           /bin/mkdir -p $HOME/android-sdk
-          /bin/bash -c "$(curl -fsSL https://dl.google.com/android/repository/commandlinetools-mac-6858069_latest.zip)"
-          mv commandlinetools-mac-6858069_latest.zip $HOME/android-sdk/
+          /bin/bash -c "$(curl -fsSL https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip)"
+          mv commandlinetools-linux-6858069_latest.zip $HOME/android-sdk/
           cd $HOME/android-sdk/
-          unzip commandlinetools-mac-6858069_latest.zip
+          unzip commandlinetools-linux-6858069_latest.zip
         env:
           ANDROID_HOME: $HOME/android-sdk
           PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
@@ -30,7 +30,8 @@ jobs:
 
       - name: Install Maven
         run: |
-          brew install maven  # Adjust for Linux runners if needed
+          sudo apt-get update
+          sudo apt-get install -y maven
 
       - name: Setup Appium
         run:
