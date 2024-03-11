@@ -14,6 +14,10 @@ jobs:
       - name: Pull the project into the runner
         uses: actions/checkout@v3
 
+      - name: Install unzip
+        run: |
+          brew install unzip  # Adjust for Linux runners if needed
+
       - name: Install Android SDK
         run: |
           /bin/mkdir -p $HOME/android-sdk
