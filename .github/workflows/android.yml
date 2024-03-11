@@ -25,9 +25,11 @@ jobs:
           curl -o $HOME/android-sdk/commandlinetools-linux.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
           cd $HOME/android-sdk/
           unzip commandlinetools-linux.zip
-          env:
-            ANDROID_HOME: $HOME/android-sdk
-            PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
+          # Corrected line(s) for setting environment variables
+          ANDROID_HOME: $HOME/android-sdk  # Option 1 (remove env::)
+          # OR
+          export ANDROID_HOME=$HOME/android-sdk  # Option 2 (use export)
+          PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
 
       - name: Accept SDK Licenses
         run: yes | sdkmanager --licenses
