@@ -1,0 +1,6 @@
+name: run android tests in gitlab runner
+
+on: push
+
+jobs:
+  run-mobile-tests
