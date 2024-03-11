@@ -21,7 +21,7 @@ jobs:
           unzip sdk-tools.zip -d $HOME/android-sdk
         env:
           ANDROID_HOME: $HOME/android-sdk
-          PATH: $HOME/android-sdk/tools/bin:$PATH
+          PATH: $HOME/android-sdk/tools/bin:$HOME/android-sdk/tools:$PATH
 
       - name: Accept SDK Licenses
         run: yes | sdkmanager --licenses
