@@ -16,7 +16,7 @@ jobs:
 
       - name: Install Android SDK
         run: |
-          mkdir -p $HOME/android-sdk
+          /bin/mkdir -p $HOME/android-sdk
           curl -o sdk-tools.zip https://dl.google.com/android/repository/commandlinetools-mac-6858069_latest.zip
           unzip sdk-tools.zip -d $HOME/android-sdk
         env:
