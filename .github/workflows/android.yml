@@ -25,7 +25,7 @@ jobs:
       - name: run appium tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 29
           script: |
                 cd android/
                 mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
