@@ -17,11 +17,11 @@ jobs:
       - name: Install basic utilities
         run: |
           sudo apt-get update
-          sudo apt-get install -y curl unzip
+          sudo apt-get install -y coreutils curl unzip
 
       - name: Install Android SDK
         run: |
-          mkdir -p $HOME/android-sdk
+          /bin/mkdir -p $HOME/android-sdk
           curl -o $HOME/android-sdk/commandlinetools-linux.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
           cd $HOME/android-sdk/
           unzip commandlinetools-linux.zip
