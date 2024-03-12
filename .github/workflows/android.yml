@@ -18,7 +18,7 @@ jobs:
 
       - name: Download and extract Android SDK
         run: |
-          wget https://dl.google.com/android/repository/commandlinetools-linux-<version>_latest.zip
+          wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
           unzip -qq commandlinetools-linux-<version>_latest.zip -d cmdline-tools
           mkdir -p $ANDROID_HOME/cmdline-tools
           mv cmdline-tools $ANDROID_HOME/cmdline-tools/latest
