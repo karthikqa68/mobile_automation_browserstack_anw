@@ -66,10 +66,9 @@ jobs:
 
       - name: Install Appium and dependencies
         run: |
-            npm install -g appium
-            npm install -g appium-doctor
-            npm install -g appium-uiautomator2-driver
+            npm install -g appium appium-uiautomator2-driver
             appium-uiautomator2-driver --allow-root --install
+            npm install -g appium-doctor
             appium-doctor --android
         shell: bash
 
