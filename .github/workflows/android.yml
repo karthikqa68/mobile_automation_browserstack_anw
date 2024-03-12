@@ -58,17 +58,32 @@ jobs:
           cd android
           mvn clean install
 
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+
+      - name: Install Appium and dependencies
+        run: |
+            npm install -g appium@v1.22
+            npm install -g appium-doctor
+            appium-doctor --android
+        shell: bash
+
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
-
-      - name: Start emulator (adjust AVD name if needed)
-        run: emulator -avd Pixel_5_API_30 &  # Replace with your emulator name
-
-      - name: Run Appium tests
-        run: |
-          pwd
-          cd android
-          mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml
+      - name: Wait for Appium server to start
+        run: sleep 10
+        
+      - name: run appium tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          script: |
+                cd android
+                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
+    
 
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
