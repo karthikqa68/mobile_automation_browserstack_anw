@@ -81,7 +81,7 @@ jobs:
         with:
           api-level: 30
           script: |
-                cd android/
+                cd android
                 mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
     
 
