@@ -48,11 +48,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
-      - name: Navigate to Maven project directory
-        run: | 
-          cd ..
-          cd android
-
       - name: Install Appium dependencies
         run: mvn install -DskipTests
 
@@ -66,7 +61,10 @@ jobs:
         run: appium -a 127.0.0.1 -p 4723 &
 
       - name: Run Appium tests
-        run: mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml
+        run: |
+          pwd
+          cd android
+          mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml
 
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
