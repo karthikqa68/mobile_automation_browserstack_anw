@@ -49,16 +49,20 @@ jobs:
             ${{ runner.os }}-m2-
 
       - name: Install Appium dependencies
-        run: mvn install -DskipTests
+        run: |
+          cd android
+          mvn install -DskipTests
 
       - name: Build the Android app (APK)
-        run: mvn clean install
-
-      - name: Start emulator (adjust AVD name if needed)
-        run: emulator -avd Pixel_5_API_30 &  # Replace with your emulator name
+        run: |
+          cd android
+          mvn clean install
 
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
+
+      - name: Start emulator (adjust AVD name if needed)
+        run: emulator -avd Pixel_5_API_30 &  # Replace with your emulator name
 
       - name: Run Appium tests
         run: |
