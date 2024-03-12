@@ -12,7 +12,7 @@ public class AndroidAppLaunchPage {
 
     public void launchingApp(String deviceName) {
         app.log("Opening the app");
-        app.openapp(deviceName);
+        app.openApp(deviceName);
         app.log("Opened app successfully");
     }
 

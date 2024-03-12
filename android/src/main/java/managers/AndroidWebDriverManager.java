@@ -18,11 +18,11 @@ import reports.ExtentManager;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import java.net.URL;
 
 
 public class AndroidWebDriverManager {
@@ -65,11 +65,13 @@ public class AndroidWebDriverManager {
 		}
 	}
 
+
+
 	/**
 	 * This Method is called for opening the browser
 	 *
      */
-	public void openapp(String deviceName) {
+	public void openApp(String deviceName) {
          UiAutomator2Options options = new UiAutomator2Options();
 		//File appPath = new File(prop.getProperty("apkPath"));
 		if(deviceName.equals("android11")){
@@ -93,20 +95,6 @@ public class AndroidWebDriverManager {
 			options.setNoSign(true);
 			options.setFullReset(false);
 		}
-
-
-
-//		DesiredCapabilities capabilities = new DesiredCapabilities();
-//		//capabilities.setCapability("autoWebview", true);
-//		capabilities.setCapability("deviceName",prop.getProperty("deviceName"));
-//		capabilities.setCapability("platformVersion", prop.getProperty("platformVersion"));
-//		capabilities.setCapability("platformName",prop.getProperty("platformName"));
-//		capabilities.setCapability("app","/home/arun-qa/workspace/anw_automation_mobile/src/test/resources/com.makemytrip-909.apk");
-//		capabilities.setCapability("automationName","UiAutomator2");
-//		capabilities.setCapability("noSign","true");
-//    	capabilities.setCapability("fullReset","false");
-
-		//capabilities.setCapability("new_command_timeout",60);
 
 		wait(15000);
 
@@ -558,5 +546,6 @@ public class AndroidWebDriverManager {
 	public void setImplicitlyWait(int waitInSeconds) {
 		aDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitInSeconds));
 	}
+
 
 }
