@@ -16,13 +16,9 @@ jobs:
           java-version: 11  # Update based on your project's requirements
 
       # Remove project_id and service_account parameters for default install
-      - name: Install Android SDK (using setup-gcloud, optional)
-        uses: google-github-actions/setup-gcloud@v0
-        with:
-
-      # Uncomment and configure if you prefer not to use setup-gcloud
-      # - name: Install Android SDK (alternative, manual installation)
-      #   run: sdkmanager --install ...  # Replace with specific commands
+     
+      - name: Install Android SDK (alternative, manual installation)
+        run: sdkmanager --install ...  # Replace with specific commands
 
       - name: Cache local Maven repository
         uses: actions/cache@v3
