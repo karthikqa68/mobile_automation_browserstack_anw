@@ -73,13 +73,13 @@ public class AndroidWebDriverManager {
      */
 	public void openApp(String deviceName) {
          UiAutomator2Options options = new UiAutomator2Options();
-		//File appPath = new File(prop.getProperty("apkPath"));
+		File appPath = new File(prop.getProperty("apkPath"));
 		if(deviceName.equals("android11")){
 			options.setDeviceName(prop.getProperty("android11DeviceName"));
 			options.setPlatformName(prop.getProperty("android11PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
-			options.setApp("/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk");
-			options.setAutomationName("UiAutomator2");
+			options.setApp(appPath.getAbsolutePath());
+			//options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
 			options.setNoSign(true);
@@ -88,8 +88,8 @@ public class AndroidWebDriverManager {
 			options.setDeviceName(prop.getProperty("android14DeviceName"));
 			options.setPlatformName(prop.getProperty("android14PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android14PlatformVersion"));
-			options.setApp("/home/arun-qa/workspace/mobile_automation_anw/android/src/test/resources/MakeMyTrip.apk");
-			options.setAutomationName("UiAutomator2");
+			options.setApp(appPath.getAbsolutePath());
+			//options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
 			options.setNoSign(true);
