@@ -4,18 +4,21 @@ on:
   push:
     branches:
       - master
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Java JDK
         uses: actions/setup-java@v3
         with:
-          java-version: 11  # Update based on your project's requirements
-          distribution: 'adopt' 
-          
+          java-version: 11
+          distribution: 'adopt'
+
       - name: Download and extract Android SDK
         run: |
           wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
@@ -33,16 +36,18 @@ jobs:
         run: |
           export ANDROID_HOME=/opt/android-sdk
           export PATH=$PATH:$ANDROID_HOME/tools/bin
-          /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --install "platform-tools" "platforms;android-30" ...  # Add any additional packages
+          /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --install "platform-tools" "platforms;android-30" # Add any additional packages
 
       - name: Cache local Maven repository
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
-          path: ~/.m2/repository
+          path: |
+            ~/.m2/repository
+            /opt/android-sdk/cmdline-tools
           key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2-
-            
+
       - name: Install Appium dependencies
         run: mvn install -DskipTests
 
@@ -65,7 +70,7 @@ jobs:
         run: kill $(ps aux | grep -v grep | grep appium | awk '{print $2}') || true
 
       - name: Upload test reports (optional)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: test-reports
           path: target/surefire-reports/
