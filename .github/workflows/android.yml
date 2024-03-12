@@ -63,6 +63,7 @@ jobs:
             npm install -g appium
             npm install -g appium-doctor
             npm install -g appium-uiautomator2-driver
+            appium-uiautomator2-driver --allow-root --install
             appium-doctor --android
         shell: bash
 
