@@ -48,6 +48,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
+      - name: Navigate to Maven project directory
+        run: cd ./android
+
       - name: Install Appium dependencies
         run: mvn install -DskipTests
 
