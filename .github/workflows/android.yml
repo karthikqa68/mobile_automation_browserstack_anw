@@ -21,6 +21,13 @@ jobs:
           npm install -g appium@v1.22
           appium -v
           appium &>/dev/null &
+      - name: Start Appium Server
+        uses: appium/start-server@v1
+        with:
+          # Customize these options as needed
+          address: localhost  # Server address (default: localhost)
+          port: 4723          # Server port (default: 4723)
+          # Add other options like base-path, capabilities, etc. (refer to action documentation)
 
       - name: run appium tests
         uses: reactivecircus/android-emulator-runner@v2
