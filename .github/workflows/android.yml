@@ -50,7 +50,7 @@ jobs:
 
       - name: Navigate to Maven project directory
         run: | 
-          cd..
+          cd ..
           cd android
 
       - name: Install Appium dependencies
