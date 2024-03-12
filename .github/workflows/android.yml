@@ -24,16 +24,17 @@ jobs:
 
       - name: Set up Android SDK in PATH
         run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
+        shell: bash
 
       - name: Accept Android SDK licenses
-        run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --licenses
+        run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
 
       - name: Install Android SDK components
         run: |
           export ANDROID_HOME=/opt/android-sdk
           export PATH=$PATH:$ANDROID_HOME/tools/bin
-          /opt/android-sdk/cmdline-tools/bin/sdkmanager --install "platform-tools" "platforms;android-30"
-          
+          /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --install "platform-tools" "platforms;android-30" ...  # Add any additional packages
+
       - name: Cache local Maven repository
         uses: actions/cache@v3
         with:
@@ -41,7 +42,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2-
-
+            
       - name: Install Appium dependencies
         run: mvn install -DskipTests
 
