@@ -69,7 +69,7 @@ jobs:
         run: |
           pwd
           cd android
-          mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml
+          mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
 
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
