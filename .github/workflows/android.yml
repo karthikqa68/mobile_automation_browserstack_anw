@@ -14,6 +14,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 11  # Update based on your project's requirements
+          distribution: 'adopt' 
 
       # Remove project_id and service_account parameters for default install
      
