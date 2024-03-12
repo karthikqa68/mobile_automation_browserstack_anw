@@ -58,6 +58,13 @@ jobs:
           cd android
           mvn clean install
 
+      - name: Install Appium and dependencies
+        run: |
+            npm install -g appium
+            npm install -g appium-doctor
+            appium-doctor --android
+        shell: bash
+
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
       - name: Wait for Appium server to start
