@@ -1,37 +1,61 @@
-name: run android tests in gitlab runner
+name: Mobile Automation Testing (Android Emulator)
 
-on: push
+on:
+  push:
+    branches: [ main ]
+  pull_request:
 
 jobs:
-  runs-mobile-tests:
-    runs-on: macos-latest
-
+  test:
+    runs-on: ubuntu-latest
     steps:
-      - name: setup java
+      - uses: actions/checkout@v3
+
+      - name: Set up Java JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '11'
+          java-version: 11  # Update based on your project's requirements
 
-      - name: pull the project in to the runner
-        uses: actions/checkout@v3
-
-      - name: setup appium
-        run:
-          npm install -g appium@v1.22
-          appium -v
-          appium &>/dev/null &
-      - name: Wait for Appium to start
-        run: sleep 10  # Adjust the sleep duration based on your Appium startup time
-
-
-      - name: run appium tests
-        uses: reactivecircus/android-emulator-runner@v2
+      # Remove project_id and service_account parameters for default install
+      - name: Install Android SDK (using setup-gcloud, optional)
+        uses: google-github-actions/setup-gcloud@v0
         with:
-          api-level: 29
-          script: |
-            # Option 1: Specify the exact path (replace with your actual path)
-            mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f ./android/pom.xml
 
-            # Option 2: Navigate to android directory and run Maven command
-            #cd android && mvn clean test -Dsurefire.suiteXmlFiles=regression.xml
+      # Uncomment and configure if you prefer not to use setup-gcloud
+      # - name: Install Android SDK (alternative, manual installation)
+      #   run: sdkmanager --install ...  # Replace with specific commands
+
+      - name: Cache local Maven repository
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
+      - name: Install Appium dependencies
+        run: mvn install -DskipTests
+
+      - name: Build the Android app (APK)
+        run: mvn clean install
+
+      - name: Start emulator (adjust AVD name if needed)
+        run: emulator -avd Pixel_5_API_30 &  # Replace with your emulator name
+
+      - name: Start Appium server
+        run: appium -a 127.0.0.1 -p 4723 &
+
+      - name: Run Appium tests
+        run: mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f ./android/pom.xml
+
+      - name: Stop emulator (optional)
+        run: adb emu kill &  # Background process to avoid interrupting tests
+
+      - name: Stop Appium server (optional)
+        run: kill $(ps aux | grep -v grep | grep appium | awk '{print $2}') || true
+
+      - name: Upload test reports (optional)
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-reports
+          path: target/surefire-reports/
