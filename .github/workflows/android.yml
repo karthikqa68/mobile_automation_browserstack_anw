@@ -15,25 +15,21 @@ jobs:
         with:
           java-version: 11  # Update based on your project's requirements
           distribution: 'adopt' 
-
+          
       - name: Download and extract Android SDK
         run: |
           wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
-          unzip -qq commandlinetools-linux-7302050_latest.zip -d cmdline-tools
-          mkdir -p $ANDROID_HOME/cmdline-tools
-          mv cmdline-tools $ANDROID_HOME/cmdline-tools/latest
+          unzip commandlinetools-linux-7302050_latest.zip -d /opt/android-sdk
+          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
 
-      - name: Add Android SDK tools to PATH
-        run: |
-          echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin' >> $GITHUB_ENV
+      - name: Set up Android SDK in PATH
+        run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
 
       - name: Accept Android SDK licenses
-        run: yes | sdkmanager --sdk_root=$ANDROID_HOME --licenses
+        run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --licenses
 
       - name: Install Android SDK components
-        run: |
-          sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-30" "build-tools;30.0.3" ...  # Add other packages as needed
-
+        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --install "platform-tools" "platforms;android-30" ...  # Add any additional packages
 
       - name: Cache local Maven repository
         uses: actions/cache@v3
