@@ -2,8 +2,8 @@ name: Mobile Automation Testing (Android Emulator)
 
 on:
   push:
-    branches: [ master ]
-
+    branches:
+      - master
 jobs:
   test:
     runs-on: ubuntu-latest
