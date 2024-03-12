@@ -18,8 +18,12 @@ jobs:
 
       # Remove project_id and service_account parameters for default install
      
-      - name: Install Android SDK (alternative, manual installation)
-        run: sdkmanager --install ...  # Replace with specific commands
+      - name: Add Android SDK tools to PATH (if manually installed)
+        run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
+
+      - name: Install Android SDK (manually installed, replace path)
+        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --install ...  # Replace with specific commands
+        
 
       - name: Cache local Maven repository
         uses: actions/cache@v3
