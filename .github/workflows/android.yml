@@ -58,6 +58,12 @@ jobs:
           cd android
           mvn clean install
 
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+
+
       - name: Install Appium and dependencies
         run: |
             npm install -g appium
