@@ -25,12 +25,24 @@ jobs:
 
       - name: Set up Android SDK and PATH
         run: |
-            export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin  # Set PATH directly
-            echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
-            export ANDROID_HOME=/opt/android-sdk
-            export PATH=$PATH:$ANDROID_HOME/tools/bin
-            /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --install "platform-tools" "platforms;android-30" # Add any additional packages
+          export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
+          export ANDROID_HOME=/opt/android-sdk
         shell: bash
+
+      - name: Install emulator
+        run: |
+          /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "emulator"
+        shell: bash
+      
+      - name: Start emulator
+        run: emulator -avd emulator-5554 &
+        shell: bash
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+          PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+
         
       - name: Cache local Maven repository
         uses: actions/cache@v2
