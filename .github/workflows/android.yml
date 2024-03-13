@@ -93,14 +93,15 @@ jobs:
       - name: Wait for Appium server to start
         run: sleep 10
 
-      - name: run appium tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 30
-          script: |
-                cd android
-                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
+      - name: start emulator tests
+        run : emulator -avd reactivecircus/android-emulator-runner@v2
 
+      - name: Run Appium tests
+        run: |
+          pwd
+          cd android
+          mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
+    
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
 
