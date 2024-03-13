@@ -95,6 +95,10 @@ jobs:
       - name: Wait for Appium server to start
         run: sleep 10
 
+      - name: List connected devices
+        run: adb devices
+        shell: bash      
+  
       - name: Start Emulator Device
         run : /opt/android-sdk/emulator/emulator -avd reactivecircus/android-emulator-runner@v2
 
