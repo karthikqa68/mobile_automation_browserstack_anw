@@ -26,10 +26,20 @@ jobs:
       - name: Set up Android SDK and PATH
         run: |
           export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
-          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
           export ANDROID_HOME=/opt/android-sdk
+          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
+          sleep 5  # Adjust the sleep duration as needed
         shell: bash
-      
+
+      - name: Verify AVD
+        run: |
+          avdmanager list avd
+          if [[ "$(avdmanager list avd | grep emulator-5554)" == "" ]]; then
+            echo "AVD emulator-5554 not found"
+            exit 1
+          fi
+        shell: bash
+
       - name: Start emulator
         run: emulator -avd emulator-5554 &
         shell: bash
@@ -37,6 +47,9 @@ jobs:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+
+      
+     
 
 
         
