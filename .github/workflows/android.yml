@@ -20,11 +20,11 @@ jobs:
           distribution: 'adopt'
           
       - name: Start Android Emulator
-        uses: ReactiveCircus/android-emulator-runner@v2.30.1
+        uses: RandyLutcavich/android-emulator-runner-without-sdk-setup@v1.0.3
         with:
           api-level: 30
           script: |
-            emulator -avd test_avd -gpu off &
+            emulator -avd test -gpu off &
 
       # Run your tests here
 
