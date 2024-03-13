@@ -90,15 +90,13 @@ jobs:
             appium-doctor --android
         shell: bash
 
-        
-
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
       - name: Wait for Appium server to start
         run: sleep 10
 
-      - name: start emulator tests
-        run : emulator -avd reactivecircus/android-emulator-runner@v2
+      - name: Start Emulator Device
+        run : /opt/android-sdk/emulator/emulator -avd reactivecircus/android-emulator-runner@v2
 
       - name: Run Appium tests
         run: |
