@@ -23,17 +23,19 @@ jobs:
         run: |
           wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
           unzip commandlinetools-linux-7302050_latest.zip -d /opt/android-sdk
-      - name: Create set_android_path.sh script (optional)
+      - name: Check for set_android_path.sh (optional)
         run: |
-          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> set_android_path.sh
+          test -f set_android_path.sh && echo "Script found" || echo "Script not found"
         shell: bash
+
       - name: Set up Android SDK PATH (optional)
-        if: ${{ exists('set_android_path.sh') }}  # Only run if script exists
-        run: source set_android_path.sh  # Source the script to set environment variable
-        
+        if: steps.Check_for_set_android_path.sh.outputs == 'Script found'  # Check output
+        run: source set_android_path.sh
+
       - name: Set up Android SDK PATH (alternative)
-        if: ${{ !exists('set_android_path.sh') }}  # Only run if script doesn't exist
+        if: steps.Check_for_set_android_path.sh.outputs != 'Script found'  # Opposite condition
         run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
+
         
       - name: Accept Android SDK licenses
         run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
