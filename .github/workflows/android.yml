@@ -32,6 +32,9 @@ jobs:
             ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
 
+
+      - name: Accept Android SDK licenses
+        run: yes | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses
       
       - name: Set up Android SDK and PATH
         run: |
