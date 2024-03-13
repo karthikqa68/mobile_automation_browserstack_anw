@@ -76,7 +76,7 @@ jobs:
       - name: Wait for Appium server to start
         run: sleep 10
       - name: Start emulator (adjust AVD name if needed)
-        run: emulator -avd Pixel_5_API_30 &  # Replace with your emulator name
+        run: emulator -avd emulator-5554 &  # Replace with your emulator name
 
       - name: Run Appium tests
         run: |
