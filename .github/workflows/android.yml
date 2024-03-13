@@ -61,7 +61,7 @@ jobs:
     
       - name: Set up Android SDK and PATH
         run: |
-          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools' >> $HOME/.bashrc
+          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator' >> $HOME/.bashrc
           echo 'export ANDROID_HOME=/opt/android-sdk' >> $HOME/.bashrc
           source $HOME/.bashrc
         shell: bash
@@ -76,7 +76,7 @@ jobs:
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-          PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+          PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator
 
       
       - name: Verify emulator command
