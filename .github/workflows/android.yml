@@ -22,7 +22,7 @@ jobs:
       - name: Start Android Emulator
         uses: ReactiveCircus/android-emulator-runner@v2.30.1
         with:
-          api-level: 30
+          api-level: 29
           script: |
             emulator -avd test -gpu off &
 
