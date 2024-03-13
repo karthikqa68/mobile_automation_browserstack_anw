@@ -78,10 +78,7 @@ jobs:
           appium-doctor --android
         shell: bash
 
-      - name: List available AVD devices
-        run: |
-          emulator -list-avds
-
+  
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
 
@@ -94,6 +91,10 @@ jobs:
           export PATH=$PATH:/opt/android-sdk/platform-tools
       - name: Wait for emulator to start
         run: wait-for-android-emulator
+
+      - name: List available AVD devices
+        run: |
+          emulator -list-avds
 
       - name: Run Appium tests
         run: |
