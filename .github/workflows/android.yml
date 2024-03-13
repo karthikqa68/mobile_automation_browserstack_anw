@@ -9,6 +9,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      PATH: ${{ runner.os == 'Linux' && env.PATH || '/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/bin' }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -23,11 +26,6 @@ jobs:
         run: |
           wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
           unzip commandlinetools-linux-7302050_latest.zip -d /opt/android-sdk
-          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
-
-      - name: Set up Android SDK in PATH
-        run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
-        shell: bash
 
       - name: Accept Android SDK licenses
         run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
@@ -63,31 +61,38 @@ jobs:
         with:
           node-version: '18'
 
-
       - name: Install Appium and dependencies
         run: |
-            npm install -g appium@v1.22
-            npm install -g appium-doctor
-            appium-doctor --android
+          npm install -g appium@v1.22
+          npm install -g appium-doctor
+          appium-doctor --android
         shell: bash
+
+      - name: List available AVD devices
+        run: |
+          emulator -list-avds
 
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
+
       - name: Wait for Appium server to start
         run: sleep 10
 
       - name: Start emulator (adjust AVD name if needed)
-        run: emulator -avd test &  # Replace with your emulator name
-        
+        run: |
+          emulator -avd test &
+          export PATH=$PATH:/opt/android-sdk/platform-tools
+      - name: Wait for emulator to start
+        run: wait-for-android-emulator
+
       - name: Run Appium tests
         run: |
           pwd
           cd android
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
-    
 
       - name: Stop emulator (optional)
-        run: adb emu kill &  # Background process to avoid interrupting tests
+        run: adb emu kill &
 
       - name: Stop Appium server (optional)
         run: kill $(ps aux | grep -v grep | grep appium | awk '{print $2}') || true
