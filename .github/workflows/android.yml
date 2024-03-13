@@ -25,7 +25,10 @@ jobs:
           wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/commandlinetools.zip
           unzip -q /opt/android-sdk/commandlinetools.zip -d /opt/android-sdk/cmdline-tools
           mv /opt/android-sdk/cmdline-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest
-          ls /opt/android-sdk
+        shell: bash
+
+      - name: List files under /opt/android-sdk
+        run: ls -la /opt/android-sdk
         shell: bash
 
       - name: Set up Android SDK and PATH
