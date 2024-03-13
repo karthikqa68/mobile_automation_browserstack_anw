@@ -23,11 +23,13 @@ jobs:
         run: |
           mkdir -p /opt/android-sdk
           wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
-          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk/cmdline-tools
+          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
         shell: bash
 
       - name: List files under /opt/android-sdk
-        run: ls -la /opt/android-sdk/cmdline-tools/cmdline-tools
+        run: |
+            ls -la /opt/android-sdk/cmdline-tools
+            ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
 
       
