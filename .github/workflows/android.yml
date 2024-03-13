@@ -58,6 +58,10 @@ jobs:
             ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
 
+      - name: List available AVD devices
+        run: |
+          emulator -list-avds
+
     
       - name: Set up Android SDK and PATH
         run: |
