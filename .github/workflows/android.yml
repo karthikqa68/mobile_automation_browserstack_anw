@@ -32,22 +32,23 @@ jobs:
             ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
 
-
       - name: Accept Android SDK licenses
-        run: y | /opt/android-sdk/cmdline-tools/bin/sdkmanager --licenses
-      
+        run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
+        shell: bash
+
       - name: Set up Android SDK and PATH
         run: |
           export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools
           export ANDROID_HOME=/opt/android-sdk
           echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV  # Add Android SDK to PATH permanently
           echo 'export ANDROID_HOME=/opt/android-sdk' >> $GITHUB_ENV  # Add Android SDK home permanently
-          y | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
+          yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
           sleep 5  # Adjust the sleep duration as needed
         shell: bash
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+
 
 
       - name: List files under /opt/android-sdk
