@@ -96,10 +96,10 @@ jobs:
         run: sleep 10
 
       - name: List emulator devices
-        run: /opt/android-sdk/emulator/emulator -list-avds
+        run: /opt/android-sdk/emulator/emulator -list-avds -gpu off
        
       - name: Start Emulator Device
-        run : /opt/android-sdk/emulator/emulator -avd reactivecircus/android-emulator-runner@v2
+        run : /opt/android-sdk/emulator/emulator -avd reactivecircus/android-emulator-runner@v2 -gpu off
 
       - name: Run Appium tests
         run: |
