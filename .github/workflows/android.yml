@@ -18,26 +18,20 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-
       - name: Download and extract Android SDK
         run: |
-          wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
-          unzip commandlinetools-linux-7302050_latest.zip -d /opt/android-sdk
-          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
+            wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
+            unzip commandlinetools-linux-7302050_latest.zip -d /opt/android-sdk
 
-      - name: Set up Android SDK in PATH
-        run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
-        shell: bash
-
-      - name: Accept Android SDK licenses
-        run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
-
-      - name: Install Android SDK components
+      - name: Set up Android SDK and PATH
         run: |
-          export ANDROID_HOME=/opt/android-sdk
-          export PATH=$PATH:$ANDROID_HOME/tools/bin
-          /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --install "platform-tools" "platforms;android-30" # Add any additional packages
-
+            export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin  # Set PATH directly
+            yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
+            export ANDROID_HOME=/opt/android-sdk
+            export PATH=$PATH:$ANDROID_HOME/tools/bin
+            /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --install "platform-tools" "platforms;android-30" # Add any additional packages
+        shell: bash
+        
       - name: Cache local Maven repository
         uses: actions/cache@v2
         with:
