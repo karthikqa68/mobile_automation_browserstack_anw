@@ -29,14 +29,14 @@ jobs:
 
       - name: Set up Android SDK and PATH
         run: |
-          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin' >> $HOME/.bashrc
+          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools' >> $HOME/.bashrc
           echo 'export ANDROID_HOME=/opt/android-sdk' >> $HOME/.bashrc
-          export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
-          export ANDROID_HOME=/opt/android-sdk
+          source $HOME/.bashrc
         shell: bash
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+
 
       - name: Start emulator
         run: emulator -avd emulator-5554 &
