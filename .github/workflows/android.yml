@@ -42,6 +42,7 @@ jobs:
 
       - name: Verify AVD
         run: |
+          which avdmanager  # Check if avdmanager command is accessible
           avdmanager list avd
           if [[ "$(avdmanager list avd | grep emulator-5554)" == "" ]]; then
             echo "AVD emulator-5554 not found"
