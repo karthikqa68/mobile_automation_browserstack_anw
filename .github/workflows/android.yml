@@ -50,7 +50,6 @@ jobs:
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
 
 
-
       - name: List files under /opt/android-sdk
         run: |
             ls -la /opt/android-sdk
@@ -58,21 +57,6 @@ jobs:
             ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
         
-      - name: List available AVD devices
-        run: |
-          emulator -list-avds
-
-    
-      - name: Set up Android SDK and PATH
-        run: |
-          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator' >> $HOME/.bashrc
-          echo 'export ANDROID_HOME=/opt/android-sdk' >> $HOME/.bashrc
-          source $HOME/.bashrc
-        shell: bash
-        env:
-          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-
 
       - name: Start emulator
         run: emulator -avd emulator-5554 &
