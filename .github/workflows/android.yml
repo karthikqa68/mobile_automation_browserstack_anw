@@ -38,15 +38,7 @@ jobs:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
 
-      - name: Verify AVD
-        run: |
-          which avdmanager  # Check if avdmanager command is accessible
-          avdmanager list avd
-          if [[ "$(avdmanager list avd | grep emulator-5554)" == "" ]]; then
-            echo "AVD emulator-5554 not found"
-            exit 1
-          fi
-        shell: bash
+     
 
       - name: Start emulator
         run: emulator -avd emulator-5554 &
