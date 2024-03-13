@@ -37,8 +37,15 @@ jobs:
         shell: bash
 
       - name: Download "tools" package
-        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
+        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
 
+      - name: List files under /opt/android-sdk
+        run: |
+            ls -la /opt/android-sdk/emulator
+            ls -la /opt/android-sdk
+            ls -la /opt/android-sdk/cmdline-tools
+            ls -la /opt/android-sdk/cmdline-tools/bin
+        shell: bash
       - name: Set up Android SDK and PATH
         run: |
           export ANDROID_HOME=/opt/android-sdk
