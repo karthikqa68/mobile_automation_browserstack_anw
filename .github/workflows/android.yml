@@ -26,13 +26,8 @@ jobs:
       - name: Set up Android SDK and PATH
         run: |
           export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
-          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
+          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
           export ANDROID_HOME=/opt/android-sdk
-        shell: bash
-
-      - name: Install emulator
-        run: |
-          /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "emulator"
         shell: bash
       
       - name: Start emulator
@@ -42,6 +37,7 @@ jobs:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+
 
         
       - name: Cache local Maven repository
