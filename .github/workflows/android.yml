@@ -22,10 +22,23 @@ jobs:
       - name: Download and extract Android SDK
         run: |
           mkdir -p /opt/android-sdk
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/commandlinetools.zip
-          unzip -q /opt/android-sdk/commandlinetools.zip -d /opt/android-sdk/cmdline-tools
-          mv /opt/android-sdk/cmdline-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
+          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk/cmdline-tools
         shell: bash
+
+      - name: Set up Android SDK and PATH
+        run: |
+          export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+          export ANDROID_HOME=/opt/android-sdk
+          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin' >> $GITHUB_ENV  # Add Android SDK to PATH permanently
+          echo 'export ANDROID_HOME=/opt/android-sdk' >> $GITHUB_ENV  # Add Android SDK home permanently
+          yes | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
+          sleep 5  # Adjust the sleep duration as needed
+        shell: bash
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+
 
       - name: List files under /opt/android-sdk
         run: ls -la /opt/android-sdk
