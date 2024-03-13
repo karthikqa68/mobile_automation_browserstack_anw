@@ -26,6 +26,11 @@ jobs:
           unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk/cmdline-tools
         shell: bash
 
+      - name: List files under /opt/android-sdk
+        run: ls -la /opt/android-sdk/cmdline-tools
+        shell: bash
+
+      
       - name: Set up Android SDK and PATH
         run: |
           export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
@@ -40,10 +45,7 @@ jobs:
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
 
 
-      - name: List files under /opt/android-sdk
-        run: ls -la /opt/android-sdk
-        shell: bash
-
+    
       - name: Set up Android SDK and PATH
         run: |
           echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools' >> $HOME/.bashrc
