@@ -38,7 +38,7 @@ jobs:
 
       - name: Set up Android SDK and PATH
         run: |
-          export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools
+          export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator
           export ANDROID_HOME=/opt/android-sdk
           echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV  # Add Android SDK to PATH permanently
           echo 'export ANDROID_HOME=/opt/android-sdk' >> $GITHUB_ENV  # Add Android SDK home permanently
@@ -57,7 +57,7 @@ jobs:
             ls -la /opt/android-sdk/cmdline-tools
             ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
-
+        
       - name: List available AVD devices
         run: |
           emulator -list-avds
