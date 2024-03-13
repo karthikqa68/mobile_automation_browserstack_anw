@@ -97,8 +97,7 @@ jobs:
 
       - name: List emulator devices
         run: /opt/android-sdk/emulator/emulator -list-avds
-        shell: bash      
-  
+       
       - name: Start Emulator Device
         run : /opt/android-sdk/emulator/emulator -avd reactivecircus/android-emulator-runner@v2
 
