@@ -58,18 +58,22 @@ jobs:
           cd android
           mvn clean install
 
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-
+      - name: Start emulator
+        run: emulator -avd emulator-5554 &
+        shell: bash
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+          PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+  
       - name: Install Appium and dependencies
         run: |
             npm install -g appium@v1.22
             npm install -g appium-doctor
             appium-doctor --android
         shell: bash
+
+        
 
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
