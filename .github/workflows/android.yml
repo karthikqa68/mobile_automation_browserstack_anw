@@ -90,6 +90,11 @@ jobs:
             appium-doctor --android
         shell: bash
 
+      - name: Create AVD
+        run: |
+          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M --memory 2048 --no-snapshot
+        shell: bash
+      
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
       - name: Wait for Appium server to start
