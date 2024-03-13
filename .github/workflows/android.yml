@@ -57,24 +57,6 @@ jobs:
             ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
 
-
-      - name: Start emulator
-        run: emulator -avd reactivecircus/android-emulator-runner@v2 &
-        shell: bash
-        env:
-          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-          PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator
-
-      
-      - name: Verify emulator command
-        run: |
-          echo "Checking emulator command..."
-          which emulator
-      
-          echo "Android SDK directory contents:"
-          ls -la /opt/android-sdk/cmdline-tools/latest/bin
-        shell: bash
         
       - name: Cache local Maven repository
         uses: actions/cache@v2
@@ -96,13 +78,6 @@ jobs:
           cd android
           mvn clean install
 
-      - name: Start emulator
-        run: emulator -avd emulator-5554 &
-        shell: bash
-        env:
-          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-          PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
   
       - name: Install Appium and dependencies
         run: |
@@ -120,11 +95,13 @@ jobs:
       - name: Start emulator (adjust AVD name if needed)
         run: emulator -avd emulator-5554 &  # Replace with your emulator name
 
-      - name: Run Appium tests
-        run: |
-          pwd
-          cd android
-          mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
+      - name: run appium tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          script: |
+                cd android
+                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
 
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
