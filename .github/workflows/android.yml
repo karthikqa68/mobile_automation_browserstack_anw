@@ -27,7 +27,7 @@ jobs:
         shell: bash
 
       - name: List files under /opt/android-sdk
-        run: ls -la /opt/android-sdk/cmdline-tools
+        run: ls -la /opt/android-sdk/cmdline-tools/cmdline-tools
         shell: bash
 
       
