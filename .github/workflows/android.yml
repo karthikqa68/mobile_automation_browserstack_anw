@@ -33,6 +33,7 @@ jobs:
           export ANDROID_HOME=/opt/android-sdk
           echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin' >> $GITHUB_ENV  # Add Android SDK to PATH permanently
           echo 'export ANDROID_HOME=/opt/android-sdk' >> $GITHUB_ENV  # Add Android SDK home permanently
+          sleep 10  # Adjust the sleep duration as needed
         shell: bash
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
@@ -49,9 +50,14 @@ jobs:
           PATH: ${{ runner.path }}:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
 
       
-     
-
-
+      - name: Verify emulator command
+        run: |
+          echo "Checking emulator command..."
+          which emulator
+      
+          echo "Android SDK directory contents:"
+          ls -la /opt/android-sdk/cmdline-tools/latest/bin
+        shell: bash
         
       - name: Cache local Maven repository
         uses: actions/cache@v2
