@@ -18,10 +18,14 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
+
       - name: Download and extract Android SDK
         run: |
-            wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
-            unzip commandlinetools-linux-7302050_latest.zip -d /opt/android-sdk
+          mkdir -p /opt/android-sdk
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/commandlinetools.zip
+          unzip -q /opt/android-sdk/commandlinetools.zip -d /opt/android-sdk/cmdline-tools
+          mv /opt/android-sdk/cmdline-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest
+        shell: bash
 
       - name: Set up Android SDK and PATH
         run: |
@@ -29,19 +33,12 @@ jobs:
           export ANDROID_HOME=/opt/android-sdk
           ls -la /opt/android-sdk/cmdline-tools/latest/bin  # Check the contents of the directory
           ls -la /opt/android-sdk/cmdline-tools/latest      # Check the contents of the cmdline-tools directory
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O cmdline-tools.zip
-          unzip -q -d /opt/android-sdk/cmdline-tools cmdline-tools.zip
-          ls -la /opt/android-sdk/cmdline-tools/latest/bin  # Check the contents again after extraction
           echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
           sleep 5  # Adjust the sleep duration as needed
         shell: bash
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
           JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-
-
-      
-
 
       - name: Verify AVD
         run: |
