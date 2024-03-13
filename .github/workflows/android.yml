@@ -23,20 +23,12 @@ jobs:
         run: |
           wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip
           unzip commandlinetools-linux-7302050_latest.zip -d /opt/android-sdk
-      - name: Check for set_android_path.sh (optional)
-        run: |
-          test -f set_android_path.sh && echo "Script found" || echo "Script not found"
+          echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
+
+      - name: Set up Android SDK in PATH
+        run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
         shell: bash
 
-      - name: Set up Android SDK PATH (optional)
-        if: steps.Check_for_set_android_path.sh.outputs == 'Script found'  # Check output
-        run: source set_android_path.sh
-
-      - name: Set up Android SDK PATH (alternative)
-        if: steps.Check_for_set_android_path.sh.outputs != 'Script found'  # Opposite condition
-        run: echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin' >> $GITHUB_ENV
-
-        
       - name: Accept Android SDK licenses
         run: yes | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
 
@@ -71,30 +63,20 @@ jobs:
         with:
           node-version: '18'
 
+
       - name: Install Appium and dependencies
         run: |
-          npm install -g appium@v1.22
-          npm install -g appium-doctor
-          appium-doctor --android
+            npm install -g appium@v1.22
+            npm install -g appium-doctor
+            appium-doctor --android
         shell: bash
 
-  
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
-
       - name: Wait for Appium server to start
         run: sleep 10
-
       - name: Start emulator (adjust AVD name if needed)
-        run: |
-          emulator -avd test &
-          export PATH=$PATH:/opt/android-sdk/platform-tools
-      - name: Wait for emulator to start
-        run: wait-for-android-emulator
-
-      - name: List available AVD devices
-        run: |
-          emulator -list-avds
+        run: emulator -avd Pixel_5_API_30 &  # Replace with your emulator name
 
       - name: Run Appium tests
         run: |
@@ -103,7 +85,7 @@ jobs:
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
 
       - name: Stop emulator (optional)
-        run: adb emu kill &
+        run: adb emu kill &  # Background process to avoid interrupting tests
 
       - name: Stop Appium server (optional)
         run: kill $(ps aux | grep -v grep | grep appium | awk '{print $2}') || true
