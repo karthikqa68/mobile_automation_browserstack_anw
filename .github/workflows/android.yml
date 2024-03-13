@@ -57,11 +57,9 @@ jobs:
             ls -la /opt/android-sdk/cmdline-tools/bin
         shell: bash
 
-      - name: List available AVD devices
-        run: emulator -list-avds
 
       - name: Start emulator
-        run: emulator -avd emulator-5554 &
+        run: emulator -avd reactivecircus/android-emulator-runner@v2 &
         shell: bash
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
