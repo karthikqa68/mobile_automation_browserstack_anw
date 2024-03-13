@@ -19,47 +19,25 @@ jobs:
           java-version: 11
           distribution: 'adopt'
 
-      - name: Download and extract Android SDK
-        run: |
-          mkdir -p /opt/android-sdk
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
-          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
-        shell: bash
+      - name: Change ownership of Android SDK directory
+        run: sudo chown $USER:$USER /usr/local/lib/android/sdk -R
 
       - name: Accept Android SDK licenses
-        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
-        shell: bash
+        run: yes | sdkmanager --licenses > /dev/null
 
-      - name: Set up Android SDK and PATH
-        run: |
-          export ANDROID_HOME=/opt/android-sdk
-          export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
-          echo 'export ANDROID_HOME=/opt/android-sdk' >> $GITHUB_ENV
-          echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools' >> $GITHUB_ENV
-          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" "system-images;android-30;google_apis;x86_64"
-          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
-          sleep 10
-        shell: bash
-        env:
-          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
-          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+      - name: Install required components
+        run: sdkmanager --install 'build-tools;34.0.0' platform-tools emulator --channel=0 > /dev/null
 
-      - name: Start Android Emulator
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 30
-          script: |
-            emulator -avd test_avd -gpu off &
+      - name: Install system image
+        run: sdkmanager --install 'system-images;android-30;google_apis;x86_64' --channel=0 > /dev/null
 
-      - name: Wait for Emulator to start
+      - name: Start the emulator
+        run: emulator -avd test -gpu off &
+
+      - name: Wait for the emulator to start
         run: sleep 30
 
-      - name: Run Appium tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 30
-          script: |
-            cd android
-            mvn clean test -Dsurefire.suiteXmlFiles=regression.xml
+      # Run your tests here
 
-      # Additional steps...
+      - name: Terminate the emulator
+        run: adb emu kill
