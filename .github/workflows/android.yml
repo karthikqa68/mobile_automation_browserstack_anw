@@ -97,7 +97,9 @@ jobs:
 
       - name: List Available SDK Packages
         run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list
-        shell: bash
+        env:
+          ANDROID_SDK_ROOT: /opt/android-sdk
+          PATH: $PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
         
       - name: Create AVD
         run: |
