@@ -9,11 +9,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Load Android SDK Environment (from .env file)
+
+      - name: Create environment variables
+        env:
+          ANDROID_HOME: ${{ secrets.ANDROID_HOME }}
+          ANDROID_SDK_ROOT: ${{ secrets.ANDROID_SDK_ROOT }}
         run: |
-          set -o allexport
-          source $GITHUB_WORKSPACE/.env
-          set +o allexport
+          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
          
       - name: Verify Android SDK Environment (optional)
         run: |
