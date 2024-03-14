@@ -9,19 +9,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Android SDK and PATH
-      run: |
-        export ANDROID_HOME=/opt/android-sdk
-        export ANDROID_SDK_ROOT=/opt/android-sdk
-        export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
-        echo 'export ANDROID_HOME=/opt/android-sdk' >> $HOME/.bashrc
-        echo 'export ANDROID_SDK_ROOT=/opt/android-sdk' >> $HOME/.bashrc
-        
-      shell: bash
+      - name: Load Android SDK Environment (from .env file)
+        env:
+          include: .env  # Load environment variables from .env file in the root directory
+        run: |
+          source /.env
 
-
-    - name: Verify Android SDK environment variables
-      run: |
+      - name: Verify Android SDK Environment (optional)
+        run: |
           echo "ANDROID_HOME is set to: $ANDROID_HOME"
           echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT"
           echo "PATH is set to: $PATH"
