@@ -60,7 +60,9 @@ jobs:
       - name: List Install system image
         run: | 
             ls -la /opt/android-sdk
-            ls -la /opt/android-sdk/system-images/android-30/google_apis/86
+            ls -la /opt/android-sdk/system-images/android-30
+            ls -la /opt/android-sdk/system-images/android-30/google_apis
+            ls -la /opt/android-sdk/system-images/android-30/google_apis/x86
         shell: bash
  
       - name: List Available SDK Packages
@@ -88,5 +90,5 @@ jobs:
         run: |
             ls -la /opt/android-sdk/emulator/emulator
              export ANDROID_AVD_HOME=/home/runner/.android/avd
-            /opt/android-sdk/emulator/emulator  -system-image /opt/android-sdk/system-images/android-30/google_apis/86/system.img --sdk_root=/opt/android-sdk -avd TestAVD --verbose
+            /opt/android-sdk/emulator/emulator  -system-image /opt/android-sdk/system-images/android-30/google_apis/x86/system.img --sdk_root=/opt/android-sdk -avd TestAVD --verbose
             
