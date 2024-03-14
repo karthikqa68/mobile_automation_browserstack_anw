@@ -9,7 +9,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-
       - name: Create environment variables
         env:
           ANDROID_HOME: ${{ secrets.ANDROID_HOME }}
