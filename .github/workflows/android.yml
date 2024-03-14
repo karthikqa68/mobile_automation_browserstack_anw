@@ -14,7 +14,10 @@ jobs:
       - name: Debug Secrets
         run: |
           echo "Secrets:"
+          echo "ANDROID_HOME secret: ${{ secrets.ANDROID_HOME }}"
+          echo "ANDROID_SDK_ROOT secret: ${{ secrets.ANDROID_SDK_ROOT }}"
           env 
+
 
       - name: Check Secrets
         run: |
