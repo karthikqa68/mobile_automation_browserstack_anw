@@ -81,9 +81,15 @@ jobs:
         shell: bash      
  
       - name: Inspect AVD Configuration (Optional)
-        run: /opt/android-sdk/cmdline-tools/bin/avdmanager  - list avd
+        run: | 
+           /opt/android-sdk/cmdline-tools/bin/avdmanager  - list avd
+           echo $ANDROID_HOME
+           echo $ANDROID_SDK_ROOT
+           ls -la /opt/android-sdk/cmdline-tools
         shell: bash
-   
+
+       
+       
       - name: Start Emulator Device
         run: |
           /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu off
