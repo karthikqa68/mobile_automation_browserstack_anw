@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+
+      - name: Debug Secrets
+        run: |
+          echo "Secrets:"
+          env | grep ANDROID
+
       - name: Check Secrets
         run: |
           echo "ANDROID_HOME secret: ${{ secrets.ANDROID_HOME }}"
