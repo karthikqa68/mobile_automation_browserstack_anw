@@ -12,7 +12,7 @@ jobs:
       - name: Load Android SDK Environment (from .env file)
         run: |
           set -o allexport
-          source ../.env
+          source .env
           set +o allexport
          
       - name: Verify Android SDK Environment (optional)
