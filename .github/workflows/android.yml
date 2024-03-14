@@ -76,7 +76,11 @@ jobs:
       - name: List emulator devices
         run: /opt/android-sdk/emulator/emulator -list-avds 
         shell: bash      
-  
+
+      - name: Inspect AVD Configuration (Optional)
+        run: /opt/android-sdk/cmdline-tools/bin/avdmanager show avd TestAVD
+        shell: bash
+
    
       - name: Start Emulator Device
         run: |
