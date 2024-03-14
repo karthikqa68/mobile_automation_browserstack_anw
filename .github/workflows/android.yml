@@ -97,7 +97,7 @@ jobs:
         shell: bash
 
       - name: List Available SDK Packages
-        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list --sdk_root=/opt/android-sdk 
+        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list | grep 'system-images;android-29;google_apis;x86' --sdk_root=/opt/android-sdk 
         shell: bash
        
       - name: Create AVD
@@ -106,7 +106,7 @@ jobs:
         shell: bash
 
       - name: List emulator devices
-        run: /opt/android-sdk/emulator/emulator -list-avds | grep 'system-images;android-29;google_apis;x86'
+        run: /opt/android-sdk/emulator/emulator -list-avds 
         shell: bash      
   
    
