@@ -31,7 +31,7 @@ jobs:
         shell: bash
 
       - name: Accept Android SDK licenses
-        run:  echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt--licenses
+        run:  echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk--licenses
         shell: bash
   
       - name: Set up Android SDK and PATH
