@@ -52,7 +52,7 @@ jobs:
             echo $ANDROID_SDK_ROOT
 
       - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt "system-images;android-30;google_apis;x86"
+        run: echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk "system-images;android-30;google_apis;x86"
         shell: bash
 
       - name: List Install system image
@@ -62,7 +62,7 @@ jobs:
         shell: bash
 
       - name: List Available SDK Packages
-        run: /opt/Sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt
+        run: /opt/Sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/Sdk 
         shell: bash
        
       - name: Create AVD
@@ -78,5 +78,5 @@ jobs:
       - name: Start Emulator Device
         run: |
             ls -la /opt/Sdk/emulator/emulator 
-            /opt/Sdk/emulator/emulator --sdk_root=/opt-avd TestAVD --verbose
+            /opt/Sdk/emulator/emulator -avd TestAVD --verbose
         shell: bash
