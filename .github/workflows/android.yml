@@ -11,27 +11,11 @@ jobs:
     steps:
       - name: Load Environment Variables from .env file
         run: |
-          # Load environment variables from .env file
           set -o allexport
-          source /home/runner/work/mobile_automation_anw/mobile_automation_anw/.env
+          source .env
           set +o allexport
-      - name: Debug Secrets
-        run: |
-          echo "Secrets:"
-          echo "ANDROID_HOME secret: ${{ secrets.ANDROID_HOME }}"
-          echo "ANDROID_SDK_ROOT secret: ${{ secrets.ANDROID_SDK_ROOT }}"
-          env 
-      - name: Check Secrets
-        run: |
-          echo "ANDROID_HOME secret: ${{ secrets.ANDROID_HOME }}"
-          echo "ANDROID_SDK_ROOT secret: ${{ secrets.ANDROID_SDK_ROOT }}"
-      - name: Create environment variables
-        env:
-          ANDROID_HOME: ${{ secrets.ANDROID_HOME }}
-          ANDROID_SDK_ROOT: ${{ secrets.ANDROID_SDK_ROOT }}
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
-          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT" >> $GITHUB_ENV
+        shell: bash
+
       - name: Verify Android SDK Environment (optional)
         run: |
           echo "ANDROID_HOME is set to: $ANDROID_HOME"
