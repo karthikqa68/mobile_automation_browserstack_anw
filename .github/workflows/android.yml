@@ -56,7 +56,10 @@ jobs:
           sudo udevadm trigger --name-match=kvm
 
     - name: Verify System Image Package
-      run: /usr/local/lib/android/sdk/cmdline-tools/bin/sdkmanager --list --sdk_root=/usr/local/lib/android/sdk
+      run: $ANDROID_SDK_ROOT/cmdline-tools/bin/sdkmanager --list
+      env:
+        ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+
 
   
     - name: Run Android Emulator
