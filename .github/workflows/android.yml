@@ -9,6 +9,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Current Directory
+        run: pwd
+        shell: bash
       - name: Load Environment Variables from .env file
         run: |
           set -o allexport
