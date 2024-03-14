@@ -54,6 +54,7 @@ jobs:
 
       - name: List files under /opt/android-sdk
         run: |
+            ls -la /opt
             ls -la /opt/android-sdk/emulator
             ls -la /opt/android-sdk
             ls -la /opt/android-sdk/cmdline-tools
