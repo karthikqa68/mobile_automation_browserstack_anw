@@ -97,7 +97,7 @@ jobs:
             ls -la /opt/android-sdk
             ls -la /opt/android-sdk/emulator/emulator 
             pwd
-            ./emulator -avd TestAVD --sdk_root=/opt/android-sdk  --verbose
+            /opt/android-sdk/emulator/emulator -avd TestAVD --sdk_root=/opt  --verbose
         shell: bash
 
            
