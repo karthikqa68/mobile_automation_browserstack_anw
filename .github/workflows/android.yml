@@ -22,6 +22,9 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v2
 
+    - name: Print ANDROID_SDK_ROOT
+      run: echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+
     - name: Create AVD
       run: echo "no" | avdmanager create avd --force --name testEmulator --abi 'google_apis/x86' --package 'system-images;android-30;google_apis;x86'
 
