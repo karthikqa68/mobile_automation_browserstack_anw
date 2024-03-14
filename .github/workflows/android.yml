@@ -53,6 +53,10 @@ jobs:
       run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --list
       env:
         ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+
+    - name: Install System Image
+      run: |
+        yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --install "system-images;android-30;google_apis;x86"
   
     - name: Run Android Emulator
       uses: reactivecircus/android-emulator-runner@v2
