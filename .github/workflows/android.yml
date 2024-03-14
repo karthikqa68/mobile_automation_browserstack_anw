@@ -111,7 +111,7 @@ jobs:
         shell: bash      
   
       - name: Start Emulator Device
-        run : /opt/android-sdk/emulator/emulator -avd reactivecircus/android-emulator-runner@v2
+        run : /opt/android-sdk/emulator/emulator -avd TestAVD
 
       - name: Run Appium tests
         run: |
