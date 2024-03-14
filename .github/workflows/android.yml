@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ANDROID_HOME: /opt/Sdk  
-      ANDROID_SDK_ROOT: /opt
+      ANDROID_SDK_ROOT: /opt/Sdk 
       ANDROID_AVD_HOME: /home/runner/.android/avd
       
     steps:
@@ -25,7 +25,7 @@ jobs:
 
       - name: Download and extract Android SDK
         run: |
-          mkdir -p /opt/Sdk
+          mkdir -p opt/Sdk
           wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/Sdk/sdk-tools-linux.zip
           unzip -q /opt/Sdk/sdk-tools-linux.zip -d /opt/Sdk
         shell: bash
