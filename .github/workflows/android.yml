@@ -52,6 +52,12 @@ jobs:
         run: | 
             echo $ANDROID_HOME
             echo $ANDROID_SDK_ROOT
+
+
+      - name: Start Emulator Device
+        run: |
+            /opt/android-sdk/emulator/emulator --sdk_root=/opt/android-sdk -avd Nexus_5X_API_28_x86 -verbose
+        shell: bash
  
       - name: Install system image (android-30;google_apis;x86)
         run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk  "system-images;android-30;google_apis;x86"
