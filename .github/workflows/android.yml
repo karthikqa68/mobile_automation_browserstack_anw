@@ -9,9 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      ANDROID_HOME: /opt/Sdk  
-      ANDROID_SDK_ROOT: /opt/Sdk 
-      ANDROID_AVD_HOME: /home/runner/.android/avd
+      ANDROID_HOME: /opt/android-sdk  
+      ANDROID_SDK_ROOT: /opt/android-sdk
       
     steps:
       - name: Checkout code
@@ -25,21 +24,21 @@ jobs:
 
       - name: Download and extract Android SDK
         run: |
-          mkdir -p opt/Sdk
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/Sdk/sdk-tools-linux.zip
-          unzip -q /opt/Sdk/sdk-tools-linux.zip -d /opt/Sdk
+          mkdir -p /opt/android-sdk
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
+          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
         shell: bash
 
       - name: Accept Android SDK licenses
-        run:  echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk--licenses
+        run:  echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
         shell: bash
   
       - name: Set up Android SDK and PATH
         run: |
-          export PATH=$PATH:/opt/Sdk/cmdline-tools/bin:/opt/Sdk/platform-tools:/opt/Sdk/emulator:/opt/Sdk/platforms:/opt/Sdk/tools
+          export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
           echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools' >> $GITHUB_ENV
-          echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk"platform-tools" "platforms;android-30" "emulator" # Add any additional packages
-          echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk"tools"
+          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
+          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
           sleep 10  # Adjust the sleep duration as needed
         shell: bash
         env:
@@ -52,31 +51,31 @@ jobs:
             echo $ANDROID_SDK_ROOT
 
       - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk "system-images;android-30;google_apis;x86"
+        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk  "system-images;android-30;google_apis;x86"
         shell: bash
 
       - name: List Install system image
         run: | 
-            ls -la /opt/Sdk
-            ls -la /opt/Sdk/system-images
+            ls -la /opt/android-sdk
+            ls -la /opt/android-sdk/system-images
         shell: bash
 
       - name: List Available SDK Packages
-        run: /opt/Sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/Sdk 
+        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
         shell: bash
        
       - name: Create AVD
         run: |
-          echo "no" | /opt/Sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M 
+          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M 
         shell: bash
 
       - name: List emulator devices
-        run: /opt/Sdk/emulator/emulator -list-avds 
+        run: /opt/android-sdk/emulator/emulator -list-avds 
         shell: bash      
   
    
       - name: Start Emulator Device
         run: |
-            ls -la /opt/Sdk/emulator/emulator 
-            /opt/Sdk/emulator/emulator -avd TestAVD --verbose
+            ls -la /opt/android-sdk/emulator/emulator 
+            /opt/android-sdk/emulator/emulator --sdk_root=/opt/android-sdk -avd TestAVD --verbose
         shell: bash
