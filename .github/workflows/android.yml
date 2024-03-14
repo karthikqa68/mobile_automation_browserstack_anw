@@ -93,7 +93,7 @@ jobs:
         shell: bash
 
       - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "system-images;android-30;google_apis;x86"
+        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager "system-images;android-30;google_apis;x86"
         shell: bash
 
       - name: List Available SDK Packages
