@@ -49,9 +49,6 @@ jobs:
         run: |
             ls -la /opt
             ls -la /opt/android-sdk
-            ls -la /opt/android-sdk/cmdline-tools
-            ls -la /opt/android-sdk/cmdline-tools/bin
-            ls -la /opt/android-sdk/tools
         shell: bash
 
         
