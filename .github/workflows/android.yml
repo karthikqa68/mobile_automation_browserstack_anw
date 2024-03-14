@@ -78,7 +78,7 @@ jobs:
         shell: bash      
 
       - name: Inspect AVD Configuration (Optional)
-        run: /opt/android-sdk/cmdline-tools/bin/avdmanager show avd TestAVD
+        run: /opt/android-sdk/cmdline-tools/bin/avdmanager --verbose show avd TestAVD
         shell: bash
 
    
