@@ -12,7 +12,7 @@ jobs:
       - name: Load Android SDK Environment (from .env file)
         run: |
           set -o allexport
-          source $GITHUB_WORKSPACE/../.env
+          source $GITHUB_WORKSPACE/.env
           set +o allexport
          
       - name: Verify Android SDK Environment (optional)
