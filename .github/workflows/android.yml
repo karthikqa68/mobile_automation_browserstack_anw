@@ -115,7 +115,7 @@ jobs:
           ANDROID_SDK_ROOT: /opt/android-sdk  # Replace with your actual SDK path
           ANDROID_HOME: /opt/android-sdk  # Replace with your actual SDK path
           PATH: $PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools
-        run: /opt/android-sdk/emulator/emulator -avd TestAVD
+        run: /opt/android-sdk/tools/emulator -avd TestAVD
         shell: bash
            
       - name: Start Appium server
