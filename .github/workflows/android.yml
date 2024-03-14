@@ -15,7 +15,7 @@ jobs:
       - name: Load Environment Variables from .env file
         run: |
           set -o allexport
-          source ../.env
+          source ./.env
           set +o allexport
           
       - name: Verify .env file contents
