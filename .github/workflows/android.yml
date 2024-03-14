@@ -95,6 +95,10 @@ jobs:
         run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "system-images;android-29;google_apis;x86"
         shell: bash
 
+      - name: List Available SDK Packages
+        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list
+        shell: bash
+        
       - name: Create AVD
         run: |
           echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-29;google_apis;x86' --device 'pixel' --sdcard 512M --sdk_root=/opt/android-sdk
