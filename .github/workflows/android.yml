@@ -102,7 +102,7 @@ jobs:
        
       - name: Create AVD
         run: |
-          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package '/opt/android-sdk/system-images;android-29;google_apis;x86' --device 'pixel' --sdcard 512M 
+          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-29;google_apis;x86' --device 'pixel' --sdcard 512M 
         shell: bash
 
       - name: List emulator devices
