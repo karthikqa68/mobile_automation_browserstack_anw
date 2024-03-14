@@ -18,14 +18,14 @@ jobs:
         uses: SpicyPizza/create-envfile@v2.0
         with:
           envkey_DEBUG: false
-          envkey_ANDROID_HOME: /opt/android-sdk
-          envkey_ANDROID_SDK_ROOT: /opt/android-sdk
+          envkey_ANDROID_HOME_2: /opt/android-sdk
+          envkey_ANDROID_SDK_ROOT_2: /opt/android-sdk
           file_name: .env
           fail_on_empty: false
           sort_keys: false
 
       - name: Verify Android SDK Environment
         run: |
-          echo "ANDROID_HOME is set to: $ANDROID_HOME"
-          echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT"
+          echo "ANDROID_HOME is set to: $ANDROID_HOME_2"
+          echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT_2"
           echo "PATH is set to: $PATH"
