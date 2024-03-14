@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Load Android SDK Environment (from .env file)
-        env:
-          include: .env  # Load environment variables from .env file in the root directory
+        run: |
+          set -o allexport
+          source ../.env
+          set +o allexport
+         
       - name: Verify Android SDK Environment (optional)
         run: |
           echo "ANDROID_HOME is set to: $ANDROID_HOME"
