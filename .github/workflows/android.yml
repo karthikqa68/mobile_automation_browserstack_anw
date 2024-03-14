@@ -30,6 +30,11 @@ jobs:
           unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
         shell: bash
 
+      - name: Update Android SDK
+        run: |
+          echo 'y' | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT --update
+        shell: bash
+      
       - name: Accept Android SDK licenses
         run:  echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
         shell: bash
