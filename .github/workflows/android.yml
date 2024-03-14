@@ -101,7 +101,7 @@ jobs:
        
       - name: Create AVD
         run: |
-          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-29;google_apis;x86' --device 'pixel' --sdcard 512M --sdk_root=/opt/android-sdk
+          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-29;google_apis;x86' --device 'pixel' --sdcard 512M 
         shell: bash
 
       - name: List emulator devices
@@ -112,7 +112,8 @@ jobs:
         run: /opt/android-sdk/emulator/emulator -avd TestAVD
         env:
           ANDROID_SDK_ROOT: /opt/android-sdk
-          PATH: $PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
+          ANDROID_HOME: /opt/android-sdk 
+          PATH: $PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools
       
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
