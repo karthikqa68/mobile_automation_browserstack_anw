@@ -13,7 +13,7 @@ jobs:
         run: |
           # Load environment variables from .env file
           set -o allexport
-          source /home/runner/work/mobile_automation_anw/.env
+          source /home/runner/work/mobile_automation_anw/mobile_automation_anw/.env
           set +o allexport
       - name: Debug Secrets
         run: |
