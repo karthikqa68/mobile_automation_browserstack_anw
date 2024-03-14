@@ -64,14 +64,12 @@ jobs:
         run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
         shell: bash
 
-      - name: Create symbolic link for emulator
-        run: ln -s /opt/android-sdk/emulator /opt/emulator
-        shell: bash
+
        
       - name: Create AVD
         run: |
-          ls -la /opt/android-sdk/cmdline-tools/bin/avdmanager  
-          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M --path /opt/android-sdk 
+          ls -la /opt/android-sdk/cmdline-tools/bin  
+          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M  
         shell: bash
 
       - name: List emulator devices
