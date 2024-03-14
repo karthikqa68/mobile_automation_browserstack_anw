@@ -11,6 +11,7 @@ jobs:
     env:
       ANDROID_HOME: /opt/android-sdk  
       ANDROID_SDK_ROOT: /opt/android-sdk
+      ANDROID_AVD_HOME: /home/runner/.android/avd  # Adjust this path as needed
       
     steps:
       - name: Checkout code
@@ -79,6 +80,7 @@ jobs:
    
       - name: Start Emulator Device
         run: |
-            ls -la /opt/android-sdk/emulator/emulator 
-            /opt/android-sdk/emulator/emulator  -avd TestAVD --verbose
+            ls -la /opt/android-sdk/emulator/emulator
+             export ANDROID_AVD_HOME=/home/runner/.android/avd
+            /opt/android-sdk/emulator/emulator --sdk_root=/opt/android-sdk -avd TestAVD --verbose
         shell: bash
