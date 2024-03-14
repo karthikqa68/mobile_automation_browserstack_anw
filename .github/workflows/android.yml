@@ -9,6 +9,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Debugging Output
+        run: |
+          ls -la    # List all files in the current directory
+          pwd       # Print the current directory path
+          cat .env  # Print the contents of .env file
       - name: Load Environment Variables from .env file
         run: |
           set -o allexport
