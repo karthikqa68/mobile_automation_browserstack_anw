@@ -15,6 +15,7 @@ jobs:
       JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
       JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
       PATH: ${{ github.workspace }}/cmdline-tools/bin:${{ github.workspace }}/platform-tools:${{ github.workspace }}/emulator:${{ github.workspace }}/platforms:${{ github.workspace }}/tools:$PATH
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
