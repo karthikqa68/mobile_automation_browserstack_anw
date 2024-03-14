@@ -23,7 +23,7 @@ jobs:
           echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT"
           echo "PATH is set to: $PATH"
 
-          - name: Download and extract Android SDK
+      - name: Download and extract Android SDK
         run: |
           mkdir -p /opt/android-sdk
           wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
