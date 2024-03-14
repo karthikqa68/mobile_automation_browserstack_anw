@@ -56,7 +56,7 @@ jobs:
 
     - name: Install System Image
       run: |
-        yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --install "system-images;android-30;google_apis;x86"
+       echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --install "system-images;android-30;google_apis;x86"
   
     - name: Run Android Emulator
       uses: reactivecircus/android-emulator-runner@v2
