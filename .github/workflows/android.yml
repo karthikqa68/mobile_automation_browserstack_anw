@@ -12,9 +12,6 @@ jobs:
       - name: Load Android SDK Environment (from .env file)
         env:
           include: .env  # Load environment variables from .env file in the root directory
-        run: |
-           cd ..
-           source .env
 
       - name: Verify Android SDK Environment (optional)
         run: |
