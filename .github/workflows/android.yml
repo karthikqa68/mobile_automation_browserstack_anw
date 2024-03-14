@@ -89,6 +89,7 @@ jobs:
    
       - name: Start Emulator Device
         run: |
+          ls -la /opt/android-sdk
           export ANDROID_AVD_HOME=/home/runner/.android/avd
           /opt/android-sdk/emulator/emulator -avd TestAVD --verbose
         shell: bash
