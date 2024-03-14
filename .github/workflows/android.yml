@@ -42,14 +42,14 @@ jobs:
           cd android
           mvn clean install
 
-     - name: Install Appium and dependencies
-        run: |
+    - name: Install Appium and dependencies
+      run: |
             npm install -g appium@v1.22
             npm install -g appium-doctor
             appium-doctor --android
-        shell: bash
+      shell: bash
 
- - name: Run Android Emulator
+    - name: Run Android Emulator
       uses: reactivecircus/android-emulator-runner@v2
       with:
         api-level: 30
@@ -61,18 +61,18 @@ jobs:
         emulator-options: -no-snapshot -no-window
         disable-animations: true
 
-  - name: Start Appium server
-    run: appium -a 127.0.0.1 -p 4723 &
+    - name: Start Appium server
+      run: appium -a 127.0.0.1 -p 4723 &
         
-  - name: Wait for Appium server to start
-    run: sleep 10
-  - name: Run Appium tests
-    run: |
+    - name: Wait for Appium server to start
+      run: sleep 10
+    - name: Run Appium tests
+      run: |
           pwd
           cd android
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
     
-  - name: Stop emulator (optional)
-        run: adb emu kill &  # Background process to avoid interrupting tests
+    - name: Stop emulator (optional)
+      run: adb emu kill &  # Background process to avoid interrupting tests
 
 
