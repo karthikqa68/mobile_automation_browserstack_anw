@@ -23,3 +23,72 @@ jobs:
           echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT"
           echo "PATH is set to: $PATH"
 
+          - name: Download and extract Android SDK
+        run: |
+          mkdir -p /opt/android-sdk
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
+          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
+        shell: bash
+
+      - name: List files under /opt/android-sdk
+        run: |
+            ls -la /opt/android-sdk/cmdline-tools
+            ls -la /opt/android-sdk/cmdline-tools/bin
+        shell: bash
+
+      - name: Accept Android SDK licenses
+        run:  echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
+        shell: bash
+
+  
+     
+
+
+
+      - name: List files under /opt/android-sdk
+        run: |
+            ls -la /opt
+            ls -la /opt/android-sdk/emulator
+            ls -la /opt/android-sdk
+            ls -la /opt/android-sdk/cmdline-tools
+            ls -la /opt/android-sdk/cmdline-tools/bin
+            ls -la /opt/android-sdk/tools
+        shell: bash
+
+        
+      - name: Install system image (android-30;google_apis;x86)
+        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk  "system-images;android-30;google_apis;x86"
+        shell: bash
+
+      - name: List Install system image
+        run: | 
+            ls -la /opt/android-sdk
+            ls -la /opt/android-sdk/system-images
+        shell: bash
+
+      - name: List Available SDK Packages
+        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
+        shell: bash
+       
+      - name: Create AVD
+        run: |
+          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M 
+        shell: bash
+
+      - name: List emulator devices
+        run: /opt/android-sdk/emulator/emulator -list-avds 
+        shell: bash      
+  
+   
+      - name: Start Emulator Device
+        run: /opt/android-sdk/emulator/emulator -avd TestAVD --verbose
+        shell: bash
+
+           
+      - name: Stop emulator (optional)
+        run: adb emu kill &  # Background process to avoid interrupting tests
+
+      - name: Stop Appium server (optional)
+        run: kill $(ps aux | grep -v grep | grep appium | awk '{print $2}') || true
+
+
