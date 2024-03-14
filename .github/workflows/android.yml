@@ -84,9 +84,9 @@ jobs:
       - name: Inspect AVD Configuration (Optional)
         run: /opt/android-sdk/cmdline-tools/bin/avdmanager  - list avd
         shell: bash
- 
    
       - name: Start Emulator Device
         run: |
-            /opt/android-sdk/emulator/emulator  -system /opt/android-sdk/system-images/android-30/google_apis/x86/system.img  -avd TestAVD --verbose
-            
+            /opt/android-sdk/emulator/emulator --sdk_root=/opt/android-sdk -avd TestAVD \
+              -system-image /opt/android-sdk/system-images/android-30/google_apis/x86/system.img
+        shell: bash
