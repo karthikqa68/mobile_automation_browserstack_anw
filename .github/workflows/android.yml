@@ -60,7 +60,6 @@ jobs:
       with:
         api-level: 30
         script: mvn test
-        abi: google_apis/x86
         target: default
         arch: x86
         profile: Nexus 6
