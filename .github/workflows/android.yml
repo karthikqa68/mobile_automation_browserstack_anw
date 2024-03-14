@@ -12,7 +12,6 @@ jobs:
       - name: Load Android SDK Environment (from .env file)
         env:
           include: .env  # Load environment variables from .env file in the root directory
-
       - name: Verify Android SDK Environment (optional)
         run: |
           echo "ANDROID_HOME is set to: $ANDROID_HOME"
