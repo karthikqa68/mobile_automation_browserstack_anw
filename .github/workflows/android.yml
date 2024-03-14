@@ -111,7 +111,11 @@ jobs:
         shell: bash      
   
       - name: Start Emulator Device
-        run : /opt/android-sdk/emulator/emulator -avd TestAVD
+        run: |
+          export ANDROID_HOME=/opt/android-sdk
+          export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools
+          /opt/android-sdk/emulator/emulator -avd TestAVD
+        shell: bash
 
       - name: Run Appium tests
         run: |
