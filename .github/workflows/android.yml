@@ -1,26 +1,91 @@
-name: Android CI
-
+name: Mobile Automation Testing (Android Emulator)
+ 
 on:
   push:
     branches:
       - master
-
+ 
 jobs:
   test:
-   runs-on: ubuntu-latest
-   name: Appium Test
-   steps:
-     - name: Checkout
-       uses: actions/checkout@v2
-     - name: Install and Run Appium Server
-       uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
-     
-     - name: Wait for Appium server to start
-       run: sleep 10
-     - name: Run Appium tests
-       run: |
-            pwd
-            cd android
-            mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
+    runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /opt/android-sdk  
+      ANDROID_SDK_ROOT: /opt/android-sdk
+      ANDROID_AVD_HOME: /home/runner/.android/avd  # Adjust this path as needed
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+ 
+      - name: Set up Java JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: 'adopt'
+ 
+      - name: Download and extract Android SDK
+        run: |
+          mkdir -p /opt/android-sdk
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
+          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
+        shell: bash
+ 
+      - name: Update Android SDK
+        run: |
+          echo 'y' | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT --update
+        shell: bash
+      - name: Accept Android SDK licenses
+        run:  echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
+        shell: bash
+      - name: Set up Android SDK and PATH
+        run: |
+          export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
+          echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools' >> $GITHUB_ENV
+          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
+          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
+          sleep 10  # Adjust the sleep duration as needed
+        shell: bash
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+ 
+      - name: Verify ANDROID_SDK_ROOT
+        run: | 
+            echo $ANDROID_HOME
+            echo $ANDROID_SDK_ROOT
+            ls -la /opt/android-sdk/cmdline-tools
+ 
+      - name: Install system image (android-30;google_apis;x86)
+        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86"
+        shell: bash
+ 
+      - name: List Install system image
+        run: | 
+            ls -la /opt/android-sdk
+            ls -la /opt/android-sdk/system-images/android-30
+            ls -la /opt/android-sdk/system-images/android-30/google_apis
+            ls -la /opt/android-sdk/system-images/android-30/google_apis/x86
+        shell: bash
+ 
+      - name: List Available SDK Packages
+        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
+        shell: bash
 
-
+      - name: Create AVD
+        run: |
+          ls -la /opt/android-sdk/cmdline-tools/bin  
+          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M  
+        shell: bash
+ 
+      - name: List emulator devices
+        run: /opt/android-sdk/emulator/emulator -list-avds 
+        shell: bash      
+ 
+      - name: Inspect AVD Configuration (Optional)
+        run: /opt/android-sdk/cmdline-tools/bin/avdmanager  - list avd
+        shell: bash
+   
+      - name: Start Emulator Device
+        run: |
+            /opt/android-sdk/emulator/emulator --sdk_root=/opt/android-sdk -avd TestAVD \
+              -system-image /opt/android-sdk/system-images/android-30/google_apis/x86/system.img
+        shell: bash
