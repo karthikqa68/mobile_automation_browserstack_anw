@@ -29,22 +29,15 @@ jobs:
           unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
         shell: bash
 
-      - name: List files under /opt/android-sdk
-        run: |
-            ls -la /opt/android-sdk/cmdline-tools
-            ls -la /opt/android-sdk/cmdline-tools/bin
-        shell: bash
-
       - name: Accept Android SDK licenses
         run:  echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
         shell: bash
-
   
       - name: Set up Android SDK and PATH
         run: |
           export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
           echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools' >> $GITHUB_ENV
-          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
+          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
           echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
           sleep 10  # Adjust the sleep duration as needed
         shell: bash
@@ -57,52 +50,4 @@ jobs:
             echo $ANDROID_HOME
             echo $ANDROID_SDK_ROOT
 
-      - name: List files under /opt/android-sdk
-        run: |
-            ls -la /opt
-            ls -la /opt/android-sdk/emulator
-            ls -la /opt/android-sdk
-            ls -la /opt/android-sdk/cmdline-tools
-            ls -la /opt/android-sdk/cmdline-tools/bin
-            ls -la /opt/android-sdk/tools
-        shell: bash
-
-        
-      - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk  "system-images;android-30;google_apis;x86"
-        shell: bash
-
-      - name: List Install system image
-        run: | 
-            ls -la /opt/android-sdk
-            ls -la /opt/android-sdk/system-images
-        shell: bash
-
-      - name: List Available SDK Packages
-        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
-        shell: bash
-       
-      - name: Create AVD
-        run: |
-          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M 
-        shell: bash
-
-      - name: List emulator devices
-        run: /opt/android-sdk/emulator/emulator -list-avds 
-        shell: bash      
-  
-   
-      - name: Start Emulator Device
-        run: |
-            ls -la /opt/android-sdk
-            ls -la /opt/android-sdk/emulator/emulator 
-            pwd
-            /opt/android-sdk/emulator/emulator -avd TestAVD --sdk_root=/opt  --verbose
-        shell: bash
-
-           
-      - name: Stop emulator (optional)
-        run: adb emu kill &  # Background process to avoid interrupting tests
-
-      - name: Stop Appium server (optional)
-        run: kill $(ps aux | grep -v grep | grep appium | awk '{print $2}') || true
+      # Add your subsequent steps here...
