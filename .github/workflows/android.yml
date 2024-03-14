@@ -33,6 +33,10 @@ jobs:
         ls -l $ANDROID_HOME
         ls -l $ANDROID_SDK_ROOT
 
+    - name: Install System Image
+      run: |
+        yes | sdkmanager --install "system-images;android-30;google_apis;x86"
+
     - name: Create AVD
       run: echo "no" | avdmanager create avd --force --name testEmulator --abi 'google_apis/x86' --package 'system-images;android-30;google_apis;x86'
 
