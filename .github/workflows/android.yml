@@ -88,7 +88,5 @@ jobs:
    
       - name: Start Emulator Device
         run: |
-            ls -la /opt/android-sdk/emulator/emulator
-             export ANDROID_AVD_HOME=/home/runner/.android/avd
-            /opt/android-sdk/emulator/emulator  -system-image /opt/android-sdk/system-images/android-30/google_apis/x86/system.img --sdk_root=/opt/android-sdk -avd TestAVD --verbose
+            /opt/android-sdk/emulator/emulator  -system /opt/android-sdk/system-images/android-30/google_apis/x86/system.img  -avd TestAVD --verbose
             
