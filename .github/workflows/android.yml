@@ -8,25 +8,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /opt/android-sdk  
+      ANDROID_SDK_ROOT: /opt/android-sdk
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set Android SDK Environment (Update paths if needed)
-        run: |
-          export ANDROID_HOME=/opt/android-sdk  # Update path if your SDK is installed elsewhere
-          export ANDROID_SDK_ROOT=/opt/android-sdk  # Update path if your SDK is installed elsewhere
-
-      
-
-      # ... (Optional: Add steps to download/build your mobile app here) ...
-
-      - name: Create .env File (Optional)  # Assuming you have key-value pairs for other variables
-        uses: SpicyPizza/create-envfile@v2.0  # Consider security implications before using this action
-        with:
-          file_name: .env
-          fail_on_empty: false
-          sort_keys: false
 
       - name: Verify Android SDK Environment
         run: |
@@ -34,4 +23,3 @@ jobs:
           echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT"
           echo "PATH is set to: $PATH"
 
-      # ... (Add your mobile automation testing steps using tools like Appium or Espresso here) ...
