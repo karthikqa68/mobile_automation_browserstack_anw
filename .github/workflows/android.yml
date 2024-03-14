@@ -9,19 +9,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Current Directory
-        run: pwd
-        shell: bash
-      - name: Load Environment Variables from .env file
-        run: |
-          set -o allexport
-          source ./.env
-          set +o allexport
-          
-      - name: Verify .env file contents
-        run: |
-          cat ../.env
-          
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment variables from .env file
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_ANDROID_HOME: /opt/android-sdk
+          envkey_ANDROID_SDK_ROOT: /opt/android-sdk
+          path: .env
+
+      - name: Load Android SDK Environment (from .env file)
+        uses: SpicyPizza/load-envfile@v1
+        with:
+          envfile: .env
+
       - name: Verify Android SDK Environment
         run: |
           echo "ANDROID_HOME is set to: $ANDROID_HOME"
