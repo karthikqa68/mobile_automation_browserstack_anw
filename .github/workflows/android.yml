@@ -80,5 +80,5 @@ jobs:
       - name: Start Emulator Device
         run: |
             ls -la /opt/android-sdk/emulator/emulator 
-            /opt/android-sdk/emulator/emulator --sdk_root=/opt/android-sdk -avd TestAVD --verbose
+            /opt/android-sdk/emulator/emulator  -avd TestAVD --verbose
         shell: bash
