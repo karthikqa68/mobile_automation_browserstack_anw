@@ -9,18 +9,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Debugging Output
-        run: |
-          ls -la    # List all files in the current directory
-          pwd       # Print the current directory path
-          ls - la /home/runner/work/mobile_automation_anw/mobile_automation_anw
       - name: Load Environment Variables from .env file
         run: |
           set -o allexport
-          source .env
+          source ../.env
           set +o allexport
-
-      - name: Verify Android SDK Environment (optional)
+          
+      - name: Verify .env file contents
+        run: |
+          cat ../.env
+          
+      - name: Verify Android SDK Environment
         run: |
           echo "ANDROID_HOME is set to: $ANDROID_HOME"
           echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT"
