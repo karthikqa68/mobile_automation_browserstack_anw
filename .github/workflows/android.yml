@@ -41,12 +41,13 @@ jobs:
         shell: bash
       - name: Set up Android SDK and PATH
         run: |
-          export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
-          echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools' >> $GITHUB_ENV
+          echo "/opt/android-sdk/cmdline-tools/bin" >> $GITHUB_PATH
+          echo "/opt/android-sdk/platform-tools" >> $GITHUB_PATH
+          echo "/opt/android-sdk/emulator" >> $GITHUB_PATH
+          echo "/opt/android-sdk/platforms" >> $GITHUB_PATH
+          echo "/opt/android-sdk/tools" >> $GITHUB_PATH
           echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
-          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
-          sleep 10  # Adjust the sleep duration as needed
-        shell: bash
+
         
       - name: Verify ANDROID_SDK_ROOT
         run: | 
