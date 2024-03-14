@@ -31,15 +31,15 @@ jobs:
         shell: bash
 
       - name: Accept Android SDK licenses
-        run:  echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk --licenses
+        run:  echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt--licenses
         shell: bash
   
       - name: Set up Android SDK and PATH
         run: |
           export PATH=$PATH:/opt/Sdk/cmdline-tools/bin:/opt/Sdk/platform-tools:/opt/Sdk/emulator:/opt/Sdk/platforms:/opt/Sdk/tools
           echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools' >> $GITHUB_ENV
-          echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
-          echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk "tools"
+          echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt"platform-tools" "platforms;android-30" "emulator" # Add any additional packages
+          echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt"tools"
           sleep 10  # Adjust the sleep duration as needed
         shell: bash
         env:
@@ -52,7 +52,7 @@ jobs:
             echo $ANDROID_SDK_ROOT
 
       - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/Sdk  "system-images;android-30;google_apis;x86"
+        run: echo "y" | /opt/Sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt "system-images;android-30;google_apis;x86"
         shell: bash
 
       - name: List Install system image
@@ -62,7 +62,7 @@ jobs:
         shell: bash
 
       - name: List Available SDK Packages
-        run: /opt/Sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/Sdk 
+        run: /opt/Sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt
         shell: bash
        
       - name: Create AVD
@@ -78,5 +78,5 @@ jobs:
       - name: Start Emulator Device
         run: |
             ls -la /opt/Sdk/emulator/emulator 
-            /opt/Sdk/emulator/emulator --sdk_root=/opt/Sdk -avd TestAVD --verbose
+            /opt/Sdk/emulator/emulator --sdk_root=/opt-avd TestAVD --verbose
         shell: bash
