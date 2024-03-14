@@ -20,8 +20,6 @@ jobs:
           envkey_DEBUG: false
           envkey_ANDROID_HOME: /opt/android-sdk
           envkey_ANDROID_SDK_ROOT: /opt/android-sdk
-          some_other_variable: foobar
-          directory: <directory_name>
           file_name: .env
           fail_on_empty: false
           sort_keys: false
