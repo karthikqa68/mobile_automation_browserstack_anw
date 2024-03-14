@@ -70,6 +70,7 @@ jobs:
 
       - name: List Install system image
         run: | 
+            ls -la /opt/android-sdk
             ls -la /opt/android-sdk/system-images
         shell: bash
 
