@@ -11,17 +11,16 @@ jobs:
     env:
       ANDROID_HOME: /opt/android-sdk  
       ANDROID_SDK_ROOT: /opt/android-sdk
-
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-
-      - name: Verify Android SDK Environment
-        run: |
-          echo "ANDROID_HOME is set to: $ANDROID_HOME"
-          echo "ANDROID_SDK_ROOT is set to: $ANDROID_SDK_ROOT"
-          echo "PATH is set to: $PATH"
+      - name: Set up Java JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: 'adopt'
 
       - name: Download and extract Android SDK
         run: |
@@ -41,14 +40,36 @@ jobs:
         shell: bash
 
   
-     
+      - name: Set up Android SDK and PATH
+        run: |
+          export ANDROID_HOME=/opt/android-sdk
+          export ANDROID_SDK_ROOT=/opt/android-sdk
+          export PATH=$PATH:/opt/android-sdk/cmdline-tools/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator:/opt/android-sdk/platforms:/opt/android-sdk/tools
+          echo 'export ANDROID_HOME=/opt/android-sdk' >> $GITHUB_ENV  # Add Android SDK home permanently
+          echo 'export ANDROID_SDK_ROOT=/opt/android-sdk' >> $GITHUB_ENV  # Add Android SDK home permanently
+          echo 'export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/platforms:$ANDROID_HOME/tools' >> $GITHUB_ENV
+          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-34" "emulator" # Add any additional packages
+          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "tools"
+          source $GITHUB_ENV
+          sleep 10  # Adjust the sleep duration as needed
+        shell: bash
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
+          JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.22-7/x64
 
-
+      - name: Verify ANDROID_SDK_ROOT
+        run: | 
+            echo $ANDROID_HOME
+            echo $ANDROID_SDK_ROOT
 
       - name: List files under /opt/android-sdk
         run: |
             ls -la /opt
+            ls -la /opt/android-sdk/emulator
             ls -la /opt/android-sdk
+            ls -la /opt/android-sdk/cmdline-tools
+            ls -la /opt/android-sdk/cmdline-tools/bin
+            ls -la /opt/android-sdk/tools
         shell: bash
 
         
@@ -59,6 +80,7 @@ jobs:
       - name: List Install system image
         run: | 
             ls -la /opt/android-sdk
+            ls -la /opt/android-sdk/system-images
         shell: bash
 
       - name: List Available SDK Packages
@@ -85,5 +107,3 @@ jobs:
 
       - name: Stop Appium server (optional)
         run: kill $(ps aux | grep -v grep | grep appium | awk '{print $2}') || true
-
-
