@@ -17,11 +17,7 @@ jobs:
           export ANDROID_HOME=/opt/android-sdk  # Update path if your SDK is installed elsewhere
           export ANDROID_SDK_ROOT=/opt/android-sdk  # Update path if your SDK is installed elsewhere
 
-      - name: Install Android SDK and Tools (replace with your actual path)
-        run: |
-          sudo apt-get update && sudo apt-get install -y unzip
-          curl -sL https://dl.google.com/android/repository/repository-10.0.0.xml > repository.xml
-          sdkmanager --install "tools" --sdk_root=/opt/android-sdk --channels=latest --update
+      
 
       # ... (Optional: Add steps to download/build your mobile app here) ...
 
