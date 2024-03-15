@@ -109,7 +109,7 @@ jobs:
         shell: bash
 
       - name: Check Emulator Logs
-        run: adb logcat | grep -iE "error|warning"
+        run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt & 
         shell: bash
         
       - name: Stop emulator (optional)
