@@ -102,7 +102,20 @@ jobs:
 
         shell: bash
 
-       
+      - name: Install HAXM (Intel Hardware Accelerated Execution Manager)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-kvm
+          sudo apt-get install -y cpu-checker
+          sudo kvm-ok
+          sudo apt-get install -y libvirt-bin
+          sudo apt-get install -y bridge-utils
+          wget https://github.com/intel/haxm/releases/download/v7.7.0/haxm_7.7.0-01_amd64.deb
+          sudo dpkg -i haxm_7.7.0-01_amd64.deb
+          sudo apt-get install -f
+      - name: Verify HAXM Installation
+        run: kvm-ok
+
        
       - name: Start Emulator Device
         run: |
