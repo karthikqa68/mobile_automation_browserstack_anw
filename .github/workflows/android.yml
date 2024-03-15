@@ -32,6 +32,8 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           sdk_root: ${{ env.ANDROID_SDK_ROOT }}
+          run: sudo ${{ env.ANDROID_SDK_ROOT }}
+        
 
       - name: Install additional packages (modify list as needed)
         run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools' 'platforms;android-30' 'cmdline-tools;latest' 'emulator' 
