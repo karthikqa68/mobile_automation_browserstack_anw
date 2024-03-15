@@ -111,7 +111,7 @@ jobs:
        
       - name: Start Emulator Device
         run: |
-          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu off -memory 2048M
+          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu off -memory 2048
         shell: bash
 
       - name: Verify Emulator Status
