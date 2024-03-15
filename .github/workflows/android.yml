@@ -35,6 +35,8 @@ jobs:
 
       - name: Update Android SDK
         run: |
+          ls -la /opt/android-sdk
+          ls -la /opt/android-sdk/cmdline-tools
           echo 'y' | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT --update
         shell: bash
 
