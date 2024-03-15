@@ -62,9 +62,7 @@ jobs:
 
 
       - name: Update Android SDK Manager
-        run: sdkmanager --update
-        working-directory: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin
-
+        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
 
       - name: List Install system image
         run: | 
