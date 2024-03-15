@@ -68,10 +68,7 @@ jobs:
         run: | 
             ls -la $ANDROID_SDK_ROOT
             ls -la $ANDROID_SDK_ROOT/system-images/android-30
-            ls -la $ANDROID_SDK_ROOT/system-images/android-30/google_apis
-            ls -la $ANDROID_SDK_ROOT/system-images/android-30/google_apis/x86
-
-
+    
       - name: List Available SDK Packages
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --list --sdk_root=$ANDROID_SDK_ROOT
 
