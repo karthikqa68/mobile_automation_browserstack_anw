@@ -34,7 +34,7 @@ jobs:
           sdk_root: ${{ env.ANDROID_SDK_ROOT }}
 
       - name: Install additional packages (modify list as needed)
-        run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools' 'platforms;android-30'
+        run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools' 'platforms;android-30' 'cmdline-tools;latest'
 
       - name: Verify ANDROID_SDK_ROOT
         run: | 
@@ -45,12 +45,12 @@ jobs:
 
       - name: Set up Android SDK and PATH
         run: |
-          echo "/opt/android-sdk/cmdline-tools/bin" >> $GITHUB_PATH
+          echo "/opt/android-sdk/cmdline-tools/latest/bin" >> $GITHUB_PATH
           echo "/opt/android-sdk/platform-tools" >> $GITHUB_PATH
           echo "/opt/android-sdk/emulator" >> $GITHUB_PATH
           echo "/opt/android-sdk/platforms" >> $GITHUB_PATH
           echo "/opt/android-sdk/tools" >> $GITHUB_PATH
-          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
+         # echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
         shell: bash
  
      
