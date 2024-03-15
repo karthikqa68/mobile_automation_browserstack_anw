@@ -87,6 +87,9 @@ jobs:
            echo $ANDROID_HOME
            echo $ANDROID_SDK_ROOT
            ls -la /opt/android-sdk/cmdline-tools
+           ls -la  /home/runner/.android/avd
+           ls -la  /home/runner/.android/avd/../avd
+           ls -la  /home/runner/.android/avd/../avd/TestAVD.avd
         shell: bash
 
        
