@@ -77,6 +77,13 @@ jobs:
           ls -la /opt/android-sdk/cmdline-tools/latest/bin  
           echo "no" | /opt/android-sdk/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M  
         shell: bash
+
+
+      - name: Recreate AVD (Optional)
+        run: |
+          echo "no" | /opt/android-sdk/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD \
+            --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M
+          shell: bash
  
       - name: List emulator devices
         run: /opt/android-sdk/emulator/emulator -list-avds 
@@ -95,5 +102,5 @@ jobs:
        
       - name: Start Emulator Device
         run: |
-          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu off
+          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu off --verbose
         shell: bash
