@@ -11,7 +11,7 @@ jobs:
     env:
       ANDROID_HOME: /opt/android-sdk  
       ANDROID_SDK_ROOT: /opt/android-sdk
-      ANDROID_AVD_HOME: /home/runner/.android/avd  # Adjust this path as needed
+      ANDROID_AVD_HOME: /home/runner/.config/.android/avd
       JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.0-7/x64
       JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.0-7/x64
         
