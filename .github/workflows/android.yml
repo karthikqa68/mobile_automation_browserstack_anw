@@ -77,12 +77,12 @@ jobs:
       - name: Create AVD
         run: |
           ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 2048M
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M
 
 
       - name: Recreate AVD (Optional)
         run: |
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 2048M
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M
 
 
       - name: List emulator devices (Force Refresh)
@@ -97,5 +97,5 @@ jobs:
 
       - name: Start Emulator Device
         run: |
-          $ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu off -memory 2048
+          $ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu off 
  
