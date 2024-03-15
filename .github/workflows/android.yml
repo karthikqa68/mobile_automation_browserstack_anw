@@ -107,5 +107,5 @@ jobs:
        
       - name: Start Emulator Device
         run: |
-          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu on 
+          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu host 
         shell: bash
