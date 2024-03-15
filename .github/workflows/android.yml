@@ -57,7 +57,7 @@ jobs:
      
  
       - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86"
+        run: echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86"
         shell: bash
  
       - name: List Install system image
@@ -69,13 +69,13 @@ jobs:
         shell: bash
  
       - name: List Available SDK Packages
-        run: /opt/android-sdk/cmdline-tools/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
+        run: /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
         shell: bash
 
       - name: Create AVD
         run: |
           ls -la /opt/android-sdk/cmdline-tools/bin  
-          echo "no" | /opt/android-sdk/cmdline-tools/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M  
+          echo "no" | /opt/android-sdk/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M  
         shell: bash
  
       - name: List emulator devices
@@ -84,7 +84,7 @@ jobs:
  
       - name: Inspect AVD Configuration (Optional)
         run: | 
-           /opt/android-sdk/cmdline-tools/bin/avdmanager  - list avd
+           /opt/android-sdk/cmdline-tools/latest/bin/avdmanager  - list avd
            echo $ANDROID_HOME
            echo $ANDROID_SDK_ROOT
            ls -la /opt/android-sdk/cmdline-tools
