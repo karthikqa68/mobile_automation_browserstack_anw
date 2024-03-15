@@ -61,6 +61,11 @@ jobs:
         run: echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86"
 
 
+      - name: Update Android SDK Manager
+        run: sdkmanager --update
+        working-directory: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+
+
       - name: List Install system image
         run: | 
             ls -la $ANDROID_SDK_ROOT
@@ -95,7 +100,7 @@ jobs:
         run: $ANDROID_SDK_ROOT/emulator/emulator -list-avds
 
       - name: Capture Emulator Logcat
-        run: adb logcat > emulator_logcat.txt 
+        run: adb logcat > emulator_logcat.txt &
         
 
       - name: Start Emulator Device
