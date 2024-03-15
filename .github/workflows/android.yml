@@ -21,19 +21,14 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Install and Run Appium Server
+      - name: Download and execute Appium server script
         run: |
-          chmod +x ./scripts/RunAppiumServer.sh
+          mkdir -p scripts
+          curl -o scripts/RunAppiumServer.sh https://raw.githubusercontent.com/your_username/your_repository/main/scripts/RunAppiumServer.sh
+          chmod +x scripts/RunAppiumServer.sh
           ./scripts/RunAppiumServer.sh
 
       - name: Run Appium Tests
+        run: |
           # Replace 'test' with your Maven command to run tests
-        uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator
-        with:
-           api-level: ${{ matrix.api-level }}
-           target: ${{ matrix.target }}
-           arch: x86_64
-           profile: Nexus 6
-           script: |
-                cd android
-                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
+          mvn test
