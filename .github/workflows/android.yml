@@ -24,35 +24,40 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
+
  
       - name: Download and extract Android SDK
         run: |
-          mkdir -p /opt/android-sdk
-          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/sdk-tools-linux.zip
-          unzip -q /opt/android-sdk/sdk-tools-linux.zip -d /opt/android-sdk
+          mkdir -p /opt/android-sdk/cmdline-tools/latest
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip -O /opt/android-sdk/cmdline-tools/latest/sdk-tools-linux.zip
+          unzip -q /opt/android-sdk/cmdline-tools/latest/sdk-tools-linux.zip -d /opt/android-sdk/cmdline-tools/latest
         shell: bash
- 
+
       - name: Update Android SDK
         run: |
-          echo 'y' | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT --update
+          echo 'y' | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT --update
         shell: bash
+
       - name: Accept Android SDK licenses
-        run:  echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
+        run:  echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk --licenses
         shell: bash
+
       - name: Set up Android SDK and PATH
         run: |
-          echo "/opt/android-sdk/cmdline-tools/bin" >> $GITHUB_PATH
+          echo "/opt/android-sdk/cmdline-tools/latest/bin" >> $GITHUB_PATH
           echo "/opt/android-sdk/platform-tools" >> $GITHUB_PATH
           echo "/opt/android-sdk/emulator" >> $GITHUB_PATH
           echo "/opt/android-sdk/platforms" >> $GITHUB_PATH
           echo "/opt/android-sdk/tools" >> $GITHUB_PATH
-          echo "y" | /opt/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
-
-        
+          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
+        shell: bash
+ 
+     
       - name: Verify ANDROID_SDK_ROOT
         run: | 
             echo $ANDROID_HOME
             echo $ANDROID_SDK_ROOT
+            ls -la /opt/android-sdk
             ls -la /opt/android-sdk/cmdline-tools
  
       - name: Install system image (android-30;google_apis;x86)
