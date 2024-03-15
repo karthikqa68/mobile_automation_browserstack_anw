@@ -111,4 +111,7 @@ jobs:
       - name: Check Emulator Logs
         run: adb logcat | grep -iE "error|warning"
         shell: bash
+        
+      - name: Stop emulator (optional)
+        run: adb emu kill &  # Background process to avoid interrupting tests
  
