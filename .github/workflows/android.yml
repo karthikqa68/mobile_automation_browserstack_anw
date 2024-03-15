@@ -100,7 +100,7 @@ jobs:
   
       - name: Start Emulator Device
         run: |
-          $ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu host -memory 2048 -wipe-data -verbose
+          $ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu swiftshader_indirect -memory 2048 -wipe-data -verbose
 
       - name: Verify Emulator Status
         run: adb devices
