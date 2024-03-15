@@ -94,7 +94,17 @@ jobs:
       - name: List emulator devices
         run: $ANDROID_SDK_ROOT/emulator/emulator -list-avds
 
-  
+
+      - name: Install Appium dependencies
+        run: |
+          cd android
+          mvn install -DskipTests
+ 
+      - name: Build the Android app (APK)
+        run: |
+          cd android
+          mvn clean install
+ 
       - name: Start Emulator Device
         run: |
             ($ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-boot-anim -no-window -no-audio  -memory 2048 -wipe-data -verbose &)
@@ -111,6 +121,26 @@ jobs:
       - name: Check Emulator Logs
         run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt & 
         shell: bash
+
+      - name: Install Appium and dependencies
+        run: |
+            npm install -g appium@v1.22
+            npm install -g appium-doctor
+            appium-doctor --android
+        shell: bash
+ 
+      - name: Start Appium server
+        run: appium -a 127.0.0.1 -p 4723 &
+      - name: Wait for Appium server to start
+        run: sleep 10
+      - name: Start emulator (adjust AVD name if needed)
+        run: emulator -avd emulator-5554 &  # Replace with your emulator name
+ 
+      - name: Run Appium tests
+        run: |
+          pwd
+          cd android
+          mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
         
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
