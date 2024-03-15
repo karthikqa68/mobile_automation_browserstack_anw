@@ -111,5 +111,17 @@ jobs:
        
       - name: Start Emulator Device
         run: |
-          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu off -memory 2048
+          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu off -memory 2048M
+        shell: bash
+
+      - name: Verify Emulator Status
+        run: adb devices
+        shell: bash
+
+      - name: Verify adb Connection
+        run: adb shell echo "Connection successful"
+        shell: bash
+
+      - name: Check Emulator Logs
+        run: adb logcat | grep -iE "error|warning"
         shell: bash
