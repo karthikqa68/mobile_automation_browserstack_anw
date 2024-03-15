@@ -97,13 +97,10 @@ jobs:
       - name: List emulator devices
         run: $ANDROID_SDK_ROOT/emulator/emulator -list-avds
 
-      - name: Capture Emulator Logcat
-        run: adb logcat > emulator_logcat.txt &
-        
-
+  
       - name: Start Emulator Device
         run: |
-          $ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu off 
+          $ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -gpu host -memory 2048
         timeout-minutes: 10 
 
       - name: Verify Emulator Status
