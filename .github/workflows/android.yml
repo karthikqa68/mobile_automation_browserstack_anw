@@ -108,7 +108,7 @@ jobs:
       - name: Start Emulator Device
         run: |
             ($ANDROID_SDK_ROOT/emulator/emulator -avd TestAVD -no-snapshot -no-boot-anim -no-window -no-audio  -memory 2048 -wipe-data -verbose &)
-            sleep 720
+            sleep 500
         
       - name: Verify Emulator Status
         run: adb devices
