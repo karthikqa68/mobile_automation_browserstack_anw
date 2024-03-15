@@ -1,127 +1,39 @@
-name: Mobile Automation Testing (Android Emulator)
- 
+name: Appium CI
+
 on:
   push:
     branches:
       - master
- 
+
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    env:
-      ANDROID_HOME: /opt/android-sdk  
-      ANDROID_SDK_ROOT: /opt/android-sdk
-      ANDROID_AVD_HOME: /home/runner/.config/.android/avd
-      JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.0-7/x64
-      JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.0-7/x64
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        api-level: [25]
+        target: [default]
         
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
- 
-      - name: Set up Java JDK
-        uses: actions/setup-java@v3
+      - uses: actions/checkout@v2
+      
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
         with:
-          java-version: 17
-          distribution: 'temurin'
-    
-      - name: Print ANDROID_SDK_ROOT path
-        run: echo ${{ env.ANDROID_SDK_ROOT }}
-        
-      - name: Download Android SDK tools (using custom location)
-        uses: android-actions/setup-android@v3
+          java-version: 1.8
+
+      - name: Install and Run Appium Server
+        run: |
+          chmod +x ./scripts/RunAppiumServer.sh
+          ./scripts/RunAppiumServer.sh
+
+      - name: Run Appium Tests
+          # Replace 'test' with your Maven command to run tests
+        uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator
         with:
-          sdk_root: ${{ env.ANDROID_SDK_ROOT }}
-        
-      - name: Install additional packages (modify list as needed)
-        run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools' 'platforms;android-30' 'cmdline-tools;latest' 'emulator' 
-
-      - name: Verify ANDROID_SDK_ROOT
-        run: | 
-            echo $ANDROID_HOME
-            echo $ANDROID_SDK_ROOT
-            ls -la /opt/android-sdk
-            ls -la /opt/android-sdk/cmdline-tools
-
-      - name: Set up Android SDK and PATH
-        run: |
-          echo "/opt/android-sdk/cmdline-tools/latest/bin" >> $GITHUB_PATH
-          echo "/opt/android-sdk/platform-tools" >> $GITHUB_PATH
-          echo "/opt/android-sdk/emulator" >> $GITHUB_PATH
-          echo "/opt/android-sdk/platforms" >> $GITHUB_PATH
-          echo "/opt/android-sdk/tools" >> $GITHUB_PATH
-          echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/opt/android-sdk "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
-        shell: bash
- 
-     
-     
- 
-      - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86"
-        shell: bash
- 
-      - name: List Install system image
-        run: | 
-            ls -la /opt/android-sdk
-            ls -la /opt/android-sdk/system-images/android-30
-            ls -la /opt/android-sdk/system-images/android-30/google_apis
-            ls -la /opt/android-sdk/system-images/android-30/google_apis/x86
-        shell: bash
- 
-      - name: List Available SDK Packages
-        run: /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --list  --sdk_root=/opt/android-sdk 
-        shell: bash
-
-      - name: Create AVD
-        run: |
-          ls -la /opt/android-sdk/cmdline-tools/latest/bin  
-          echo "no" | /opt/android-sdk/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 2048M  
-        shell: bash
-
-
-      - name: Recreate AVD (Optional)
-        run: |
-          echo "no" | /opt/android-sdk/cmdline-tools/latest/bin/avdmanager create avd --force --name TestAVD \
-            --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 2048M
-        shell: bash
-
-      - name: List emulator devices (Force Refresh)
-        run: avdmanager list avd
-        shell: bash
- 
-      - name: List emulator devices
-        run: /opt/android-sdk/emulator/emulator -list-avds 
-        shell: bash      
- 
-      - name: Inspect AVD Configuration (Optional)
-        run: | 
-           /opt/android-sdk/cmdline-tools/latest/bin/avdmanager  - list avd
-           echo $ANDROID_HOME
-           echo $ANDROID_SDK_ROOT
-           ls -la /opt/android-sdk/cmdline-tools
-
-        shell: bash
-
-      - name: Enable KVM group perms
-        run: |
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
-
-       
-      - name: Start Emulator Device
-        run: |
-          /opt/android-sdk/emulator/emulator -avd TestAVD -no-snapshot -no-window -no-audio -no-accel -gpu off -memory 2048
-        shell: bash
-
-      - name: Verify Emulator Status
-        run: adb devices
-        shell: bash
-
-      - name: Verify adb Connection
-        run: adb shell echo "Connection successful"
-        shell: bash
-
-      - name: Check Emulator Logs
-        run: adb logcat | grep -iE "error|warning"
-        shell: bash
+           api-level: ${{ matrix.api-level }}
+           target: ${{ matrix.target }}
+           arch: x86_64
+           profile: Nexus 6
+           script: |
+                cd android
+                mvn clean test '-Dsurefire.suiteXmlFiles=regression.xml'
