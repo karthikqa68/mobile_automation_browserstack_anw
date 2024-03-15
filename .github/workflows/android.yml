@@ -108,7 +108,7 @@ jobs:
           sudo apt-get install -y qemu-kvm
           sudo apt-get install -y cpu-checker
           sudo kvm-ok
-          sudo apt-get install -y libvirt-bin
+          sudo apt-get install -y libvirt-daemon-system
           sudo apt-get install -y bridge-utils
           wget https://github.com/intel/haxm/releases/download/v7.7.0/haxm_7.7.0-01_amd64.deb
           sudo dpkg -i haxm_7.7.0-01_amd64.deb
