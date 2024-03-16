@@ -140,11 +140,12 @@ jobs:
           cd android
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
 
-      - name: Upload test reports (optional)
+      - name: Upload failure reports (optional)
         uses: actions/upload-artifact@v2
         with:
-          name: test-reports
-          path: android/reports
+          name: test-reports-failure
+          path: android/reports/failure
+        if: failure()
         
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
