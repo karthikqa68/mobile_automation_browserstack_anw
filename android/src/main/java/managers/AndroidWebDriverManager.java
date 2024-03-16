@@ -81,10 +81,11 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android11PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
-			//options.setAutomationName("UiAutomator2");
+			options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
 			options.setCapability("androidInstallTimeout",120000);
+			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
 			options.setFullReset(false);
 			//System.out.println(appPath.getAbsolutePath());
@@ -93,10 +94,11 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android14PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android14PlatformVersion"));
 			options.setApp("MakeMyTrip.apk");
-			//options.setAutomationName("UiAutomator2");
+			options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
 			options.setCapability("androidInstallTimeout",120000);
+			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
 			options.setFullReset(false);
 		}
