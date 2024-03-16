@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="47.723" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Launch the app" name="Verify whether the app is getting launched - Example #1.1" time="45.543">
+<testsuite name="Cucumber" time="138.837" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Launch the app" name="Verify whether the app is getting launched - Example #1.1" time="138.718">
 <system-out><![CDATA[
 When I launch the Android app on device-'android11'.........................passed
-Then I select english language..............................................passed
-]]></system-out>
-</testcase>
-<testcase classname="Launch the app" name="Verify whether the app is getting launched - Example #1.2" time="47.59">
-<system-out><![CDATA[
-When I launch the Android app on device-'android14'.........................passed
 Then I select english language..............................................passed
 ]]></system-out>
 </testcase>

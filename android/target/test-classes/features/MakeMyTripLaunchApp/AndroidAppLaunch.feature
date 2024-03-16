@@ -7,7 +7,6 @@ Feature: Launch the app
   Examples:
     | device-name |
     | android11   |
-    | android14   |
 
 
 
