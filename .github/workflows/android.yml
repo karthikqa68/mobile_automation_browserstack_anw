@@ -108,7 +108,10 @@ jobs:
       - name: Start Emulator Device
         run: |
             ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -no-audio  -memory 2048 -wipe-data -verbose &)
-            sleep 280
+            sleep 500
+            adb logcat -b install > app_install_log.txt &  # Redirect logs to a file
+            cd android
+            adb install /src/test/resources/MakeMyTrip.apk
             
       - name: Verify Emulator Status
         run: adb devices
