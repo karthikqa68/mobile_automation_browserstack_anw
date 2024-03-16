@@ -21,7 +21,7 @@ public class AndroidAppLaunchPage {
         app.log("Clicking on Continue button");
         //app.click("selectLanguageClick_xpath",true);
         app.wait(6000);
-        app.click("continueButtonselectLanguage_id",true);
+        app.click("continueButtonselectLanguage_xpath",true);
         app.wait(11000);
         app.takeScreenShot();
     }
