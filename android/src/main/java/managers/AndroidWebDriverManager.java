@@ -82,7 +82,7 @@ public class AndroidWebDriverManager {
 			options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
 			//options.setAutomationName("UiAutomator2");
-			options.setCapability("appWaitForLaunch",false);
+			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
 			options.setCapability("androidInstallTimeout",240000);
 			options.setCapability("ignoreHiddenApiPolicyError",true);
