@@ -87,7 +87,7 @@ public class AndroidWebDriverManager {
 			options.setCapability("androidInstallTimeout",240000);
 			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
-			options.setFullReset(false);
+			options.noReset();
 			//System.out.println(appPath.getAbsolutePath());
 		}else if (deviceName.equals("android14")) {
 			options.setDeviceName(prop.getProperty("android14DeviceName"));
