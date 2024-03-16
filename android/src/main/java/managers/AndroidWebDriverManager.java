@@ -84,7 +84,7 @@ public class AndroidWebDriverManager {
 			options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
-			options.setCapability("androidInstallTimeout",120000);
+			options.setCapability("androidInstallTimeout",240000);
 			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
 			options.setFullReset(false);
@@ -97,7 +97,7 @@ public class AndroidWebDriverManager {
 			options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
-			options.setCapability("androidInstallTimeout",120000);
+			options.setCapability("androidInstallTimeout",240000);
 			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
 			options.setFullReset(false);
