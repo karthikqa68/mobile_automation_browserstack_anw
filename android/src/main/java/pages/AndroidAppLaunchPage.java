@@ -20,8 +20,8 @@ public class AndroidAppLaunchPage {
         app.log("Clicking on Language");
         app.log("Clicking on Continue button");
         //app.click("selectLanguageClick_xpath",true);
-        app.wait(6000);
-        app.click("continueButtonselectLanguage_xpath",true);
+        app.wait(12000);
+        app.click("continueButtonselectLanguages_xpath",true);
         app.wait(11000);
         app.takeScreenShot();
     }
