@@ -84,6 +84,7 @@ public class AndroidWebDriverManager {
 			//options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
+			options.setCapability("androidInstallTimeout",120000);
 			options.setNoSign(true);
 			options.setFullReset(false);
 			//System.out.println(appPath.getAbsolutePath());
@@ -95,6 +96,7 @@ public class AndroidWebDriverManager {
 			//options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
+			options.setCapability("androidInstallTimeout",120000);
 			options.setNoSign(true);
 			options.setFullReset(false);
 		}
