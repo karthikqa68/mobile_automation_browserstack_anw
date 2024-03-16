@@ -57,8 +57,8 @@ jobs:
           echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-30" "emulator" # Add any additional packages
 
 
-      - name: Install system image (android-30;google_apis;x86)
-        run: echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86"
+      - name: Install system image (android-30;google_apis;x86_64)
+        run: echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86_64"
 
 
       - name: Update Android SDK Manager
@@ -79,12 +79,12 @@ jobs:
       - name: Create AVD
         run: |
           ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-30;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
 
       - name: Recreate AVD (Optional)
         run: |
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-30;google_apis;x86' --device 'pixel' --sdcard 512M
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-30;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
 
       - name: List emulator devices (Force Refresh)
