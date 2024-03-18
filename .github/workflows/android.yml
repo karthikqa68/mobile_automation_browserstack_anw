@@ -36,7 +36,7 @@ jobs:
 
 
       - name: Install additional packages (modify list as needed)
-        run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools' 'platforms;android-30' 'cmdline-tools;latest' 'emulator'
+        run: sdkmanager --install 'build-tools;29.0.0' 'platform-tools' 'platforms;android-29' 'cmdline-tools;latest' 'emulator'
 
 
       - name: Verify ANDROID_SDK_ROOT
