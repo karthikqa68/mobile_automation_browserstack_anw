@@ -140,6 +140,12 @@ jobs:
           cd android
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
 
+      - name: Upload success reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-reports-success
+          path: android/reports
+
       - name: Upload failure reports (optional)
         uses: actions/upload-artifact@v2
         with:
