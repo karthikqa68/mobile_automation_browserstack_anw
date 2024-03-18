@@ -34,8 +34,17 @@ jobs:
         with:
           sdk_root: ${{ env.ANDROID_SDK_ROOT }}
 
+
       - name: Install additional packages (modify list as needed)
         run: sdkmanager --install 'build-tools;29.0.0' 'platform-tools' 'platforms;android-29' 'cmdline-tools;latest' 'emulator'
+
+
+      - name: Verify ANDROID_SDK_ROOT
+        run: | 
+            echo $ANDROID_HOME
+            echo $ANDROID_SDK_ROOT
+            ls -la $ANDROID_SDK_ROOT
+            ls -la $ANDROID_SDK_ROOT/cmdline-tools
 
 
       - name: Set up Android SDK and PATH
@@ -55,6 +64,14 @@ jobs:
       - name: Update Android SDK Manager
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
 
+      - name: List Install system image
+        run: | 
+            ls -la $ANDROID_SDK_ROOT
+            ls -la $ANDROID_SDK_ROOT/system-images/android-29
+    
+      - name: List Available SDK Packages
+        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --list --sdk_root=$ANDROID_SDK_ROOT
+
 
       - name: Start ADB server
         run: adb start-server  # Assuming ADB is installed and in PATH
@@ -63,6 +80,15 @@ jobs:
         run: |
           ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
           echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
+
+
+      - name: Recreate AVD (Optional)
+        run: |
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
+
+
+      - name: List emulator devices (Force Refresh)
+        run: avdmanager list avd
 
 
       - name: List emulator devices
@@ -74,7 +100,7 @@ jobs:
           cd android
           mvn install -DskipTests
  
-      - name: Build the Project
+      - name: Build the Android app (APK)
         run: |
           cd android
           mvn clean install
@@ -90,6 +116,10 @@ jobs:
 
       - name: Verify adb Connection
         run: adb shell echo "Connection successful"
+        shell: bash
+
+      - name: Check Emulator Logs
+        run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt & 
         shell: bash
 
       - name: Install Appium and dependencies
