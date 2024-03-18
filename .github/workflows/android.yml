@@ -61,9 +61,6 @@ jobs:
           ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
           echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
-      - name: List emulator devices (Force Refresh)
-        run: avdmanager list avd
-
 
       - name: List emulator devices
         run: $ANDROID_SDK_ROOT/emulator/emulator -list-avds
@@ -74,7 +71,7 @@ jobs:
           cd android
           mvn install -DskipTests
  
-      - name: Build the Android app (APK)
+      - name: Build the Project
         run: |
           cd android
           mvn clean install
@@ -90,10 +87,6 @@ jobs:
 
       - name: Verify adb Connection
         run: adb shell echo "Connection successful"
-        shell: bash
-
-      - name: Check Emulator Logs
-        run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt & 
         shell: bash
 
       - name: Install Appium and dependencies
