@@ -89,7 +89,7 @@ public class AndroidWebDriverManager {
 			options.setNoSign(true);
 			options.setFullReset(false);
 			//System.out.println(appPath.getAbsolutePath());
-		}else if (deviceName.equals("android14")) {
+		}else if (deviceName.equals("android10")) {
 			options.setDeviceName(prop.getProperty("android14DeviceName"));
 			options.setPlatformName(prop.getProperty("android14PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android14PlatformVersion"));
