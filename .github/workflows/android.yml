@@ -1,7 +1,7 @@
-#on:
-  #push:
-    #branches:
-     # - master
+on:
+  push:
+    branches:
+       - master1
  
 jobs:
   test:
