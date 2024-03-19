@@ -93,9 +93,9 @@ public class AndroidWebDriverManager {
 			options.setDeviceName(prop.getProperty("android09DeviceName"));
 			options.setPlatformName(prop.getProperty("android09PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
-			options.setApp("MakeMyTrip.apk");
-			options.setAutomationName("UiAutomator2");
-			options.setCapability("appWaitForLaunch",false);
+			options.setApp(directoryPath.getAbsolutePath());
+			//options.setAutomationName("UiAutomator2");
+			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
 			options.setCapability("androidInstallTimeout",240000);
 			options.setCapability("ignoreHiddenApiPolicyError",true);
