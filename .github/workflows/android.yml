@@ -107,26 +107,8 @@ jobs:
       - name: Start Emulator Device
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 10  # Give some time for the emulators to start up initially
-          timeout=600  # Timeout value in seconds
-          start_time=$(date +%s)
-          while true; do
-            current_time=$(date +%s)
-            elapsed_time=$((current_time - start_time))
-            if [ $elapsed_time -ge $timeout ]; then
-              echo "Timeout reached. Emulators might not have fully booted up."
-              break
-            fi
-            emulator_status=$(adb devices | grep emulator | wc -l)
-            if [ $emulator_status -ge 2 ]; then
-              echo "Both emulators are up."
-              break
-            else
-              echo "Waiting for emulators to boot up... Elapsed time: $elapsed_time seconds"
-              sleep 10  # Adjust the sleep interval as needed
-            fi
-          done
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
+          sleep 600
     
       - name: Verify Emulator Status
         run: adb devices
