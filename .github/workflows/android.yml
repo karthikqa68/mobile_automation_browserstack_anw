@@ -136,8 +136,8 @@ jobs:
         run: adb -s emulator-5554 shell echo "Connection successful"
         shell: bash
  
-      - name: Verify adb Connection emulator-5555
-        run: adb -s emulator-5555 shell echo "Connection successful"
+      - name: Verify adb Connection emulator-5556
+        run: adb -s emulator-5556 shell echo "Connection successful"
         shell: bash
  
       - name: Check Emulator Logs
