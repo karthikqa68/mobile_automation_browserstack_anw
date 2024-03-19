@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: macos-latest
     env:
-      ANDROID_HOME: ${{ github.workspace }}/android-sdk  
+      ANDROID_HOME: ${{ github.workspace }}/android-sdk
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
       ANDROID_AVD_HOME: ${{ github.workspace }}/.config/.android/avd
       JAVA_HOME: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
@@ -40,11 +40,11 @@ jobs:
 
 
       - name: Verify ANDROID_SDK_ROOT
-        run: | 
-            echo $ANDROID_HOME
-            echo $ANDROID_SDK_ROOT
-            ls -la $ANDROID_SDK_ROOT
-            ls -la $ANDROID_SDK_ROOT/cmdline-tools
+        run: |
+          echo $ANDROID_HOME
+          echo $ANDROID_SDK_ROOT
+          ls -la $ANDROID_SDK_ROOT
+          ls -la $ANDROID_SDK_ROOT/cmdline-tools
 
 
       - name: Set up Android SDK and PATH
@@ -65,10 +65,10 @@ jobs:
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
 
       - name: List Install system image
-        run: | 
-            ls -la $ANDROID_SDK_ROOT
-            ls -la $ANDROID_SDK_ROOT/system-images/android-29
-    
+        run: |
+          ls -la $ANDROID_SDK_ROOT
+          ls -la $ANDROID_SDK_ROOT/system-images/android-29
+
       - name: List Available SDK Packages
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --list --sdk_root=$ANDROID_SDK_ROOT
 
@@ -99,17 +99,17 @@ jobs:
         run: |
           cd android
           mvn install -DskipTests
- 
+
       - name: Build the Android app (APK)
         run: |
           cd android
           mvn clean install
- 
+
       - name: Start Emulator Device
         run: |
-            ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -logcat *:e -memory 2048 -wipe-data -verbose &)
-            sleep 500
-            
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -logcat *:e -memory 2048 -wipe-data -verbose &)
+          sleep 500
+
       - name: Verify Emulator Status
         run: adb devices
         shell: bash
@@ -119,21 +119,21 @@ jobs:
         shell: bash
 
       - name: Check Emulator Logs
-        run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt & 
+        run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt &
         shell: bash
 
       - name: Install Appium and dependencies
         run: |
-            npm install -g appium@v1.22
-            npm install -g appium-doctor
-            appium-doctor --android
+          npm install -g appium@v1.22
+          npm install -g appium-doctor
+          appium-doctor --android
         shell: bash
- 
+
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
       - name: Wait for Appium server to start
         run: sleep 10
-      
+
       - name: Run Appium tests
         run: |
           pwd
@@ -152,7 +152,7 @@ jobs:
           name: test-reports-failure
           path: android/reports
         if: failure()
-        
+
       - name: Stop emulator (optional)
         run: adb emu kill &  # Background process to avoid interrupting tests
  
