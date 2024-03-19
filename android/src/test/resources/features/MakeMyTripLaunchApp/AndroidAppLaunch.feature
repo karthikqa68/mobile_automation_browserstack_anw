@@ -6,7 +6,7 @@ Feature: Launch the app
     Then   I select english language
   Examples:
     | device-name |
-    | android11   |
+    | android09   |
     | android10   |
 
 

@@ -89,10 +89,10 @@ public class AndroidWebDriverManager {
 			options.setNoSign(true);
 			options.setFullReset(false);
 			//System.out.println(appPath.getAbsolutePath());
-		}else if (deviceName.equals("android10")) {
-			options.setDeviceName(prop.getProperty("android14DeviceName"));
-			options.setPlatformName(prop.getProperty("android14PlatformName"));
-			options.setPlatformVersion(prop.getProperty("android14PlatformVersion"));
+		}else if (deviceName.equals("android09")) {
+			options.setDeviceName(prop.getProperty("android09DeviceName"));
+			options.setPlatformName(prop.getProperty("android09PlatformName"));
+			options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
 			options.setApp("MakeMyTrip.apk");
 			options.setAutomationName("UiAutomator2");
 			options.setCapability("appWaitForLaunch",false);
