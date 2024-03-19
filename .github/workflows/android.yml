@@ -108,8 +108,7 @@ jobs:
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &)
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &)
-          wait
-          sleep 500
+          sleep 600
  
       - name: Verify Emulator Status
         run: adb devices
