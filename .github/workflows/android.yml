@@ -1,3 +1,5 @@
+name: Mobile Automation Testing (Android Emulator)
+
 on:
   push:
     branches:
@@ -17,27 +19,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-
       - name: Set up Java JDK
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'adopt'
 
-
       - name: Print ANDROID_SDK_ROOT path
         run: echo ${{ env.ANDROID_SDK_ROOT }}
-
 
       - name: Download Android SDK tools (using custom location)
         uses: android-actions/setup-android@v3
         with:
           sdk_root: ${{ env.ANDROID_SDK_ROOT }}
 
-
       - name: Install additional packages (modify list as needed)
-        run: sdkmanager --install 'build-tools;29.0.0' 'platform-tools' 'platforms;android-29' 'cmdline-tools;latest' 'emulator'
-
+        run: |
+          sdkmanager --install 'build-tools;29.0.0' 'platform-tools' 'platforms;android-29' 'cmdline-tools;latest' 'emulator'
+          sdkmanager --install 'build-tools;28.0.0' 'platform-tools' 'platforms;android-28' 'cmdline-tools;latest' 'emulator'
+        
 
       - name: Verify ANDROID_SDK_ROOT
         run: |
@@ -45,7 +45,6 @@ jobs:
           echo $ANDROID_SDK_ROOT
           ls -la $ANDROID_SDK_ROOT
           ls -la $ANDROID_SDK_ROOT/cmdline-tools
-
 
       - name: Set up Android SDK and PATH
         run: |
@@ -55,11 +54,13 @@ jobs:
           echo "$ANDROID_SDK_ROOT/platforms" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/tools" >> $GITHUB_PATH
           echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-29" "emulator" # Add any additional packages
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-28" "emulator" # Add any additional packages
 
 
       - name: Install system image (android-29;google_apis;x86_64)
-        run: echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-29;google_apis;x86_64"
-
+        run: |
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-29;google_apis;x86_64"
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-28;google_apis;x86_64"
 
       - name: Update Android SDK Manager
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
@@ -68,52 +69,33 @@ jobs:
         run: |
           ls -la $ANDROID_SDK_ROOT
           ls -la $ANDROID_SDK_ROOT/system-images/android-29
+          ls -la $ANDROID_SDK_ROOT/system-images/android-28
 
       - name: List Available SDK Packages
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --list --sdk_root=$ANDROID_SDK_ROOT
 
-
       - name: Start ADB server
         run: adb start-server  # Assuming ADB is installed and in PATH
 
-      - name: Create AVD
+      - name: Create AVD emulator-5554
         run: |
-          ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
+          ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin
           echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
-
-
-      - name: Recreate AVD (Optional)
-        run: |
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
-
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-28;google_apis;x86_64' --device 'pixel' --sdcard 512M
+  
 
       - name: List emulator devices (Force Refresh)
         run: avdmanager list avd
 
-
       - name: List emulator devices
         run: $ANDROID_SDK_ROOT/emulator/emulator -list-avds
 
-
-      - name: Install Appium dependencies
-        run: |
-          cd android
-          mvn install -DskipTests
-
-      - name: Build the Android app (APK)
-        run: |
-          cd android
-          mvn clean install
-
-      - name: Start Emulator Device
-        run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -logcat *:e -memory 2048 -wipe-data -verbose &)
-          sleep 500
+      # Your other steps go here
 
       - name: Verify Emulator Status
         run: adb devices
-        shell: bash
-
+        shell: bash     
+        
       - name: Verify adb Connection
         run: adb shell echo "Connection successful"
         shell: bash
