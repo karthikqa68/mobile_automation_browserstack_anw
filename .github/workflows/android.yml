@@ -58,8 +58,9 @@ jobs:
  
  
       - name: Install system image (android-29;google_apis;x86_64)
-        run:echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-29;google_apis;x86_64" "system-images;android-28;google_apis;x86_64"
- 
+        run: |
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-29;google_apis;x86_64" "system-images;android-28;google_apis;x86_64"  
+      
       - name: Update Android SDK Manager
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
  
