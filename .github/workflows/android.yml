@@ -49,15 +49,9 @@ jobs:
         run: lsof -i -P -n | grep LISTEN
         shell: bash
 
-      - name: Start another Appium server
-        run: appium -a 127.0.0.1 -p 0 &
-        
-      - name: Wait for Appium server to start
-        run: sleep 10
-          
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
+      - name: Capture Appium port for the first server
+        run: echo "APPIUM_PORT_1=$(lsof -i -P -n | grep LISTEN | grep appium | awk 'NR==1{print $9}' | cut -d ':' -f 2)" >> $GITHUB_ENV
+
  
       - name: Print ANDROID_SDK_ROOT path
         run: echo ${{ env.ANDROID_SDK_ROOT }}
@@ -133,8 +127,6 @@ jobs:
           cd android
           mvn install -DskipTests
 
-
- 
       - name: Build the Android app (APK)
         run: |
           cd android
@@ -142,9 +134,25 @@ jobs:
  
       - name: Start Emulator Device
         run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port $APPIUM_PORT_1 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
           sleep 500
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
+      
+      - name: Start another Appium server
+        run: appium -a 127.0.0.1 -p 0 &
+        
+      - name: Wait for Appium server to start
+        run: sleep 10
+          
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
+
+      - name: Capture Appium port for the second server
+        run: echo "APPIUM_PORT_2=$(lsof -i -P -n | grep LISTEN | grep appium | awk 'NR==2{print $9}' | cut -d ':' -f 2)" >> $GITHUB_ENV
+
+      - name: Start Another Emulator Device
+        run: |
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port $APPIUM_PORT_2 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
           sleep 500
     
       - name: Verify Emulator Status
