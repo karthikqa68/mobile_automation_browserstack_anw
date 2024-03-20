@@ -44,9 +44,14 @@ jobs:
 
       - name: Capture Appium port for the first server
         run: |
-         APPIUM_PORT_1=$(lsof -i -P -n | grep LISTEN | grep appium | awk 'NR==1{print $9}' | cut -d ':' -f 2)
-         echo "APPIUM_PORT_1=$APPIUM_PORT_1" >> $GITHUB_ENV
-
+          APPIUM_PORT_1=$(lsof -i -P -n | grep LISTEN | grep -i 'node' | awk '{print $9}' | cut -d ':' -f 2)
+          if [ -n "$APPIUM_PORT_1" ]; then
+            echo "APPIUM_PORT_1=$APPIUM_PORT_1" >> $GITHUB_ENV
+          else
+            echo "Failed to capture Appium port." >&2
+            exit 1
+          fi
+        
       - name: Print APPIUM_PORT_1 variable
         run: echo "APPIUM_PORT_1 = $APPIUM_PORT_1"
        
