@@ -102,6 +102,31 @@ jobs:
         run: |
           cd android
           mvn install -DskipTests
+
+          #----
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
+    
+      - name: Start Appium server
+        run: appium -a 127.0.0.1 -p 0 &
+        
+      - name: Wait for Appium server to start
+        run: sleep 10
+          
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
+
+      - name: Start another Appium server
+        run: appium -a 127.0.0.1 -p 0 &
+        
+      - name: Wait for Appium server to start
+        run: sleep 10
+          
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
  
       - name: Build the Android app (APK)
         run: |
