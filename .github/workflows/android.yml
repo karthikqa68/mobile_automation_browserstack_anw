@@ -27,6 +27,30 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+          #----
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
+    
+      - name: Start Appium server
+        run: appium -a 127.0.0.1 -p 0 &
+        
+      - name: Wait for Appium server to start
+        run: sleep 10
+          
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
+
+      - name: Start another Appium server
+        run: appium -a 127.0.0.1 -p 0 &
+        
+      - name: Wait for Appium server to start
+        run: sleep 10
+          
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
  
       - name: Print ANDROID_SDK_ROOT path
         run: echo ${{ env.ANDROID_SDK_ROOT }}
@@ -36,7 +60,6 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           sdk_root: ${{ env.ANDROID_SDK_ROOT }}
- 
  
       - name: Install additional packages (modify list as needed)
         run: sdkmanager --install 'build-tools;29.0.0' 'platform-tools' 'platforms;android-29' 'platforms;android-28'  'cmdline-tools;latest' 'emulator'
@@ -103,30 +126,7 @@ jobs:
           cd android
           mvn install -DskipTests
 
-          #----
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
-    
-      - name: Start Appium server
-        run: appium -a 127.0.0.1 -p 0 &
-        
-      - name: Wait for Appium server to start
-        run: sleep 10
-          
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
 
-      - name: Start another Appium server
-        run: appium -a 127.0.0.1 -p 0 &
-        
-      - name: Wait for Appium server to start
-        run: sleep 10
-          
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
  
       - name: Build the Android app (APK)
         run: |
