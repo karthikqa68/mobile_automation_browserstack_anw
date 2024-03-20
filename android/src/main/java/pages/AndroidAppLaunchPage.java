@@ -3,6 +3,8 @@ package pages;
 
 import managers.AndroidWebDriverManager;
 
+import java.net.MalformedURLException;
+
 public class AndroidAppLaunchPage {
     private AndroidWebDriverManager app;
 
@@ -10,7 +12,7 @@ public class AndroidAppLaunchPage {
         this.app = app;
     }
 
-    public void launchingApp(String deviceName) {
+    public void launchingApp(String deviceName) throws MalformedURLException {
         app.log("Opening the app");
         app.openApp(deviceName);
         app.log("Opened app successfully");

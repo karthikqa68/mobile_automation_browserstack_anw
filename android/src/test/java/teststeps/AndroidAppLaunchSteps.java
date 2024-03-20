@@ -7,6 +7,8 @@ import io.cucumber.java.Status;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.net.MalformedURLException;
+
 public class AndroidAppLaunchSteps {
 
     private context.AndroidTestContext context;
@@ -37,7 +39,7 @@ public class AndroidAppLaunchSteps {
     }
 
     @When("I launch the Android app on device-{string}")
-    public void launchApp(String deviceName) {
+    public void launchApp(String deviceName) throws MalformedURLException {
         androidAppLaunchPage.launchingApp(deviceName);
     }
 
