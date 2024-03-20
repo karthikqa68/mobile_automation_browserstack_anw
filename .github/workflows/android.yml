@@ -133,7 +133,13 @@ jobs:
           npm install -g appium-doctor
           appium-doctor --android
         shell: bash
-
+        
+  check_ports:
+    runs-on: macos-latest
+    steps:
+      - name: Check used ports
+        run: |
+          netstat -tuln
         
  
       - name: Start Appium server
