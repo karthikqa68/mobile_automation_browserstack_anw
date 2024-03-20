@@ -11,10 +11,7 @@ jobs:
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
       ANDROID_AVD_HOME: ${{ github.workspace }}/.config/.android/avd
       JAVA_HOME: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
-      JAVA_HOME_11_X64: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
-      APPIUM_JS_PATH: /home/runner/work/mobile_automation_anw/mobile_automation_anw/node_modules/appium/build/lib/main.js
-      NODE_PATH: /usr/local/bin/node
-  
+      JAVA_HOME_11_X64: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home 
     
     steps:
       - name: Checkout code
@@ -33,10 +30,6 @@ jobs:
           npm install -g appium@v1.22
           npm install -g appium-doctor
           appium-doctor --android
-        shell: bash
-        
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
         shell: bash
     
       - name: Start Appium server
@@ -171,37 +164,6 @@ jobs:
         run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt &
         shell: bash
  
-      - name: Install Appium and dependencies
-        run: |
-          npm install -g appium@v1.22
-          npm install -g appium-doctor
-          appium-doctor --android
-        shell: bash
-        
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
-    
-      - name: Start Appium server
-        run: appium -a 127.0.0.1 -p 0 &
-        
-      - name: Wait for Appium server to start
-        run: sleep 10
-          
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
-
-      - name: Start another Appium server
-        run: appium -a 127.0.0.1 -p 0 &
-        
-      - name: Wait for Appium server to start
-        run: sleep 10
-          
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
-        
       - name: Run Appium tests
         run: |
           pwd
