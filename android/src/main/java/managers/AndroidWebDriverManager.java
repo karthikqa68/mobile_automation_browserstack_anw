@@ -81,6 +81,7 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android11PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
+			options.setSystemPort(8201);
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
@@ -94,6 +95,7 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android09PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
+			options.setSystemPort(8202);
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
