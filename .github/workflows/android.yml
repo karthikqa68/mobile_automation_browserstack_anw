@@ -150,7 +150,14 @@ jobs:
         shell: bash
 
       - name: Capture Appium port for the second server
-        run: echo "APPIUM_PORT_2=$(lsof -i -P -n | grep LISTEN | grep appium | awk 'NR==2{print $9}' | cut -d ':' -f 2)" >> $GITHUB_ENV
+        run: |
+          APPIUM_PORT_2=$(lsof -i -P -n | grep LISTEN | grep -i 'node' | awk 'NR==2{print $9}' | cut -d ':' -f 2)
+          if [ -n "$APPIUM_PORT_2" ]; then
+            echo "APPIUM_PORT_2=$APPIUM_PORT_2" >> $GITHUB_ENV
+          else
+            echo "Failed to capture Appium port for the second server." >&2
+            exit 1
+          fi
 
       - name: Start Another Emulator Device
         run: |
