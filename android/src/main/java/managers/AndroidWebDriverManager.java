@@ -19,7 +19,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 import java.util.Date;
 import java.util.List;
@@ -82,7 +81,7 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android11PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
-			options.setSystemPort(4728);
+			//options.setSystemPort(4723);
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
@@ -97,7 +96,7 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android09PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
-			options.setSystemPort(4730);
+			//options.setSystemPort(4730);
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
@@ -111,8 +110,9 @@ public class AndroidWebDriverManager {
 		wait(15000);
 
 		try {
-			String appiumServerUrl = "http://localhost:" + options.getCapability("systemPort") + "/wd/hub";
-			aDriver =  new AndroidDriver(new URL(appiumServerUrl), options);
+			//String appiumServerUrl = "http://127:" + options.getCapability("systemPort") + "/wd/hub";
+			//aDriver =  new AndroidDriver(new URL("http://127.0.0.1"), options);
+			aDriver = new AndroidDriver(options);
 			//driver = new RemoteWebDriver(new URL(prop.getProperty("hubURL")), capabilities);
 			//aDriver = (AndroidDriver<AndroidElement>)driver;
 			//iDriver =  (IOSDriver)driver;

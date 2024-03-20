@@ -6,6 +6,7 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import managers.AndroidAppiumServer;
 
 import java.net.MalformedURLException;
 
@@ -21,7 +22,7 @@ public class AndroidAppLaunchSteps {
 
     @Before
     public void before(Scenario scenario) {
-        //AndroidAppiumServer.start();
+        AndroidAppiumServer.start();
         String[] tags = scenario.getSourceTagNames().toArray(new String[0]);
         context.createScenario(scenario.getName(), tags);
         context.log("Starting scenario " + scenario.getName());
@@ -35,7 +36,7 @@ public class AndroidAppLaunchSteps {
         }
         context.endScenario();
         context.getAndroidPageObjectManager().getAndroidWebDriverManager().quit();
-        //AndroidAppiumServer.stop();
+        AndroidAppiumServer.stop();
     }
 
     @When("I launch the Android app on device-{string}")

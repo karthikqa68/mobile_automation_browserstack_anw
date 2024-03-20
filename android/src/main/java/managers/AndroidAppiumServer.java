@@ -15,10 +15,13 @@ public class AndroidAppiumServer {
         builder
                 .withAppiumJS(new File("/usr/lib/node_modules/appium/build/lib/main.js"))
                 .usingDriverExecutable(new File("/usr/bin/node"))
-                .usingPort(4723)
+                .usingAnyFreePort()
+                //.usingPort(4723)
+                .withIPAddress("127.0.0.1")
+                //.usingAnyFreePort()
                 .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
-                .withLogFile(new File("Appiumlog.txt"))
-                .withIPAddress("127.0.0.1");
+                .withLogFile(new File("Appiumlog.txt"));
+
 
         server = AppiumDriverLocalService.buildService(builder);
         //server.start();
