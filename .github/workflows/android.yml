@@ -168,12 +168,12 @@ jobs:
         run: adb devices
         shell: bash
 
-      - name: Verify adb Connection emulator-5554
-        run: adb -s emulator-5554 shell echo "Connection successful"
+      - name: Verify adb Connection emulator-$APPIUM_PORT_1
+        run: adb -s emulator-$APPIUM_PORT_1 shell echo "Connection successful"
         shell: bash
  
-      - name: Verify adb Connection emulator-5556
-        run: adb -s emulator-5556 shell echo "Connection successful"
+      - name: Verify adb Connection emulator-$APPIUM_PORT_2
+        run: adb -s emulator-$APPIUM_PORT_2 shell echo "Connection successful"
         shell: bash
  
       - name: Check Emulator Logs
