@@ -18,11 +18,12 @@ import reports.ExtentManager;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
-import java.net.URL;
 
 
 public class AndroidWebDriverManager {
@@ -71,7 +72,7 @@ public class AndroidWebDriverManager {
 	 * This Method is called for opening the browser
 	 *
      */
-	public void openApp(String deviceName) {
+	public void openApp(String deviceName) throws MalformedURLException {
          UiAutomator2Options options = new UiAutomator2Options();
 		//File appPath = new File(prop.getProperty("apkPath"));
 		System.out.println(System.getProperty("user.dir"));
@@ -81,7 +82,7 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android11PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
-			options.setSystemPort(8201);
+			options.setSystemPort(4724);
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
@@ -89,13 +90,14 @@ public class AndroidWebDriverManager {
 			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
 			options.setFullReset(false);
+			//aDriver =  new AndroidDriver(new URL(prop.getProperty("hubURL")), options);
 			//System.out.println(appPath.getAbsolutePath());
 		}else if (deviceName.equals("android09")) {
 			options.setDeviceName(prop.getProperty("android09DeviceName"));
 			options.setPlatformName(prop.getProperty("android09PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
-			options.setSystemPort(8202);
+			options.setSystemPort(4723);
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
 			options.setCapability("–session-override",true);
@@ -103,12 +105,14 @@ public class AndroidWebDriverManager {
 			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
 			options.setFullReset(false);
+			//aDriver =  new AndroidDriver(new URL(prop.getProperty("hubURL1")), options);
 		}
 
 		wait(15000);
 
 		try {
-			aDriver =  new AndroidDriver(new URL(prop.getProperty("hubURL")), options);
+			String appiumServerUrl = "http://localhost:" + options.getCapability("systemPort") + "/wd/hub";
+			aDriver =  new AndroidDriver(new URL(appiumServerUrl), options);
 			//driver = new RemoteWebDriver(new URL(prop.getProperty("hubURL")), capabilities);
 			//aDriver = (AndroidDriver<AndroidElement>)driver;
 			//iDriver =  (IOSDriver)driver;
