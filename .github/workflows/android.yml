@@ -28,6 +28,13 @@ jobs:
           distribution: 'adopt'
 
           #----
+      - name: Install Appium and dependencies
+        run: |
+          npm install -g appium@v1.22
+          npm install -g appium-doctor
+          appium-doctor --android
+        shell: bash
+        
       - name: Check Port Numbers in Use
         run: lsof -i -P -n | grep LISTEN
         shell: bash
