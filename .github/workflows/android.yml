@@ -28,6 +28,8 @@ jobs:
           distribution: 'adopt'
 
       - name: Set environment variables
+        run : |
+          sleep 10
         env:
           APPIUM_JS_PATH: /home/runner/work/mobile_automation_anw/mobile_automation_anw/node_modules/appium/build/lib/main.js
           NODE_PATH: /usr/local/bin/node
