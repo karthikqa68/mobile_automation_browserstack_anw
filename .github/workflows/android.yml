@@ -138,6 +138,11 @@ jobs:
         run: appium -a 127.0.0.1 -p 4723 &
       - name: Wait for Appium server to start
         run: sleep 20
+
+      - name: Start another Appium server
+        run: appium -a 127.0.0.1 -p 4724 &
+      - name: Wait for Appium server to start
+        run: sleep 20
  
       - name: Run Appium tests
         run: |
