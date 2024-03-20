@@ -107,9 +107,9 @@ jobs:
       - name: Start Emulator Device
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 450
+          sleep 500
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 450
+          sleep 500
     
       - name: Verify Emulator Status
         run: adb devices
@@ -133,16 +133,18 @@ jobs:
           npm install -g appium-doctor
           appium-doctor --android
         shell: bash
+
+        
  
       - name: Start Appium server
-        run: appium -a 127.0.0.1 -p 4723 &
+        run: appium -a 127.0.0.1 -p 4728 &
       - name: Wait for Appium server to start
-        run: sleep 20
+        run: sleep 60
 
       - name: Start another Appium server
-        run: appium -a 127.0.0.1 -p 4724 &
+        run: appium -a 127.0.0.1 -p 4730 &
       - name: Wait for Appium server to start
-        run: sleep 20
+        run: sleep 60
  
       - name: Run Appium tests
         run: |
