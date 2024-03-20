@@ -27,12 +27,6 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Set environment variables
-        run : |
-          sleep 10
-        env:
-          APPIUM_JS_PATH: /home/runner/work/mobile_automation_anw/mobile_automation_anw/node_modules/appium/build/lib/main.js
-          NODE_PATH: /usr/local/bin/node
  
       - name: Print ANDROID_SDK_ROOT path
         run: echo ${{ env.ANDROID_SDK_ROOT }}
@@ -148,7 +142,17 @@ jobs:
         run: lsof -i -P -n | grep LISTEN
         shell: bash
     
- 
+      - name: Start Appium server
+        run: appium -a 127.0.0.1 -p 0 &
+        
+      - name: Wait for Appium server to start
+        run: sleep 10
+
+      - name: Start another Appium server
+        run: appium -a 127.0.0.1 -p 0 &
+        
+      - name: Wait for Appium server to start
+        run: sleep 10
       - name: Run Appium tests
         run: |
           pwd
