@@ -43,7 +43,9 @@ jobs:
         shell: bash
 
       - name: Capture Appium port for the first server
-        run: echo "APPIUM_PORT_1=$(lsof -i -P -n | grep LISTEN | grep appium | awk 'NR==1{print $9}' | cut -d ':' -f 2)" >> $GITHUB_ENV
+        run: |
+         APPIUM_PORT_1=$(lsof -i -P -n | grep LISTEN | grep appium | awk 'NR==1{print $9}' | cut -d ':' -f 2)
+         echo "APPIUM_PORT_1=$APPIUM_PORT_1" >> $GITHUB_ENV
 
       - name: Print APPIUM_PORT_1 variable
         run: echo "APPIUM_PORT_1 = $APPIUM_PORT_1"
