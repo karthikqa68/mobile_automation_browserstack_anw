@@ -20,8 +20,9 @@ public class AndroidAppLaunchSteps {
     }
 
     @Before
-    public void before(Scenario scenario) {
+    public void before(Scenario scenario) throws InterruptedException {
         //AndroidAppiumServer.start();
+        wait(10000);
         String[] tags = scenario.getSourceTagNames().toArray(new String[0]);
         context.createScenario(scenario.getName(), tags);
         context.log("Starting scenario " + scenario.getName());
