@@ -146,7 +146,7 @@ jobs:
       - name: Start Emulator Device
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port $APPIUM_PORT_1 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 300
+          sleep 400
 
 
           - name: Check if port is in use and kill process
