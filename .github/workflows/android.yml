@@ -31,6 +31,19 @@ jobs:
           npm install -g appium-doctor
           appium-doctor --android
         shell: bash
+
+      - name: Check if port is in use and kill process
+        run: |
+          PORT=4723  # Replace with the port number you want to check
+          PID=$(lsof -t -i:$PORT)
+          if [ -n "$PID" ]; then
+            echo "Process using port $PORT found. Killing process..."
+            kill $PID
+            sleep 5  # Wait for the process to be killed
+          else
+            echo "Port $PORT is free."
+          fi
+        shell: bash
     
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
@@ -133,9 +146,24 @@ jobs:
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port $APPIUM_PORT_1 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
           sleep 300
-      
+
+
+      - name: Check if port is in use and kill process
+        run: |
+          PORT=4724  # Replace with the port number you want to check
+          PID=$(lsof -t -i:$PORT)
+          if [ -n "$PID" ]; then
+            echo "Process using port $PORT found. Killing process..."
+            kill $PID
+            sleep 5  # Wait for the process to be killed
+          else
+            echo "Port $PORT is free."
+          fi
+        shell: bash
+
       - name: Start another Appium server
         run: appium -a 127.0.0.1 -p 4724 &
+        
         
       - name: Wait for Appium server to start
         run: sleep 10
