@@ -43,8 +43,7 @@ jobs:
           else
             echo "Port $PORT is free."
           fi
-        shell: bash
-    
+          
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
         
@@ -159,7 +158,7 @@ jobs:
           else
             echo "Port $PORT is free."
           fi
-        shell: bash
+
 
       - name: Start another Appium server
         run: appium -a 127.0.0.1 -p 4724 &
