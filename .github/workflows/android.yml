@@ -55,7 +55,7 @@ jobs:
           sdk_root: ${{ env.ANDROID_SDK_ROOT }}
  
       - name: Install additional packages (modify list as needed)
-        run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools' 'platforms;android-27' 'platforms;android-30' 'platforms;android-29' 'platforms;android-28'  'cmdline-tools;latest' 'emulator'
+        run: sdkmanager --install 'build-tools;31.0.0' 'platform-tools' 'platforms;android-31' 'platforms;android-30' 'platforms;android-29' 'cmdline-tools;latest' 'emulator'
  
  
       - name: Verify ANDROID_SDK_ROOT
@@ -73,13 +73,13 @@ jobs:
           echo "$ANDROID_SDK_ROOT/emulator" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/platforms" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/tools" >> $GITHUB_PATH
-          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-27" "platforms;android-30" "platforms;android-29" "platforms;android-28" "emulator" # Add any additional packages
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-31" "platforms;android-30" "platforms;android-29" "emulator" # Add any additional packages
       
  
  
       - name: Install system image (android-29;google_apis;x86_64)
         run: |
-          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-27;google_apis;x86_64" "system-images;android-30;google_apis;x86_64" "system-images;android-29;google_apis;x86_64" "system-images;android-28;google_apis;x86_64"  
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-31;google_apis;x86_64" "system-images;android-30;google_apis;x86_64" "system-images;android-29;google_apis;x86_64" 
       
       - name: Update Android SDK Manager
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
@@ -102,7 +102,7 @@ jobs:
         run: |
           ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
           echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-27;google_apis;x86_64' --device 'pixel' --sdcard 512M
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-31;google_apis;x86_64' --device 'pixel' --sdcard 512M
  
  
       - name: List emulator devices (Force Refresh)
