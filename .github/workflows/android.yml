@@ -149,8 +149,8 @@ jobs:
           sleep 400
 
 
-          - name: Check if port is in use and kill process
-            run: |
+      - name: Check if port is in use and kill process
+        run: |
               set -e  # Exit immediately if any command fails
               PORT=4724  # Replace with the port number you want to check
               PID=$(lsof -t -i:$PORT || true)  # Use '|| true' to prevent script failure if lsof command fails
