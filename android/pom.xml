@@ -171,6 +171,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
+                 <configuration>
+                    <!-- Enable parallel execution -->
+                    <parallel>methods</parallel>
+                    <!-- Set the number of parallel threads -->
+                    <threadCount>2</threadCount>
+                    <!-- Set to true to reuse JVMs between test runs -->
+                    <reuseForks>true</reuseForks>
+                    <!-- Set timeout for test execution -->
+                    <forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
+                </configuration>
             </plugin>
 
         </plugins>
