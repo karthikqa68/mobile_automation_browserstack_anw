@@ -151,7 +151,7 @@ jobs:
       - name: Check if port is in use and kill process
         run: |
               set -e  # Exit immediately if any command fails
-              PORT=4724  # Replace with the port number you want to check
+              PORT=4725  # Replace with the port number you want to check
               PID=$(lsof -t -i:$PORT || true)  # Use '|| true' to prevent script failure if lsof command fails
               if [ -n "$PID" ]; then
                 echo "Process using port $PORT found. Killing process..."
@@ -164,7 +164,7 @@ jobs:
 
 
       - name: Start another Appium server
-        run: appium -a 127.0.0.1 -p 4724 &
+        run: appium -a 127.0.0.1 -p 4725 &
         
         
       - name: Wait for Appium server to start
@@ -176,7 +176,7 @@ jobs:
 
       - name: Capture port for the second server
         run: |
-          APPIUM_PORT_2=4724
+          APPIUM_PORT_2=4725
           echo "APPIUM_PORT_2=$APPIUM_PORT_2" >> $GITHUB_ENV
 
       - name: Start Another Emulator Device
