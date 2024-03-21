@@ -128,7 +128,7 @@ jobs:
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4723 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 500
+          sleep 800
 
     
 
@@ -137,13 +137,7 @@ jobs:
         run: adb devices
         shell: bash
 
-      - name: Verify adb Connection emulator-5554
-        run: adb -s emulator-5554 shell echo "Connection successful"
-        shell: bash
- 
-      - name: Verify adb Connectione emulator-5556
-        run: adb -s emulator-5556 shell echo "Connection successful"
-        shell: bash
+   
  
       - name: Check Emulator Logs
         run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt &
