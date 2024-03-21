@@ -33,7 +33,7 @@ jobs:
         shell: bash
     
       - name: Start Appium server
-        run: appium -a 127.0.0.1 -p 0 &
+        run: appium -a 127.0.0.1 -p 4723 &
         
       - name: Wait for Appium server to start
         run: sleep 10
@@ -42,15 +42,10 @@ jobs:
         run: lsof -i -P -n | grep LISTEN
         shell: bash
 
-      - name: Capture Appium port for the first server
+      - name: Capture port for the first server
         run: |
-          APPIUM_PORT_1=$(lsof -i -P -n | grep LISTEN | grep -i 'node' | awk '{print $9}' | cut -d ':' -f 2)
-          if [ -n "$APPIUM_PORT_1" ]; then
-            echo "APPIUM_PORT_1=$APPIUM_PORT_1" >> $GITHUB_ENV
-          else
-            echo "Failed to capture Appium port." >&2
-            exit 1
-          fi
+          APPIUM_PORT_1=4723
+          echo "APPIUM_PORT_1=$APPIUM_PORT_1" >> $GITHUB_ENV
         
       - name: Print APPIUM_PORT_1 variable
         run: echo "APPIUM_PORT_1 = $APPIUM_PORT_1"
@@ -140,7 +135,7 @@ jobs:
           sleep 500
       
       - name: Start another Appium server
-        run: appium -a 127.0.0.1 -p 0 &
+        run: appium -a 127.0.0.1 -p 4724 &
         
       - name: Wait for Appium server to start
         run: sleep 10
@@ -149,15 +144,10 @@ jobs:
         run: lsof -i -P -n | grep LISTEN
         shell: bash
 
-      - name: Capture Appium port for the second server
+      - name: Capture port for the second server
         run: |
-          APPIUM_PORT_2=$(lsof -i -P -n | grep LISTEN | grep -i 'node' | awk 'NR==2{print $9}' | cut -d ':' -f 2)
-          if [ -n "$APPIUM_PORT_2" ]; then
-            echo "APPIUM_PORT_2=$APPIUM_PORT_2" >> $GITHUB_ENV
-          else
-            echo "Failed to capture Appium port for the second server." >&2
-            exit 1
-          fi
+          APPIUM_PORT_2=4724
+          echo "APPIUM_PORT_2=$APPIUM_PORT_2" >> $GITHUB_ENV
 
       - name: Start Another Emulator Device
         run: |
