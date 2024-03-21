@@ -132,26 +132,9 @@ jobs:
       
           # Start emulator-5556 in background
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4727 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-      
-          # Loop until both emulators are ready
-          while true; do
-            # Check emulator-5554 status
-            if adb -s emulator-5554 shell getprop init.svc.bootanim | grep -q "stopped"; then
-              echo "emulator-5554 booted"
-              break
-            fi
-      
-            # Check emulator-5556 status
-            if adb -s emulator-5556 shell getprop init.svc.bootanim | grep -q "stopped"; then
-              echo "emulator-5556 booted"
-              break
-            fi
-      
-            # Wait for a short duration before checking again
-            sleep 5
-          done
-      
-          echo "Both emulators booted successfully. Proceeding to next step..."
+          
+          sleep 800
+          
 
 
     
