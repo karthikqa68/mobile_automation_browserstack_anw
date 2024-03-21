@@ -146,7 +146,7 @@ jobs:
       - name: Start Emulator Device
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port $APPIUM_PORT_1 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 300
+          sleep 500
 
       - name: Check if port is in use and kill process
         run: |
@@ -182,18 +182,18 @@ jobs:
       - name: Start Another Emulator Device
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port $APPIUM_PORT_2 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 300
+          sleep 500
     
       - name: Verify Emulator Status
         run: adb devices
         shell: bash
 
-      - name: Verify adb Connection emulator-$APPIUM_PORT_1
-        run: adb -s emulator-$APPIUM_PORT_1 shell echo "Connection successful"
+      - name: Verify adb Connection emulator-5554
+        run: adb -s emulator-5554 shell echo "Connection successful"
         shell: bash
  
-      - name: Verify adb Connection emulator-$APPIUM_PORT_2
-        run: adb -s emulator-$APPIUM_PORT_2 shell echo "Connection successful"
+      - name: Verify adb Connectione emulator-5556
+        run: adb -s emulator-5556 shell echo "Connection successful"
         shell: bash
  
       - name: Check Emulator Logs
