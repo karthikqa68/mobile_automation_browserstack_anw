@@ -127,8 +127,8 @@ jobs:
       - name: Start Emulator Device
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4723 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 500
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
+          sleep 500
 
     
 
