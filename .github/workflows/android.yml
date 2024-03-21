@@ -32,19 +32,7 @@ jobs:
           appium-doctor --android
         shell: bash
 
-      - name: Check if port is in use and kill process
-        run: |
-          set -e  # Exit immediately if any command fails
-          PORT=4723  # Replace with the port number you want to check
-          PID=$(lsof -t -i:$PORT || true)  # Use '|| true' to prevent script failure if lsof command fails
-          if [ -n "$PID" ]; then
-            echo "Process using port $PORT found. Killing process..."
-            kill $PID || true  # Use '|| true' to prevent script failure if kill command fails
-            sleep 5  # Wait for the process to be killed
-          else
-            echo "Port $PORT is free."
-          fi
-
+     
           
       - name: Start Appium server
         run: appium -a 127.0.0.1 -p 4723 &
@@ -56,13 +44,6 @@ jobs:
         run: lsof -i -P -n | grep LISTEN
         shell: bash
 
-      - name: Capture port for the first server
-        run: |
-          APPIUM_PORT_1=4723
-          echo "APPIUM_PORT_1=$APPIUM_PORT_1" >> $GITHUB_ENV
-        
-      - name: Print APPIUM_PORT_1 variable
-        run: echo "APPIUM_PORT_1 = $APPIUM_PORT_1"
        
       - name: Print ANDROID_SDK_ROOT path
         run: echo ${{ env.ANDROID_SDK_ROOT }}
@@ -145,44 +126,12 @@ jobs:
  
       - name: Start Emulator Device
         run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port $APPIUM_PORT_1 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4723 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
           sleep 500
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
 
-      - name: Check if port is in use and kill process
-        run: |
-              set -e  # Exit immediately if any command fails
-              PORT=4725  # Replace with the port number you want to check
-              PID=$(lsof -t -i:$PORT || true)  # Use '|| true' to prevent script failure if lsof command fails
-              if [ -n "$PID" ]; then
-                echo "Process using port $PORT found. Killing process..."
-                kill $PID || true  # Use '|| true' to prevent script failure if kill command fails
-                sleep 5  # Wait for the process to be killed
-              else
-                echo "Port $PORT is free."
-              fi
+    
 
-
-
-      - name: Start another Appium server
-        run: appium -a 127.0.0.1 -p 4725 &
-        
-        
-      - name: Wait for Appium server to start
-        run: sleep 10
-          
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
-
-      - name: Capture port for the second server
-        run: |
-          APPIUM_PORT_2=4725
-          echo "APPIUM_PORT_2=$APPIUM_PORT_2" >> $GITHUB_ENV
-
-      - name: Start Another Emulator Device
-        run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port $APPIUM_PORT_2 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio  -memory 2048 -wipe-data -verbose &) &
-          sleep 500
     
       - name: Verify Emulator Status
         run: adb devices
