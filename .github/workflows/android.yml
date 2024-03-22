@@ -62,8 +62,7 @@ jobs:
           echo $ANDROID_HOME
           echo $ANDROID_SDK_ROOT
           ls -la $ANDROID_SDK_ROOT
-          ls -la $ANDROID_SDK_ROOT/cmdline-tools
- 
+          ls -la $ANDROID_SDK_ROOT/cmdline-tools 
  
       - name: Set up Android SDK and PATH
         run: |
@@ -74,7 +73,6 @@ jobs:
           echo "$ANDROID_SDK_ROOT/tools" >> $GITHUB_PATH
           echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-31" "platforms;android-30" "platforms;android-29" "emulator" # Add any additional packages
       
- 
  
       - name: Install system image (android-29;google_apis;x86_64)
         run: |
@@ -101,7 +99,7 @@ jobs:
         run: |
           ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
           echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-31;google_apis;x86_64' --device 'pixel' --sdcard 512M
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-30;google_apis;x86_64' --device 'pixel' --sdcard 512M
  
  
       - name: List emulator devices (Force Refresh)
