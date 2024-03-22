@@ -88,7 +88,7 @@ jobs:
           ls -la $ANDROID_SDK_ROOT
           ls -la $ANDROID_SDK_ROOT/system-images/android-30
           ls -la $ANDROID_SDK_ROOT/system-images/android-29
-          ls -la $ANDROID_SDK_ROOT/system-images/android-28
+  
  
       - name: List Available SDK Packages
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --list --sdk_root=$ANDROID_SDK_ROOT
