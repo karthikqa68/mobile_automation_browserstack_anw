@@ -86,6 +86,7 @@ public class AndroidWebDriverManager {
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
 			//options.setCapability("–session-override",true);
+			options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
 			options.setCapability("androidInstallTimeout",600000);
 			options.setCapability("ignoreHiddenApiPolicyError",true);
 			options.setNoSign(true);
@@ -97,6 +98,7 @@ public class AndroidWebDriverManager {
 			options.setPlatformName(prop.getProperty("android09PlatformName"));
 			options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
 			options.setApp(directoryPath.getAbsolutePath());
+			options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
 			//options.setSystemPort(4730);
 			//options.setAutomationName("UiAutomator2");
 			//options.setCapability("appWaitForLaunch",false);
