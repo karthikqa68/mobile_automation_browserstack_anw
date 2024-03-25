@@ -38,9 +38,9 @@ public class AndroidAppLaunchSteps {
         //AndroidAppiumServer.stop();
     }
 
-    @When("I launch the Android app on device-{string}")
-    public void launchApp(String deviceName) throws MalformedURLException {
-        androidAppLaunchPage.launchingApp(deviceName);
+    @When("I launch the Android app on device-{string} and with automation type as {string}")
+    public void launchApp(String deviceName,String automationType) throws MalformedURLException {
+        androidAppLaunchPage.launchingApp(deviceName,automationType);
     }
 
     @Then("I select english language")

@@ -12,9 +12,9 @@ public class AndroidAppLaunchPage {
         this.app = app;
     }
 
-    public void launchingApp(String deviceName) throws MalformedURLException {
+    public void launchingApp(String deviceName,String automationType) throws MalformedURLException {
         app.log("Opening the app");
-        app.openApp(deviceName);
+        app.openApp(deviceName,automationType);
         app.log("Opened app successfully");
     }
 

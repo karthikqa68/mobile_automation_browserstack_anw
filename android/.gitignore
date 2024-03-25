@@ -1,0 +1,10 @@
+/target/
+.settings
+.project
+.classpath
+.idea
+/reports/
+/test-output/
+/rerun/
+/Cookies/
+/users/
