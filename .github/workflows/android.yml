@@ -76,7 +76,7 @@ jobs:
  
       - name: Install system image (android-29;google_apis;x86_64)
         run: |
-          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-31;google_apis;x86_64" "system-images;android-30;google_apis;x86_64" "system-images;android-29;google_apis;x86_64" 
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86_64" "system-images;android-29;google_apis;x86_64" 
       
       - name: Update Android SDK Manager
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
@@ -126,14 +126,14 @@ jobs:
       - name: Start Emulator Devices
         run: |
           # Start emulator-5554 in background
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          #($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
         
     
          
           # Start emulator-5556 in background
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4727 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
           
-          sleep 900
+          sleep 400
           
 
 
@@ -155,28 +155,6 @@ jobs:
           cd android
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
 
-      - name: Retry Failed Tests
-        run: |
-         retries=3
-         delay=10
-         for ((i=1; i<=$retries; i++)); do
-         echo "Attempt $i of $retries"
-         # Run failed tests
-         mvn test
-         # Check if tests passed
-         if [ $? -eq 0 ]; then
-         echo "Tests passed on attempt $i"
-         exit 0
-         else
-         echo "Tests failed on attempt $i"
-         if [ $i -lt $retries ]; then
-         echo "Retrying in $delay seconds..."
-         sleep $delay
-         fi
-         fi
-         done
-         echo "All attempts failed"
-         exit 1
  
       - name: Upload success reports
         uses: actions/upload-artifact@v2
