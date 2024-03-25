@@ -32,7 +32,12 @@ jobs:
      # Start Docker
       - name: Start Docker
         run: |
-          open --background -a Docker
+          open -a Docker
+
+      # Wait for Docker to start
+      - name: Wait for Docker to start
+        run: |
+          sleep 20
           
       # Verify Docker installation
       - name: Verify Docker installation
