@@ -121,9 +121,15 @@ public class AndroidWebDriverManager {
 				 //String appiumServerUrl = "http://127:" + options.getCapability("systemPort") + "/wd/hub";
 				 //aDriver =  new AndroidDriver(new URL("http://127.0.0.1"), options);
 				 //aDriver = new AndroidDriver(options);
-				 aDriver = new AndroidDriver(new URL(prop.getProperty("hubURL")), options);
+				 //aDriver = new AndroidDriver(new URL(prop.getProperty("hubURL")), options);
 				 //aDriver = (AndroidDriver<AndroidElement>)driver;
 				 //iDriver =  (IOSDriver)driver;
+				// Set the URL of the Selenium Grid Hub
+    String gridUrl = "http://127.0.0.1:4444/wd/hub";  // Replace with your Selenium Grid Hub URL
+    
+    // Initialize the AndroidDriver with the desired capabilities and Selenium Grid URL
+    AndroidDriver driver = new AndroidDriver(new URL(gridUrl), options);
+						 
 			 } catch (Exception e) {
 				 e.printStackTrace();
 				 Assert.fail("Driver failed to start - " + e.getMessage());
