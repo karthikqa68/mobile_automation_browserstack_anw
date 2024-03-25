@@ -93,7 +93,7 @@ jobs:
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
       - name: List emulator devices (Force Refresh)
-        run: avdmanager list av
+        run: avdmanager list avd
       
       # Start Emulator Devices
       - name: Start Emulator Devices
