@@ -90,8 +90,8 @@ jobs:
       # Start Emulator Devices
       - name: Start Emulator Devices
         run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose --nodeconfig appium_node_emulator.json &) &
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose --nodeconfig appium_node_emulator.json &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose -nodeconfig appium_node_emulator.json &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose -nodeconfig appium_node_emulator.json &) &
           sleep 500
       - name: Verify Emulator Status
         run: adb devices
