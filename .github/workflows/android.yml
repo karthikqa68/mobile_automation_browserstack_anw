@@ -18,7 +18,13 @@ jobs:
 
       - name: Start Selenium Grid
         run: docker run -d --name selenium-hub -p 4444:4444 selenium/standalone-chrome:latest  # Update version number as needed
-
+       
+      - name: Check Docker container status
+        run: docker ps
+        
+      - name: Check Selenium Grid logs
+        run: docker logs selenium-hub
+        
   test:
     runs-on: macos-latest
     env:
@@ -81,7 +87,7 @@ jobs:
 
       # Create AVDs
       - name: Create AVD emulator-5555
-        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5555 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
+        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
       - name: Create AVD emulator-5556
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
@@ -94,9 +100,9 @@ jobs:
       # Start Emulator Devices
       - name: Start Emulator Devices
         run: |    
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          sleep 500
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4727 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          sleep 600
 
       - name: Verify Emulator Status
         run: adb devices
