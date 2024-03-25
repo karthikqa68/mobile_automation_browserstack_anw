@@ -98,8 +98,10 @@ jobs:
       - name: Create AVD
         run: |
           ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M --gpu host
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-30;google_apis;x86_64' --device 'pixel' --sdcard 512M --gpu host
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
+          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-30;google_apis;x86_64' --device 'pixel' --sdcard 512M
+          echo "hw.gpu.mode = host" >> $ANDROID_AVD_HOME/emulator-5554.avd/config.ini
+          echo "hw.gpu.mode = host" >> $ANDROID_AVD_HOME/emulator-5556.avd/config.ini
  
  
       - name: List emulator devices (Force Refresh)
