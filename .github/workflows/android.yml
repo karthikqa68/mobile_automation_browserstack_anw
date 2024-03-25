@@ -27,6 +27,12 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Install Docker on macOS (if not available)
+        run: |
+          brew update  # Update Homebrew package lists
+          brew install docker  # Install Docker using Homebrew
+          brew services start docker  # Start Docker daemon (if needed)
+
       # Install Appium and dependencies
       - name: Install Appium and dependencies
         run: |
