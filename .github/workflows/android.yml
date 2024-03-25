@@ -93,12 +93,9 @@ jobs:
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose --nodeconfig appium_node_emulator.json &) &
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose --nodeconfig appium_node_emulator.json &) &
           sleep 500
-
-      # Wait for Emulator Devices to start
-      - name: Wait for Emulator Devices
-        run: |
-          adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
-          adb devices
+      - name: Verify Emulator Status
+        run: adb devices
+        shell: bash
 
       # Run Appium tests
       - name: Run Appium tests
