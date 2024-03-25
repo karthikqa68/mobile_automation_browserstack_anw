@@ -30,8 +30,10 @@ jobs:
       - name: Install Docker on macOS (if not available)
         run: |
           brew update  # Update Homebrew package lists
-          brew install docker  # Install Docker using Homebrew
-          brew services start docker  # Start Docker daemon (if needed)
+          
+      - name: Reinstall Docker (if formula updated)
+        run: |
+          brew reinstall docker
 
       # Install Appium and dependencies
       - name: Install Appium and dependencies
