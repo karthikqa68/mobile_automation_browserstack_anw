@@ -9,8 +9,8 @@ jobs:
       ANDROID_HOME: ${{ github.workspace }}/android-sdk
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
       ANDROID_AVD_HOME: ${{ github.workspace }}/.config/.android/avd
-      JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
-      JAVA_HOME_11_X64: /usr/lib/jvm/java-11-openjdk-amd64
+      JAVA_HOME: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
+      JAVA_HOME_11_X64: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home 
 
     steps:
       - name: Checkout code
@@ -48,7 +48,7 @@ jobs:
       - name: Set up Java JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'adopt'
 
       # Download Android SDK tools (using custom location)
