@@ -16,15 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Install Docker on Ubuntu
-      - name: Install Docker on Ubuntu
-        run: |
-          sudo apt update
-          sudo apt install -y docker.io
-          sudo systemctl start docker
-          sudo systemctl enable docker
-          sudo usermod -aG docker $USER
-          newgrp docker
+   
 
       # Verify Docker installation
       - name: Verify Docker installation
