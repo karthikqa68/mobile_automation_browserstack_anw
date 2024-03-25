@@ -49,6 +49,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
+          distribution: 'adopt'
 
       # Download Android SDK tools (using custom location)
       - name: Download Android SDK tools
