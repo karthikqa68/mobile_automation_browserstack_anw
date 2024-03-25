@@ -9,7 +9,7 @@ on:
 jobs:
 
   grid-hub-test:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     env:
       ANDROID_HOME: ${{ github.workspace }}/android-sdk
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
