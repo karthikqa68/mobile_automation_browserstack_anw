@@ -27,13 +27,17 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Install Docker on macOS (if not available)
+      - name: Setup docker (missing on MacOS)
+        if: runner.os == 'macOS'
         run: |
-          brew update  # Update Homebrew package lists
-          
-      - name: Reinstall Docker (if formula updated)
-        run: |
-          brew reinstall docker
+            brew install docker
+            colima start
+            sleep 120
+        
+      # Verify Docker installation
+      - name: Verify Docker installation
+        run: docker version
+        if: runner.os == 'macOS'
 
       # Install Appium and dependencies
       - name: Install Appium and dependencies
