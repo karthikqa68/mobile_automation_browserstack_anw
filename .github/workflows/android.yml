@@ -25,27 +25,24 @@ jobs:
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+     # Install Docker on macOS
       - name: Install Docker on macOS
         run: |
           brew install --cask docker
-          if [[ "$(command -v docker)" ]]; then
-            brew services start docker
-          else
-            echo "Docker installation failed."
-            exit 1
+          if [[ "$(command -v docker)" ]]; then  # Check if docker is installed
+            brew services start docker  # Start Docker daemon (if needed)
           fi
         if: runner.os == 'macOS'
 
+     # Wait for Docker to start
+      - name: Wait for Docker to start
+        run: |
+          sleep 20
           
      # Start Docker
       - name: Start Docker
         run: |
           open -a Docker
-
-      # Wait for Docker to start
-      - name: Wait for Docker to start
-        run: |
-          sleep 20
           
       # Verify Docker installation
       - name: Verify Docker installation
