@@ -8,47 +8,25 @@ on:
 
 jobs:
   setup-and-test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     env:
       ANDROID_HOME: ${{ github.workspace }}/android-sdk
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
       ANDROID_AVD_HOME: ${{ github.workspace }}/.config/.android/avd
-      JAVA_HOME: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
-      JAVA_HOME_11_X64: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-        # Install Homebrew
-      - name: Install Homebrew
+      # Install Docker on Ubuntu
+      - name: Install Docker on Ubuntu
         run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
 
-     # Install Docker on macOS
-      - name: Install Docker on macOS
-        run: |
-          brew install --cask docker
-          if [[ "$(command -v docker)" ]]; then  # Check if docker is installed
-            brew services start docker  # Start Docker daemon (if needed)
-          fi
-        if: runner.os == 'macOS'
-
-     # Wait for Docker to start
-      - name: Wait for Docker to start
-        run: |
-          sleep 20
-          
-     # Start Docker
-      - name: Start Docker
-        run: |
-          open -a Docker
-          
-      # Verify Docker installation
-      - name: Verify Docker installation
-        run: |
-          docker --version
-
+      # Pull Docker images for Selenium Grid and Appium
       - name: Pull Docker images for Selenium Grid and Appium
         run: |
           docker pull selenium/standalone-chrome:latest
@@ -62,7 +40,7 @@ jobs:
 
       - name: Start Appium Server
         run: appium -a 127.0.0.1 -p 4723 &
-      
+
       - name: Wait for services to start
         run: sleep 20
 
