@@ -54,7 +54,7 @@ jobs:
         run: docker run -d --name selenium-hub -p 4444:4444 selenium/standalone-chrome:latest
           
       - name: Start Appium server
-        run: appium -a 127.0.0.1 -p 4723 &
+        run: appium -a localhost -p 4723 &
         
       - name: Wait for Appium server to start
         run: sleep 10
@@ -62,6 +62,12 @@ jobs:
       - name: Check Port Numbers in Use
         run: lsof -i -P -n | grep LISTEN
         shell: bash
+
+      - name: Check Docker container status
+        run: docker ps -a --filter name=selenium-hub
+
+      - name: View Docker container logs
+        run: docker logs selenium-hub
 
        # Check if Selenium Grid Hub is accessible
       - name: Check Selenium Grid Hub accessibility
@@ -123,7 +129,7 @@ jobs:
         run: |
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4727 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          sleep 600
+          sleep 400
       
         
       - name: Verify Emulator Status
