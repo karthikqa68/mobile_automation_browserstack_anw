@@ -63,6 +63,18 @@ jobs:
         run: lsof -i -P -n | grep LISTEN
         shell: bash
 
+       # Check if Selenium Grid Hub is accessible
+      - name: Check Selenium Grid Hub accessibility
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" http://localhost:4444/wd/hub -o /dev/null
+          status=$?
+          if [ $status -eq 0 ]; then
+            echo "Selenium Grid Hub is accessible."
+          else
+            echo "Selenium Grid Hub is not accessible."
+            exit 1
+          fi
+      
       # Download Android SDK tools (using custom location)
       - name: Download Android SDK tools
         uses: android-actions/setup-android@v3
