@@ -7,7 +7,7 @@ Feature: Launch the app
   Examples:
     | device-name | automation-type |
     | android11   |  app            |
-    #| android09   |  app            |
+    | android09   |  app            |
 
 
 
