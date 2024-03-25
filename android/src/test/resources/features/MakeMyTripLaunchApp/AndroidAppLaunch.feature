@@ -6,8 +6,8 @@ Feature: Launch the app
     Then   I select english language
   Examples:
     | device-name | automation-type |
-    #| android11   |  app            |
-    | android09   |  app            |
+    | android11   |  app            |
+    #| android09   |  app            |
 
 
 
