@@ -38,6 +38,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+
       - name: Set up Java JDK
         uses: actions/setup-java@v3
         with:
@@ -50,6 +51,16 @@ jobs:
           npm install -g appium@1.22
           npm install -g appium-doctor
           appium-doctor --android
+        shell: bash
+
+      - name: Start Appium server
+        run: appium -a 127.0.0.1 -p 4723 &
+      
+      - name: Wait for Appium server to start
+        run: sleep 10
+        
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
         shell: bash
 
       # Download Android SDK tools (using custom location)
