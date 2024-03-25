@@ -25,10 +25,12 @@ jobs:
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-      # Install Docker using Homebrew
-      - name: Install Docker
+      - name: Install Docker on macOS
         run: |
-          brew install docker
+          brew install --cask docker
+          brew services start docker
+          if: runner.os == 'macOS'
+          
      # Start Docker
       - name: Start Docker
         run: |
