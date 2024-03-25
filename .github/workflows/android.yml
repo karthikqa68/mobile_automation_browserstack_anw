@@ -86,12 +86,16 @@ jobs:
       - name: Create AVD emulator-5556
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
+      - name: Verify Emulator Status
+        run: adb devices
+        shell: bash
+
+    
       # Start Emulator Devices
       - name: Start Emulator Devices
-        run: |
-          cd android      
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) 
-          #($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+        run: |    
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
           sleep 500
 
       - name: Verify Emulator Status
