@@ -28,8 +28,14 @@ jobs:
       - name: Install Docker on macOS
         run: |
           brew install --cask docker
-          brew services start docker
-          if: runner.os == 'macOS'
+          if [[ "$(command -v docker)" ]]; then
+            brew services start docker
+          else
+            echo "Docker installation failed."
+            exit 1
+          fi
+        if: runner.os == 'macOS'
+
           
      # Start Docker
       - name: Start Docker
