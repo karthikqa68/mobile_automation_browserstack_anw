@@ -127,11 +127,11 @@ jobs:
         run: |
           # Start emulator-5554 in background
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-      
+         sleep 450
           # Start emulator-5556 in background
           ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4727 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
           
-          sleep 800
+          sleep 450
           
 
 
