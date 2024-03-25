@@ -1,9 +1,30 @@
+# This workflow defines a job that sets up an Android environment,
+# starts two emulators, and runs Appium tests in parallel using Grid.
+
 on:
   push:
     branches:
-       - master
- 
+      - master
+
 jobs:
+  grid-hub:
+    runs-on: ubuntu-latest  # Replace with appropriate runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Pull Docker image for Selenium Grid
+        uses: docker/pull-image@v1
+        with:
+          image: selenium/standalone-chrome:9.0  # Replace with desired version
+
+      - name: Start Selenium Grid
+        uses: docker/run@v1
+        with:
+          image: selenium/standalone-chrome:9.0  # Replace with desired version
+          ports: 4444:4444
+          detach: true
+
   test:
     runs-on: macos-latest
     env:
@@ -11,59 +32,37 @@ jobs:
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
       ANDROID_AVD_HOME: ${{ github.workspace }}/.config/.android/avd
       JAVA_HOME: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
-      JAVA_HOME_11_X64: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home 
-    
+      JAVA_HOME_11_X64: /Library/Java/JavaVirtualMachines/adoptopenjdk-17.jdk/Contents/Home
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
- 
+
       - name: Set up Java JDK
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'adopt'
 
-          #----
+      # Install Appium and dependencies
       - name: Install Appium and dependencies
         run: |
-          npm install -g appium@v1.22
+          npm install -g appium@1.22
           npm install -g appium-doctor
           appium-doctor --android
         shell: bash
 
-     
-          
-      - name: Start Appium server
-        run: appium -a 127.0.0.1 -p 4723 &
-        
-      - name: Wait for Appium server to start
-        run: sleep 10
-          
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
-
-       
-      - name: Print ANDROID_SDK_ROOT path
-        run: echo ${{ env.ANDROID_SDK_ROOT }}
- 
- 
-      - name: Download Android SDK tools (using custom location)
+      # Download Android SDK tools (using custom location)
+      - name: Download Android SDK tools
         uses: android-actions/setup-android@v3
         with:
           sdk_root: ${{ env.ANDROID_SDK_ROOT }}
- 
-      - name: Install additional packages (modify list as needed)
+
+      # Install additional packages (modify list as needed)
+      - name: Install additional Android SDK packages
         run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools' 'platforms;android-30' 'platforms;android-29' 'cmdline-tools;latest' 'emulator'
- 
- 
-      - name: Verify ANDROID_SDK_ROOT
-        run: |
-          echo $ANDROID_HOME
-          echo $ANDROID_SDK_ROOT
-          ls -la $ANDROID_SDK_ROOT
-          ls -la $ANDROID_SDK_ROOT/cmdline-tools 
- 
+
+      # Set up Android SDK and PATH
       - name: Set up Android SDK and PATH
         run: |
           echo "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin" >> $GITHUB_PATH
@@ -71,103 +70,62 @@ jobs:
           echo "$ANDROID_SDK_ROOT/emulator" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/platforms" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/tools" >> $GITHUB_PATH
-          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-30" "platforms;android-29" "emulator" # Add any additional packages
-      
- 
-      - name: Install system image (android-29;google_apis;x86_64)
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-30" "platforms;android-29" "emulator"
+
+      # Install system image (android-29;google_apis;x86_64)
+      - name: Install system image
         run: |
-          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86_64" "system-images;android-29;google_apis;x86_64" 
-      
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86_64" "system-images;android-29;google_apis;x86_64"
+
+      # Update Android SDK Manager
       - name: Update Android SDK Manager
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --update --sdk_root=$ANDROID_SDK_ROOT
- 
-      - name: List Install system image
-        run: |
-          ls -la $ANDROID_SDK_ROOT
-          ls -la $ANDROID_SDK_ROOT/system-images/android-30
-          ls -la $ANDROID_SDK_ROOT/system-images/android-29
-  
- 
-      - name: List Available SDK Packages
-        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --list --sdk_root=$ANDROID_SDK_ROOT
- 
- 
+
+      # Start ADB server
       - name: Start ADB server
         run: adb start-server  # Assuming ADB is installed and in PATH
- 
-      - name: Create AVD
-        run: |
-          ls -la $ANDROID_SDK_ROOT/cmdline-tools/latest/bin  
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
-          echo "no" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
-          
- 
-      - name: List emulator devices (Force Refresh)
-        run: avdmanager list avd
- 
- 
-      - name: List emulator devices
-        run: | 
-          $ANDROID_SDK_ROOT/emulator/emulator -list-avds
-          exit 0  # Exit with code 0 indicating success
- 
- 
-      - name: Install Appium dependencies
-        run: |
-          cd android
-          mvn install -DskipTests
 
-      - name: Build the Android app (APK)
-        run: |
-          cd android
-          mvn clean install
- 
+      # Create AVDs
+      - name: Create AVD emulator-5555
+        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5555 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
+      - name: Create AVD emulator-5556
+        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
+
+      # Start Emulator Devices
       - name: Start Emulator Devices
         run: |
-          # Start emulator-5554 in background
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-        
-    
-         
-          # Start emulator-5556 in background
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4727 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose --nodeconfig appium_node_emulator.json &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose --nodeconfig appium_node_emulator.json &) &
           sleep 500
-          
 
+      # Wait for Emulator Devices to start
+      - name: Wait for Emulator Devices
+        run: |
+          adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+          adb devices
 
-  
-    
-      - name: Verify Emulator Status
-        run: adb devices
-        shell: bash
-
-   
- 
-      - name: Check Emulator Logs
-        run: adb logcat | grep -iE "error|warning" >> emulator_logs.txt &
-        shell: bash
- 
+      # Run Appium tests
       - name: Run Appium tests
         run: |
-          pwd
           cd android
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
 
- 
+      # Upload success reports
       - name: Upload success reports
         uses: actions/upload-artifact@v2
         with:
           name: test-reports-success
           path: android/reports
- 
-      - name: Upload failure reports (optional)
+
+      # Upload failure reports (optional)
+      - name: Upload failure reports
         uses: actions/upload-artifact@v2
         with:
           name: test-reports-failure
           path: android/reports
         if: failure()
- 
-      - name: Stop emulator (optional)
+
+      # Stop emulator (optional)
+      - name: Stop emulator
         run: adb emu kill &  # Background process to avoid interrupting tests
