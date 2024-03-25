@@ -154,6 +154,29 @@ jobs:
           pwd
           cd android
           mvn clean test -Dsurefire.suiteXmlFiles=regression.xml -f pom.xml -X
+
+      - name: Retry Failed Tests
+        run: |
+         retries=3
+         delay=10
+         for ((i=1; i<=$retries; i++)); do
+         echo "Attempt $i of $retries"
+         # Run failed tests
+         mvn test
+         # Check if tests passed
+         if [ $? -eq 0 ]; then
+         echo "Tests passed on attempt $i"
+         exit 0
+         else
+         echo "Tests failed on attempt $i"
+         if [ $i -lt $retries ]; then
+         echo "Retrying in $delay seconds..."
+         sleep $delay
+         fi
+         fi
+         done
+         echo "All attempts failed"
+         exit 1
  
       - name: Upload success reports
         uses: actions/upload-artifact@v2
