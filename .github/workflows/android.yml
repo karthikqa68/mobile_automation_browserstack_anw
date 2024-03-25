@@ -29,12 +29,11 @@ jobs:
       - name: Install Docker
         run: |
           brew install docker
-
-      # Start Docker service
-      - name: Start Docker service
+     # Start Docker
+      - name: Start Docker
         run: |
-          brew services start docker
-
+          open --background -a Docker
+          
       # Verify Docker installation
       - name: Verify Docker installation
         run: |
