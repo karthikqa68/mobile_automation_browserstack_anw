@@ -128,7 +128,7 @@ public class AndroidWebDriverManager {
     String gridUrl = "http://127.0.0.1:4444/wd/hub";  // Replace with your Selenium Grid Hub URL
     
     // Initialize the AndroidDriver with the desired capabilities and Selenium Grid URL
-    AndroidDriver driver = new AndroidDriver(new URL(gridUrl), options);
+				 aDriver = new AndroidDriver(new URL(gridUrl), options);
 						 
 			 } catch (Exception e) {
 				 e.printStackTrace();
