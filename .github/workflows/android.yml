@@ -14,11 +14,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Pull Docker image for Selenium Grid
-        run: docker pull selenium/standalone-chrome:3.141.59  # Update version number as needed
+        run: docker pull selenium/standalone-chrome:latest  # Update version number as needed
 
       - name: Start Selenium Grid
-        run: docker run -d --name selenium-hub -p 4444:4444 selenium/standalone-chrome:3.141.59  # Update version number as needed
-
+        run: docker run -d --name selenium-hub -p 4444:4444 selenium/standalone-chrome:latest  # Update version number as needed
 
   test:
     runs-on: macos-latest
@@ -91,9 +90,10 @@ jobs:
       - name: Start Emulator Devices
         run: |
           cd android      
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose -nodeconfig appium_node_emulator.json &) 
-          #($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose -nodeconfig appium_node_emulator.json &) &
-          #sleep 500
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5555 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) 
+          #($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4726 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          sleep 500
+
       - name: Verify Emulator Status
         run: adb devices
         shell: bash
