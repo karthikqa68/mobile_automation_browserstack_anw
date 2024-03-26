@@ -84,7 +84,7 @@ jobs:
           sleep 10
       
           # Check Selenium Grid Hub accessibility using hostname
-          status_code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:4446/wd/hub)
+          status_code=$(curl -s -o /dev/null -w "%{http_code}" http://172.17.0.2:4446/wd/hub)
           if [ $status_code -eq 200 ]; then
             echo "Selenium Grid Hub is accessible."
           else
