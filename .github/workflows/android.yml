@@ -48,6 +48,9 @@ jobs:
         shell: bash
 
 
+      - name: Check Docker container status
+        run: docker ps 
+      
    
        # Start Selenium Grid Hub
       
@@ -55,13 +58,14 @@ jobs:
       - name: Start Selenium Grid Hub and check accessibility
         run: |
           # Start Selenium Grid Hub in detached mode using hostname
-          docker run -d --name selenium-hub -p 4444:4444 --hostname selenium-hub selenium/standalone-chrome:latest
-      
+          docker run -d --name selenium-hub -p 4446:4444 --hostname selenium-hub selenium/standalone-chrome:latest
+          netstat -tuln | grep 4444
+          
           # Wait for Grid Hub to start (optional)
           sleep 10
       
           # Check Selenium Grid Hub accessibility using hostname
-          status_code=$(curl -s -o /dev/null -w "%{http_code}" http://selenium-hub:4444/wd/hub)
+          status_code=$(curl -s -o /dev/null -w "%{http_code}" http://selenium-hub:4446/wd/hub)
           if [ $status_code -eq 200 ]; then
             echo "Selenium Grid Hub is accessible."
           else
