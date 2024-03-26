@@ -56,7 +56,7 @@ jobs:
 
       - name: Start Selenium Grid Hub
         run: |
-           docker run -d --name selenium-hub --network=host --hostname selenium-hub selenium/standalone-chrome:latest
+           docker run -d --name selenium-hub --network=host selenium/standalone-chrome:latest
            sleep 60
         shell: bash
 
