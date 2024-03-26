@@ -64,7 +64,7 @@ jobs:
         run: docker ps 
 
       - name: Check Docker container status
-        run: docker ps -a --filter name=selenium-hub
+        run: docker ps
 
       - name: Inspect Selenium Grid Hub container
         run: docker inspect selenium-hub
