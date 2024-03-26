@@ -53,6 +53,15 @@ jobs:
       - name: Start Selenium Grid Hub
         run: docker run -d --name selenium-hub -p 4444:4444 selenium/standalone-chrome:latest
 
+      - name: Check Docker container status
+        run: docker ps -a --filter name=selenium-hub
+
+      - name: Inspect Selenium Grid Hub container
+        run: docker inspect selenium-hub
+
+      - name: View Docker container logs
+        run: docker logs selenium-hub
+
       - name: Check Selenium Grid Hub accessibility
         run: |
           status_code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:4444/wd/hub)
@@ -73,11 +82,7 @@ jobs:
         run: lsof -i -P -n | grep LISTEN
         shell: bash
 
-      - name: Check Docker container status
-        run: docker ps -a --filter name=selenium-hub
-
-      - name: View Docker container logs
-        run: docker logs selenium-hub
+   
 
      
       
