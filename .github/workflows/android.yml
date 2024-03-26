@@ -57,6 +57,7 @@ jobs:
       - name: Start Selenium Grid Hub
         run: |
            docker run -d --name selenium-hub -p 4446:4444 --hostname selenium-hub selenium/standalone-chrome:latest
+           sleep 60
         shell: bash
 
       - name: Check Docker container status
@@ -73,7 +74,7 @@ jobs:
       
       - name: Check if port 4446 is listening
         run: |
-          netstat -tuln | grep 4446
+         netstat -tuln -v | grep 4446
         shell: bash
 
       - name: Start Selenium Grid Hub and check accessibility
