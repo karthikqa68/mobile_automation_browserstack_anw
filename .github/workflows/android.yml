@@ -61,10 +61,19 @@ jobs:
 
       - name: Check Docker container status
         run: docker ps 
+
+      - name: Check Docker container status
+        run: docker ps -a --filter name=selenium-hub
+
+      - name: Inspect Selenium Grid Hub container
+        run: docker inspect selenium-hub
+
+      - name: View Docker container logs
+        run: docker logs selenium-hub
       
-      - name: Check if port 4444 is listening
+      - name: Check if port 4446 is listening
         run: |
-          netstat -tuln | grep 4444
+          netstat -tuln | grep 4446
         shell: bash
 
       - name: Start Selenium Grid Hub and check accessibility
