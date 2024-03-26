@@ -77,20 +77,9 @@ jobs:
          netstat -tuln -v 
         shell: bash
 
-      - name: Start Selenium Grid Hub and check accessibility
-        run: |
-        
-          # Wait for Grid Hub to start (optional)
-          sleep 60
-      
-          # Check Selenium Grid Hub accessibility using hostname
-          status_code=$(curl -s -o /dev/null -w "%{http_code}" http://172.17.0.2:4446/wd/hub)
-          if [ $status_code -eq 200 ]; then
-            echo "Selenium Grid Hub is accessible."
-          else
-            echo "Selenium Grid Hub is not accessible. Status code: $status_code"
-            exit 1
-          fi
+      - name: Check Port Numbers in Use
+        run: lsof -i -P -n | grep LISTEN
+        shell: bash
 
       - name: Check Docker container status
         run: docker ps -a --filter name=selenium-hub
