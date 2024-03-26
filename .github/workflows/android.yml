@@ -56,15 +56,12 @@ jobs:
 
       - name: Start Selenium Grid Hub
         run: |
-           docker run -d -p 4444:4444 --hostname selenium-hub selenium/standalone-chrome:latest
+           docker run -name selenium-hub -d -p 4444:4444 --hostname selenium-hub selenium/standalone-chrome:latest
            sleep 60
         shell: bash
 
       - name: Check Docker container status
         run: docker ps 
-
-      - name: Check Docker container status
-        run: docker ps
 
       - name: Inspect Selenium Grid Hub container
         run: docker inspect selenium-hub
