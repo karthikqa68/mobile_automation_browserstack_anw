@@ -22,7 +22,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Date;
-import java.util.List;
 import java.util.Properties;
 
 
@@ -229,54 +228,6 @@ public class AndroidWebDriverManager {
 			ex.printStackTrace();
 		}
 		return e;
-	}
-
-
-	/**
-	 * This Method is called to check whether webelement is present in the opened
-	 * page or not
-	 *
-	 * @param locatorkey Is the webelement(fetched from propertyfile)
-	 * @param assertype Is a boolean which tells what type of assertion should be
-	 *                   done in case of pass and failure whether hardassert or
-	 *                   sortassert should be done.
-	 * @return Boolen ,will return true if webelemt is found or else will return
-	 *         false
-	 */
-	public boolean isElementPresent(String locatorkey, boolean assertype) {
-		try {
-			List<WebElement> webelementlist = null;
-			if (locatorkey.endsWith("_xpath"))
-				webelementlist = aDriver.findElements(By.xpath(prop.getProperty(locatorkey)));
-			else if (locatorkey.endsWith("_id"))
-				webelementlist = aDriver.findElements(By.id(prop.getProperty(locatorkey)));
-			else if (locatorkey.endsWith("_name"))
-				webelementlist = aDriver.findElements(By.name(prop.getProperty(locatorkey)));
-			else {
-				takeScreenShot();
-				reportFailure("Locator not found" + locatorkey, assertype);
-			}
-			if (webelementlist.size() == 0) {
-				if(assertype == false){
-					return false;
-				}else {
-					reportFailure("WebElement " + locatorkey + " is not Present", assertype);
-					return false;
-				}
-			} else {
-				if(assertype == false){
-					return true;
-				}else {
-					reportPass("WebElement " + locatorkey + " is Present");
-					return true;
-				}
-			}
-		} catch (Exception ex) {
-			reportFailure(ex.getMessage(), assertype);
-			ex.printStackTrace();
-			Assert.fail("Fail the test" + ex.getMessage());
-			return false;
-		}
 	}
 
 	/**
