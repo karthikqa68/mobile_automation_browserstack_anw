@@ -72,95 +72,79 @@ public class AndroidWebDriverManager {
 	 * This Method is called for opening the browser
 	 *
      */
-	public void openApp(String deviceName,String automationType) throws MalformedURLException {
-         UiAutomator2Options options = new UiAutomator2Options();
-		 if (automationType.equals("app")) {
-			 //File appPath = new File(prop.getProperty("apkPath"));
-			 System.out.println(System.getProperty("user.dir"));
-			 File directoryPath = new File(System.getProperty("user.dir") + "/src/test/resources/MakeMyTrip.apk");
-			 if (deviceName.equals("android11")) {
-				 options.setDeviceName(prop.getProperty("android11DeviceName"));
-				 options.setPlatformName(prop.getProperty("android11PlatformName"));
-				 options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
-				 options.setApp(directoryPath.getAbsolutePath());
-				 options.setCapability("uiautomator2ServerInstallTimeout", 600000);
-				 //options.setSystemPort(4723);
-				 //options.setAutomationName("UiAutomator2");
-				 //options.setCapability("appWaitForLaunch",false);
-				 //options.setCapability("–session-override",true);
-				 options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
-				 options.setCapability("androidInstallTimeout", 600000);
+	public void openApp(String deviceName, String automationType) throws MalformedURLException {
+		UiAutomator2Options options = new UiAutomator2Options();
 
+		switch (automationType) {
+			case "app":
+				setAppOptions(deviceName, options);
+				break;
+			case "browser":
+				setBrowserOptions(options);
+				break;
+			default:
+				throw new IllegalArgumentException("Invalid automation type: " + automationType);
+		}
 
-				 options.setCapability("ignoreHiddenApiPolicyError", true);
-				 options.setNoSign(true);
-				 options.setFullReset(false);
-				 //aDriver =  new AndroidDriver(new URL(prop.getProperty("hubURL")), options);
-				 //System.out.println(appPath.getAbsolutePath());
-			 } else if (deviceName.equals("android09")) {
-				 options.setDeviceName(prop.getProperty("android09DeviceName"));
-				 options.setPlatformName(prop.getProperty("android09PlatformName"));
-				 options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
-				 options.setApp(directoryPath.getAbsolutePath());
-				 options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
-				 options.setCapability("uiautomator2ServerInstallTimeout", 600000);
-				 //options.setSystemPort(4730);
-				 //options.setAutomationName("UiAutomator2");
-				 //options.setCapability("appWaitForLaunch",false);
-				 //options.setCapability("–session-override",true);
-				 options.setCapability("androidInstallTimeout", 600000);
-				 options.setCapability("ignoreHiddenApiPolicyError", true);
-				 options.setNoSign(true);
-				 options.setFullReset(false);
-				 //aDriver =  new AndroidDriver(new URL(prop.getProperty("hubURL1")), options);
-			 }
+		wait(15000);
 
-			 wait(15000);
+		try {
+			String gridUrl = "http://127.0.0.1:4444/wd/hub";
+			aDriver = new AndroidDriver(new URL(gridUrl), options);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+			Assert.fail("Invalid URL for Selenium Grid Hub - " + e.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Driver failed to start - " + e.getMessage());
+		}
 
-			 try {
-				 //String appiumServerUrl = "http://127:" + options.getCapability("systemPort") + "/wd/hub";
-				 //aDriver =  new AndroidDriver(new URL("http://127.0.0.1"), options);
-				 //aDriver = new AndroidDriver(options);
-				 //aDriver = new AndroidDriver(new URL(prop.getProperty("hubURL")), options);
-				 //aDriver = (AndroidDriver<AndroidElement>)driver;
-				 //iDriver =  (IOSDriver)driver;
-				// Set the URL of the Selenium Grid Hub
-    String gridUrl = "http://127.0.0.1:4444/wd/hub";  // Replace with your Selenium Grid Hub URL
-    
-    // Initialize the AndroidDriver with the desired capabilities and Selenium Grid URL
-				 aDriver = new AndroidDriver(new URL(gridUrl), options);
-						 
-			 } catch (Exception e) {
-				 e.printStackTrace();
-				 Assert.fail("Driver failed to start - " + e.getMessage());
-			 }}else {
-			 options.setDeviceName(prop.getProperty("android09DeviceName"));
-			 options.setPlatformName(prop.getProperty("android09PlatformName"));
-			 options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
-			 //options.
-			 options.setCapability("browserName", "chrome");
+		if ("browser".equals(automationType)) {
+			aDriver.get(prop.getProperty("url"));
+		}
 
-			 wait(15000);
-
-			 try {
-				 //String appiumServerUrl = "http://127:" + options.getCapability("systemPort") + "/wd/hub";
-				 //aDriver =  new AndroidDriver(new URL("http://127.0.0.1"), options);
-				 //aDriver = new AndroidDriver(options);
-				 aDriver = new AndroidDriver(new URL(prop.getProperty("hubURL")), options);
-				 //aDriver.get(prop.getProperty("url"));
-				 //aDriver = (AndroidDriver<AndroidElement>)driver;
-				 //iDriver =  (IOSDriver)driver;
-			 } catch (Exception e) {
-				 e.printStackTrace();
-				 Assert.fail("Driver failed to start - " + e.getMessage());
-			 }
-		 }
-
-		//aDriver.manage().timeouts().implicitlyWait(30);
 		setDefaultImplicitlyWait();
 	}
 
+	private void setAppOptions(String deviceName, UiAutomator2Options options) {
+		File directoryPath = new File(System.getProperty("user.dir") + "/src/test/resources/MakeMyTrip.apk");
 
+		switch (deviceName) {
+			case "android11":
+				options.setDeviceName(prop.getProperty("android11DeviceName"));
+				options.setPlatformName(prop.getProperty("android11PlatformName"));
+				options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
+				options.setApp(directoryPath.getAbsolutePath());
+				options.setCapability("uiautomator2ServerInstallTimeout", 600000);
+				options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
+				options.setCapability("androidInstallTimeout", 600000);
+				options.setCapability("ignoreHiddenApiPolicyError", true);
+				options.setNoSign(true);
+				options.setFullReset(false);
+				break;
+			case "android09":
+				options.setDeviceName(prop.getProperty("android09DeviceName"));
+				options.setPlatformName(prop.getProperty("android09PlatformName"));
+				options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
+				options.setApp(directoryPath.getAbsolutePath());
+				options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
+				options.setCapability("uiautomator2ServerInstallTimeout", 600000);
+				options.setCapability("androidInstallTimeout", 600000);
+				options.setCapability("ignoreHiddenApiPolicyError", true);
+				options.setNoSign(true);
+				options.setFullReset(false);
+				break;
+			default:
+				throw new IllegalArgumentException("Invalid device name: " + deviceName);
+		}
+	}
+
+	private void setBrowserOptions(UiAutomator2Options options) {
+		options.setDeviceName(prop.getProperty("android09DeviceName"));
+		options.setPlatformName(prop.getProperty("android09PlatformName"));
+		options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
+		options.setCapability("browserName", "chrome");
+	}
 
 	/**
 	 * This Method is called for clicking on a webelement
