@@ -51,7 +51,7 @@ jobs:
 
       - name: Start Selenium Grid Hub
         run: |
-            docker run -d -p 4444:4444 --network host --shm-size="2g" --name selenium-hub -e SE_OPTS="--host 0.0.0.0 --allow-cors true" --hostname selenium-hub selenium/standalone-chrome:latest
+            docker run -d -p 4444:4444 --network host --shm-size="2g" --name selenium-hub -e SE_OPTS="--host 0.0.0.0 --allow-cors true" selenium/standalone-chrome:latest
             sleep 120
             docker logs selenium-hub
         shell: bash
