@@ -47,39 +47,28 @@ jobs:
           appium-doctor --android
         shell: bash
 
-
-      - name: Check Docker container status
-        run: docker ps 
-      
-   
        # Start Selenium Grid Hub
 
       - name: Start Selenium Grid Hub
         run: |
            docker run -d -p 4444:4444 --shm-size="2g" --name selenium-hub -e SE_OPTS="--host 0.0.0.0 --allow-cors true" --hostname selenium-hub selenium/standalone-chrome:latest
            sleep 60
+           docker logs selenium-hub
+           curl http://localhost:4444/ui
         shell: bash
 
       - name: Check Docker container status
         run: docker ps 
 
-      - name: Inspect Selenium Grid Hub container
-        run: docker inspect selenium-hub
-
       - name: View Docker container logs
         run: docker logs selenium-hub
 
       
-      
-      - name: Check if port 4444 is listening
+      - name: Check Port Numbers
         run: |
-         netstat -tuln -v 
+         netstat -nltp
         shell: bash
-
-      - name: Check Port Numbers in Use
-        run: lsof -i -P -n | grep LISTEN
-        shell: bash
-
+        
         # Check if Selenium Grid Hub is accessible
       - name: Check Selenium Grid Hub accessibility
         run: |
