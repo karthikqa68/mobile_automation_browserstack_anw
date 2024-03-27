@@ -51,10 +51,17 @@ jobs:
 
       - name: Start Selenium Grid Hub
         run: |
-           docker run -d -p 4444:4444 --shm-size="2g" --name selenium-hub -e SE_OPTS="--host 0.0.0.0 --allow-cors true" --hostname selenium-hub selenium/standalone-chrome:latest
-           sleep 60
-           docker logs selenium-hub
-           curl http://localhost:4444/ui
+            docker run -d -p 4444:4444 --shm-size="2g" --name selenium-hub -e SE_OPTS="--host 0.0.0.0 --allow-cors true" --hostname selenium-hub selenium/standalone-chrome:latest
+            sleep 60
+            docker logs selenium-hub
+            curl -s -o /dev/null -w "%{http_code}" http://localhost:4444/ui -o /dev/null
+            status=$?
+            if [ $status -eq 200 ]; then
+              echo "Selenium Grid Hub is accessible."
+            else
+              echo "Selenium Grid Hub is not accessible."
+              exit 16
+            fi
         shell: bash
 
       - name: Check Docker container status
@@ -66,7 +73,7 @@ jobs:
       
       - name: Check Port Numbers
         run: |
-         netstat -nltp
+         netstat -tuln -v 
         shell: bash
         
         # Check if Selenium Grid Hub is accessible
