@@ -213,22 +213,6 @@ public class AndroidWebDriverManager {
 		}
 	}
 
-	public void closeapp(){
-		log("Closing app");
-		if(aDriver!=null) {
-			aDriver.quit();
-			aDriver = null;
-		}
-	}
-
-	public Properties getEnvprop() {
-		return envprop;
-	}
-
-	public Properties getProp() {
-		return prop;
-	}
-
 	public void init(ExtentTest test) {
 		this.test = test;
 	}
@@ -263,29 +247,6 @@ public class AndroidWebDriverManager {
 		return e;
 	}
 
-
-	/**
-	 * This Method is called for clearing data in a webelementt
-	 *
-	 * @param locatorKey Is the webelement from which data needs to be
-	 *                   cleared(fetched from propertyfile)
-	 */
-	public void clearText(String locatorKey, boolean assertype) {
-		wait(1000);
-		log("Clearing text field " + locatorKey);
-		getElement(locatorKey, assertype).clear();
-	}
-
-	/**
-	 * This Method is called for clicking on enter button
-	 *
-	 * @param locatorKey Is the webelement on which enter buton needs to be
-	 *                   clicked(fetched from propertyfile)
-	 */
-	public void clickEnterButton(String locatorKey, boolean assertype) {
-		log("Clicking Enter button");
-		getElement(locatorKey, assertype).sendKeys(Keys.ENTER);
-	}
 
 	/**
 	 * This Method is called to check whether webelement is present in the opened
@@ -333,61 +294,6 @@ public class AndroidWebDriverManager {
 			return false;
 		}
 	}
-	
-	/**
-	 * This Method is called to check whether webelement is present in the opened
-	 * page within the period of time passed as an argument
-	 *
-	 * @param locatorKey Is the webelement(fetched from propertyfile)
-	 * @param timeoutInSeconds Is a int which indicates how long the method will wait for element before failing the test
-	 */
-	public void waitForElement(String locatorKey, int timeoutInSeconds) {
-		  Date start = new Date();
-		  while(!this.isElementPresent(locatorKey, false)
-				  && new Date().getTime() - timeoutInSeconds * 1000 < start.getTime()){
-			  this.wait(500);
-	        }
-		  if(new Date().getTime() - timeoutInSeconds * 1000 > start.getTime()) {
-			  takeScreenShot();
-				reportFailure("Locator not found in timeout" + timeoutInSeconds, true);
-				Assert.fail("\"Locator not found in timeout" + timeoutInSeconds);
-		  }
-	}
-
-	/**
-	 * This Method is called to check whether webelement is not present in the
-	 * opened page or not
-	 *
-	 * @param locatorkey Is the webelement(fetched from propertyfile)
-	 * @param assertype Is a boolean which tells what type of assertion should be
-	 *                   done in case of pass and failure whether hardassert or
-	 *                   sortassert should be done.
-	 * @return Boolen ,will return true if webelemt is not found or else will return
-	 *         false
-	 */
-	public boolean isElementnotPresent(String locatorkey, boolean assertype) {
-		List<WebElement> webelementlist = null;
-
-		if (locatorkey.endsWith("_xpath"))
-			webelementlist = aDriver.findElements(By.xpath(prop.getProperty(locatorkey)));
-		else if (locatorkey.endsWith("_id"))
-			webelementlist = aDriver.findElements(By.id(prop.getProperty(locatorkey)));
-		else if (locatorkey.endsWith("_name"))
-			webelementlist = aDriver.findElements(By.name(prop.getProperty(locatorkey)));
-		else {
-			takeScreenShot();
-			reportFailure("Locator not found" + locatorkey, assertype);
-			Assert.fail("Locator not found" + locatorkey);
-		}
-		if (webelementlist.size() == 0) {
-			reportPass("WebElement is not Present");
-			return false;
-		} else {
-			reportFailure("WebElement is Present", assertype);
-			return true;
-		}
-	}
-
 
 	/**
 	 * This Method is called for the test execution to wait implicitily,till the
@@ -464,16 +370,8 @@ public class AndroidWebDriverManager {
 			// get the dynamic folder name
 			FileUtils.copyFile(scrFile, new File(ExtentManager.screenshotFolderPath + "/" + screenshotFile));
 			// adding the screen-shot in extent reports
-
-			// ExtentTest.log(Status.INFO,"Screenshot-> "+
-			// ExtentTest.addScreenCaptureFromPath(ExtentManager.screenshotFolderPath+ "/" +
-			// screenshotFile));
 			test.log(Status.INFO, "Screenshot-> "
 					+ test.addScreenCaptureFromPath("screenshots" + "/" + screenshotFile));
-			// MediaEntityBuilder
-			// test.log(Status.INFO,"Screenshot-> "+
-			// MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotFolderPath+
-			// "/" + screenshotFile).build());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -487,108 +385,6 @@ public class AndroidWebDriverManager {
 		}
 	}
 
-
-	/**
-	 * This Method is called to check whether text is present in the opened web page
-	 * or not
-	 *
-	 * @param locatorkey Is the web element(fetched from property file)
-	 * @param text       Is the text which needs to be verified
-	 * @param asserttype Is a boolean which tells what type of assertion should be
-	 *                   done in case of pass and failure whether hard assert or
-	 *                   sort assert should be done.
-	 * @return Boolen ,will return true if text is present or else will return false
-	 */
-	public boolean verifyText(String locatorkey, String text, boolean asserttype) {
-		String ActualText = getElement(locatorkey, asserttype).getText().trim().replaceAll("[\\t\\n\\r]+", " ");
-		System.out.println(ActualText);
-		// String ExpectedText = prop.getProperty(text);
-		if (ActualText.equals(text)) {
-			reportPass(text + " is present in the webpage based on the locatorkey");
-			return true;
-		} else {
-			reportFailure(text + " is not present in the webpage based on the locatorkey", asserttype);
-			return false;
-		}
-	}
-
-
-	/**
-	 * This Method is called to check whether text is present in the opened webpage
-	 * or not
-	 *
-	 * @param text       Is the text which needs to be verified
-	 * @param asserttype Is a boolean which tells what type of assertion should be
-	 *                   done in case of pass and failure whether hardassert or
-	 *                   sortassert should be done.
-	 */
-	public boolean verifyTextinPage(String text, boolean asserttype) {
-		wait(2000);
-		if (aDriver.getPageSource().contains(text)) {
-			reportPass(text + " " + "is present in the webpage");
-			return true;
-		} else {
-			reportFailure(text + " " + "is not present in the webpage", asserttype);
-			return false;
-		}
-	}
-
-	/**
-	 * This Method is called to check whether text is not present in the opened
-	 * webpage or not
-	 *
-	 * @param text       Is the text which needs to be verified
-	 * @param asserttype Is a boolean which tells what type of assertion should be
-	 *                   done in case of pass and failure whether hardassert or
-	 *                   sortassert should be done.
-	 */
-	public boolean verifyTextNotinPage(String text, boolean asserttype) {
-		if (aDriver.getPageSource().contains(text)) {
-			reportFailure(text + " " + "is present in the webpage", asserttype);
-			return false;
-		} else {
-			reportPass(text + " " + "is not present in the webpage");
-			return true;
-		}
-	}
-
-	/**
-	 * This Method is called to select the value from the Drop down
-	 * 
-	 * @param locatorkey Is the webelement(fetched from propertyfile)
-	 * @param text       Is the text which needs to be verified
-	 */
-	public void selectValueDropdown(String locatorkey, String text) {
-		List<WebElement> ele = aDriver.findElements(By.xpath(prop.getProperty(locatorkey)));
-		System.out.println(ele.size());
-		for (WebElement i : ele) {
-			System.out.println(i.getText());
-			if (i.getText().equals(text)) {
-				i.click();
-				break;
-			}
-		}
-	}
-
-
-	/**
-	 * The ClearData method is used to clearing the text in the text box.
-	 *
-	 * @param locatorKey Is the webelement of the text box
-	 * @param assertype Is a boolean which tells what type of assertion should be
-	 *                   done in case of pass and failure whether hardassert or
-	 *                   sortassert should be done.
-	 */
-	public void clearData(String locatorKey, boolean assertype) {
-		log("Clearing text field " + locatorKey);
-		getElement(locatorKey, assertype).sendKeys(Keys.CONTROL + "a");
-		getElement(locatorKey, assertype).sendKeys(Keys.DELETE);
-	}
-	
-	public JavascriptExecutor getJavascriptExecutor() {
-		return (JavascriptExecutor) aDriver;
-	}
-		
 	public void setDefaultImplicitlyWait() {
 		setImplicitlyWait(40);
 	}
@@ -596,6 +392,4 @@ public class AndroidWebDriverManager {
 	public void setImplicitlyWait(int waitInSeconds) {
 		aDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitInSeconds));
 	}
-
-
 }
