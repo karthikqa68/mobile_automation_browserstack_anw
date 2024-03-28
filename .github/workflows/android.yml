@@ -96,19 +96,15 @@ jobs:
 
       - name: Register device 1 (if already downloaded)
         run: |
-          if [[ $(./check_device_downloaded.sh) == "true" ]]; then
-          echo "Device already downloaded. Proceeding with registration."
           cd android
-          nohup java -jar selenium-server-standalone-3.141.59.jar -role hub > hub.out 2>&1 &
+          nohup java -jar selenium-server-standalone-3.141.59.jar -role hub
           sleep 30
           # Start Appium nodes for emulators
           appium --base-path /wd/hub -p 4729 --nodeconfig appium_node_emulator.json
           appium --base-path /wd/hub -p 4731 --nodeconfig appium_node_emulator1.json
           # Wait for Appium nodes to initialize (adjust sleep time if needed)
           sleep 100
-          else
-          echo "Device not downloaded. Skipping registration."
-          fi
+  
 
       # - name: Register device 2(if already downloaded)
       #   run: |
