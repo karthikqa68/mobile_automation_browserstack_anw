@@ -113,6 +113,7 @@ public class AndroidWebDriverManager {
 				options.setDeviceName(prop.getProperty("android11DeviceName"));
 				options.setPlatformName(prop.getProperty("android11PlatformName"));
 				options.setPlatformVersion(prop.getProperty("android11PlatformVersion"));
+				options.setSystemPort(8205);
 				options.setApp(directoryPath.getAbsolutePath());
 				options.setCapability("uiautomator2ServerInstallTimeout", 600000);
 				options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
@@ -125,6 +126,7 @@ public class AndroidWebDriverManager {
 				options.setDeviceName(prop.getProperty("android09DeviceName"));
 				options.setPlatformName(prop.getProperty("android09PlatformName"));
 				options.setPlatformVersion(prop.getProperty("android09PlatformVersion"));
+				options.setSystemPort(8207);
 				options.setApp(directoryPath.getAbsolutePath());
 				options.setCapability("uiautomator2ServerLaunchTimeout", 90000);
 				options.setCapability("uiautomator2ServerInstallTimeout", 600000);
