@@ -88,23 +88,26 @@ jobs:
       - name: List emulator devices (Force Refresh)
         run: avdmanager list avd
 
-      - name: Use a local JAR file (if already downloaded)
-        run: |
-          cd android
-          java -jar selenium-server-standalone-3.141.59.jar -role hub
-          sleep 50
+      # - name: Use a local JAR file (if already downloaded)
+      #   run: |
+      #     cd android
+      #     java -jar selenium-server-standalone-3.141.59.jar -role hub
+      #     sleep 50
 
       - name: Register device 1(if already downloaded)
         run: |
           cd android
+          java -jar selenium-server-standalone-3.141.59.jar -role hub
+          sleep 30
           appium --base-path /wd/hub -p 4729 --nodeconfig appium_node_emulator.json
-          sleep 100
-
-      - name: Register device 2(if already downloaded)
-        run: |
-          cd android
           appium --base-path /wd/hub -p 4731 --nodeconfig appium_node_emulator1.json 
           sleep 100
+
+      # - name: Register device 2(if already downloaded)
+      #   run: |
+      #     cd android
+      #     appium --base-path /wd/hub -p 4731 --nodeconfig appium_node_emulator1.json 
+      #     sleep 100
 
       
       # Start Emulator Devices
