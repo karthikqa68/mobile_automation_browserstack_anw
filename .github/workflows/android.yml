@@ -88,31 +88,31 @@ jobs:
       - name: List emulator devices (Force Refresh)
         run: avdmanager list avd
 
-        
-      
-      # Start Emulator Devices
-      - name: Start Emulator Devices
-        run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554  -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          sleep 500
-
-          
       - name: Use a local JAR file (if already downloaded)
         run: |
           cd android
           java -jar selenium-server-standalone-3.141.59.jar -role hub
+          sleep 50
 
       - name: Register device 1(if already downloaded)
         run: |
           cd android
           appium --base-path /wd/hub -p 4729 --nodeconfig appium_node_emulator.json
+          sleep 100
 
       - name: Register device 2(if already downloaded)
         run: |
           cd android
           appium --base-path /wd/hub -p 4731 --nodeconfig appium_node_emulator1.json 
+          sleep 100
+
       
+      # Start Emulator Devices
+      - name: Start Emulator Devices
+        run: |
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          sleep 500
         
       - name: Verify Emulator Status
         run: adb devices
