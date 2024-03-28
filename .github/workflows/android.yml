@@ -30,7 +30,6 @@ jobs:
       # Install Appium and dependencies
       - name: Install Appium and dependencies
         run: |
-          docker pull selenium/standalone-chrome:latest
           npm install -g appium@1.22
           npm install -g appium-doctor
           appium-doctor --android
