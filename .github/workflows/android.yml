@@ -25,8 +25,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'adopt
-
+          distribution: 'adopt'
 
       # Install Appium and dependencies
       - name: Install Appium and dependencies
@@ -35,23 +34,7 @@ jobs:
           npm install -g appium@1.22
           npm install -g appium-doctor
           appium-doctor --android
-        shell: bash
-
-     - name: Use a local JAR file (if already downloaded)
-       use_cache: ${{ path: . }}
-       run: |
-         cd android
-         java -jar selenium-server-standalone-3.141.59.jar -role hub
-
-     - name: Register device 1(if already downloaded)
-       run: |
-         cd android
-         appium --base-path /wd/hub -p 4729 --nodeconfig appium_node_emulator.json
-
-    - name: Register device 2(if already downloaded)
-      run: |
-         cd android
-         appium --base-path /wd/hub -p 4731 --nodeconfig appium_node_emulator1.json        
+        shell: bash       
             
       - name: Check Port Numbers
         run: |
@@ -101,17 +84,35 @@ jobs:
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
       - name: Create AVD emulator-5556
-        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
+        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-30;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
       - name: List emulator devices (Force Refresh)
         run: avdmanager list avd
+
+        
       
       # Start Emulator Devices
       - name: Start Emulator Devices
         run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -port 4725 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -port 4727 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          sleep 400
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554  -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
+          sleep 500
+
+          
+      - name: Use a local JAR file (if already downloaded)
+        run: |
+          cd android
+          java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+      - name: Register device 1(if already downloaded)
+        run: |
+          cd android
+          appium --base-path /wd/hub -p 4729 --nodeconfig appium_node_emulator.json
+
+      - name: Register device 2(if already downloaded)
+        run: |
+          cd android
+          appium --base-path /wd/hub -p 4731 --nodeconfig appium_node_emulator1.json 
       
         
       - name: Verify Emulator Status
