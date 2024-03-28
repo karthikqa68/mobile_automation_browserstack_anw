@@ -4,7 +4,7 @@
     {
       "browserName": "Android",
       "platformName": "Android",
-      "platformVersion": "11.0",
+      "platformVersion": "10.0",
       "maxInstances": 3,
       "deviceName": "emulator-5556",
       "systemPort": "8207",
