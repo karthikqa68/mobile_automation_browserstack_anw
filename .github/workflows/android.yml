@@ -29,7 +29,7 @@ jobs:
       # Install Appium and dependencies
       - name: Install Appium and dependencies
         run: |
-          npm install -g appium
+          npm install -g appium@1.22
           npm install -g appium-doctor
           appium-doctor --android
           appium driver install uiautomator2
@@ -80,7 +80,7 @@ jobs:
 
       # Create AVDs
       - name: Create AVD emulator-5554
-        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
+        run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5554 --package 'system-images;android-30;google_apis;x86_64' --device 'pixel' --sdcard 512M
 
       - name: Create AVD emulator-5556
         run: $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/avdmanager create avd --force --name emulator-5556 --package 'system-images;android-29;google_apis;x86_64' --device 'pixel' --sdcard 512M
