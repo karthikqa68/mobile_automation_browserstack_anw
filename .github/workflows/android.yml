@@ -63,12 +63,12 @@ jobs:
           echo "$ANDROID_SDK_ROOT/emulator" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/platforms" >> $GITHUB_PATH
           echo "$ANDROID_SDK_ROOT/tools" >> $GITHUB_PATH
-          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-30" "platforms;android-29" "emulator"
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "platform-tools" "platforms;android-29" "emulator"
 
       # Install system image (android-29;google_apis;x86_64)
       - name: Install system image
         run: |
-          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-30;google_apis;x86_64" "system-images;android-29;google_apis;x86_64"
+          echo "y" | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT "system-images;android-29;google_apis;x86_64"
 
       # Update Android SDK Manager
       - name: Update Android SDK Manager
@@ -105,9 +105,9 @@ jobs:
       # Start Emulator Devices
       - name: Start Emulator Devices
         run: |
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 2048 -wipe-data -verbose &) &
-          sleep 400
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5554 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 512 -wipe-data -verbose &) &
+          ($ANDROID_SDK_ROOT/emulator/emulator -avd emulator-5556 -no-snapshot -no-boot-anim -no-window -http-proxy localhost -no-audio -memory 512 -wipe-data -verbose &) &
+          sleep 500
         
       - name: Verify Emulator Status
         run: adb devices
