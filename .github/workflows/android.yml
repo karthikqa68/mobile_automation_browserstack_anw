@@ -7,7 +7,6 @@ on:
       - master
 
 jobs:
-
   grid-hub-test:
     runs-on: macOS-latest
     env:
