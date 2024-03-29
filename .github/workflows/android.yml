@@ -33,7 +33,8 @@ jobs:
           npm install -g appium
           npm install -g appium-doctor
           appium-doctor --android
-        shell: bash       
+          appium-uiautomator2-driver
+        shell: bash 
             
       # - name: Check Port Numbers
       #   run: |
