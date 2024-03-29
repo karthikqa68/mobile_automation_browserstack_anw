@@ -52,7 +52,7 @@ jobs:
 
       # Install additional packages (modify list as needed)
       - name: Install additional Android SDK packages
-        run: sdkmanager --install 'build-tools;29.0.0' 'platform-tools'  'platforms;android-29' 'cmdline-tools;latest' 'emulator'
+        run: sdkmanager --install 'build-tools;30.0.0' 'platform-tools'  'platforms;android-30' 'platforms;android-29' 'cmdline-tools;latest' 'emulator'
 
       # Set up Android SDK and PATH
       - name: Set up Android SDK and PATH
