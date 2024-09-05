@@ -1,52 +1,35 @@
 package managers;
 
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import io.cucumber.java.Before;
+import org.openqa.selenium.MutableCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
+import java.net.URL;
 
 
-public class AndroidAppiumServer {
+public class AndroidAppiumServer{
     static AppiumDriverLocalService server;
 
-    private static void setInstance(){
-        AppiumServiceBuilder builder = new AppiumServiceBuilder();
-        builder
-                .withAppiumJS(new File("/usr/lib/node_modules/appium/build/lib/main.js"))
-                .usingDriverExecutable(new File("/usr/bin/node"))
-                .usingAnyFreePort()
-                //.usingPort(4723)
-                .withIPAddress("127.0.0.1")
-                //.usingAnyFreePort()
-                .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
-                .withLogFile(new File("Appiumlog.txt"));
 
+    public AndroidDriver driver;
 
-        server = AppiumDriverLocalService.buildService(builder);
-        //server.start();
-        //System.out.println(server.getUrl());
-        //System.out.println(server.isRunning());
-        //server.stop();
-    }
+//    @BeforeClass
+//    public void setUp() throws Exception {
+//        MutableCapabilities capabilities = new UiAutomator2Options();
+//        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+//    }
 
-    private static AppiumDriverLocalService getInstance(){
-        if(server == null){
-            setInstance();
-        }
-        return server;
-    }
+//    @AfterMethod(alwaysRun=true)
+//    public void tearDown() throws Exception {
+//        driver.quit();
+//    }
 
-    public static void start(){
-        getInstance().start();
-        System.out.println(server.getUrl());
-        System.out.println(server.isRunning());
-    }
-
-    public static void stop(){
-        if(server != null){
-            getInstance().stop();
-            System.out.println("Appium server stopped");
-        }
-    }
 }

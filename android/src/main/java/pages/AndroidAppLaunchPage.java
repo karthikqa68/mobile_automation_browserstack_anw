@@ -1,30 +1,36 @@
 package pages;
 
 
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
 import managers.AndroidWebDriverManager;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.net.MalformedURLException;
+import java.time.Duration;
+import java.util.List;
 
 public class AndroidAppLaunchPage {
     private AndroidWebDriverManager app;
+    private AndroidDriver aDriver;
+
 
     public AndroidAppLaunchPage(AndroidWebDriverManager app) {
         this.app = app;
+        this.aDriver = app.getDriver();
     }
 
-    public void launchingApp(String deviceName,String automationType) throws MalformedURLException {
-        app.log("Opening the app");
-        app.openApp(deviceName,automationType);
-        app.log("Opened app successfully");
+    public void selectingLanguage() throws InterruptedException {
+        app.click("searchWikipedia_accessibilityid", true);
+        app.wait(4000);
     }
 
-    public void selectingLanguage() {
-        app.log("Clicking on Language");
-        app.log("Clicking on Continue button");
-        //app.click("selectLanguageClick_xpath",true);
-        app.wait(12000);
-        app.click("continueButtonselectLanguages_xpath",true);
-        app.wait(11000);
-        app.takeScreenShot();
+    public void enteringText(String text)
+    {
+        app.clickAndEnterText("search_id", text);
+        System.out.println("Executed scuccesfuly in anw mobile automation");
     }
 }

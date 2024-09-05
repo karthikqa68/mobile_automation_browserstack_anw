@@ -1,13 +1,6 @@
 Feature: Launch the app
 
   @RegressionWorking
-  Scenario Outline: Verify whether the app is getting launched
-    When   I launch the Android app on device-'<device-name>' and with automation type as '<automation-type>'
-    Then   I select english language
-  Examples:
-    | device-name | automation-type |
-    | android11   |  app            |
-    | android09   |  app            |
-
-
-
+  Scenario: Verify whether the app is getting launched
+    When   I click on search wikipedia
+    Then   I enter text in search field- 'BrowserStack'

@@ -1,0 +1,957 @@
+09:32:55.632 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:32:55.634 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:32:55.980 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:32:55.983 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:32:56.088 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:32:57.723 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:33:02.356 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+09:33:02.356 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+09:33:02.356 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:33:05.314 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:33:06.660 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:33:12.989 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:33:15.568 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/y2s3wclahow6wvunrf8kangm2wsxqnsmm2eqvymv to view build report, insights, and many more debugging information all at one place!
+
+09:33:15.568 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:33:33.677 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:33:33.681 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:33:33.926 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:33:33.928 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:33:33.996 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:33:35.614 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:33:40.124 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+09:33:40.125 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+09:33:40.125 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:33:42.628 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:33:43.865 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:33:48.612 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:33:51.808 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/q3bqtiaipvoybsrufescj7gr5wiii0yhffszxeti to view build report, insights, and many more debugging information all at one place!
+
+09:33:51.808 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:34:45.409 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:34:45.412 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:34:45.692 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:34:45.693 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:34:45.770 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:34:47.143 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:34:50.801 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+09:34:50.802 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+09:34:50.802 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:34:53.543 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:34:54.604 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:34:59.290 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:35:33.175 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ldzyglk7iwl4sytv5scgkao3i2ugtmowhk5nabxk to view build report, insights, and many more debugging information all at one place!
+
+09:35:33.175 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:35:37.552 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/581442caf6e643213b55b6fcbda56bd9dd12379d
+09:35:37.552 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:29:47.409 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+10:29:47.413 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+10:29:47.691 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:29:47.692 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+10:29:47.765 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:29:49.115 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+10:29:53.270 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+10:29:53.272 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+10:29:53.272 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:29:56.240 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:29:57.430 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:30:02.438 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:30:35.365 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ymfyfrcqlweeiouyzgmiaaksdmtjdt6smdiqiq2u to view build report, insights, and many more debugging information all at one place!
+
+10:30:35.365 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:30:39.578 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/68f6eeee5b406adbd9545de01a47cf0395f1c05e
+10:30:39.578 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:21:26.936 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:21:26.939 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:21:27.227 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:21:27.229 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:21:27.290 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:21:28.623 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:21:33.241 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+11:21:33.242 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+11:21:33.243 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:21:35.952 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:21:37.076 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:21:42.600 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:22:19.753 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/rrgj6m21j7m3xr7ssdb3ey4gdd9wcqw785nya2c0 to view build report, insights, and many more debugging information all at one place!
+
+11:22:19.754 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:22:24.587 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/359064857f121898b5f5938358a83f877eff7367
+11:22:24.588 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:24:33.577 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:24:33.580 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:24:33.845 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:24:33.846 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:24:33.919 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:24:35.308 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:24:39.084 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+11:24:39.085 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+11:24:39.085 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:24:41.815 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:24:42.928 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:24:48.252 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:25:30.008 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/qodkrvi6xc754jgeraqjc7jzem9p05jkji2ez7rr to view build report, insights, and many more debugging information all at one place!
+
+11:25:30.008 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:25:34.291 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/45b8ab0694ab3d3eac4b8a5f3c1f1367b727dfa9
+11:25:34.292 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:26:23.763 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:26:23.766 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:26:24.023 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:26:24.026 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:26:24.086 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:26:25.529 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:26:30.193 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+11:26:30.194 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+11:26:30.194 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:26:32.820 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:26:34.097 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:26:39.526 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:27:31.576 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/sdwuypdqq9jkrkpvukzaqezhmluvtt6lwbgj5wbu to view build report, insights, and many more debugging information all at one place!
+
+11:27:31.577 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:27:35.986 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/2b7622814bdfab8a1d2b6b44947b2ba02eecb6a1
+11:27:35.986 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:28:28.040 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:28:28.044 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:28:28.370 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:28:28.371 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:28:28.457 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:28:30.010 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:28:34.726 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+11:28:34.727 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+11:28:34.727 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:28:38.611 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:28:39.838 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:28:44.376 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:28:49.195 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ztsz8rpg87bqsqkuppj8drtdpysntvop7rjnawcj to view build report, insights, and many more debugging information all at one place!
+
+11:28:49.196 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+12:52:00.177 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+12:52:00.181 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+12:52:00.369 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+12:52:00.370 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+12:52:00.417 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+12:52:01.621 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+12:52:05.940 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+12:52:05.941 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+12:52:05.941 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+12:52:08.673 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+12:52:09.787 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+12:52:14.210 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+12:52:16.849 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/zxmvlxdlpufvg9ife38wsaruyslduhosxxplbr1m to view build report, insights, and many more debugging information all at one place!
+
+12:52:16.850 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+12:58:16.893 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+12:58:16.896 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+12:58:17.077 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+12:58:17.078 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+12:58:17.131 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+12:58:18.296 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+12:58:22.342 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+12:58:22.343 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+12:58:22.343 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+12:58:24.927 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+12:58:26.065 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+12:58:31.172 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+12:58:33.664 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/oktyfpkknqlj3zhswwywrpfujcfddcsnsxntlorl to view build report, insights, and many more debugging information all at one place!
+
+12:58:33.664 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+13:00:24.394 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+13:00:24.397 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+13:00:24.584 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+13:00:24.585 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+13:00:24.636 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+13:00:25.817 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+13:00:30.126 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+13:00:30.127 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+13:00:30.127 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+13:00:32.633 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+13:00:33.624 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+13:00:38.223 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+13:00:40.989 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ahjlq9tytesf5sjwh2px64rpft0qxhhvfm9lppzf to view build report, insights, and many more debugging information all at one place!
+
+13:00:40.989 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+13:03:46.247 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+13:03:46.249 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+13:03:46.420 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+13:03:46.422 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+13:03:46.485 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+13:03:47.781 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+13:03:52.320 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+13:03:52.320 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+13:03:52.320 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+13:03:54.878 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+13:03:56.056 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+13:04:01.538 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+13:04:03.458 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/hto200ugpqdleuqskjd5ypl7tunz8gp9rc0rvkea to view build report, insights, and many more debugging information all at one place!
+
+13:04:03.459 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+13:06:07.139 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+13:06:07.142 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+13:06:07.332 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+13:06:07.333 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+13:06:07.398 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+13:06:08.596 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+13:06:13.127 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+13:06:13.128 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+13:06:13.128 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+13:06:16.329 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+13:06:17.468 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+13:06:21.891 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+13:06:24.366 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/jqpxbfoxsrwrwnx9mjvesjdxj0ztkd4siwqpewf8 to view build report, insights, and many more debugging information all at one place!
+
+13:06:24.366 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+14:40:56.928 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+14:40:56.931 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+14:40:57.202 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+14:40:57.204 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+14:40:57.267 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+14:40:58.539 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+14:41:02.765 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+14:41:02.767 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+14:41:02.767 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+14:41:05.330 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+14:41:06.441 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+14:41:11.130 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+14:41:14.682 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ipvbbbmrzlnqiy78nkten93zxkv5wzusxqiaes8q to view build report, insights, and many more debugging information all at one place!
+
+14:41:14.682 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+14:42:40.058 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+14:42:40.062 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+14:42:40.313 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+14:42:40.315 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+14:42:40.371 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+14:42:41.880 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+14:42:45.883 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+14:42:45.883 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+14:42:45.883 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+14:42:48.643 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+14:42:49.926 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+14:42:55.372 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+14:42:58.700 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ngjdu0n9kgwrf81kwyz40j3zju7wzojzvhgzoboc to view build report, insights, and many more debugging information all at one place!
+
+14:42:58.700 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+14:49:20.089 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+14:49:20.093 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+14:49:20.365 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+14:49:20.366 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+14:49:20.424 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+14:49:21.767 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+14:49:29.949 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+14:49:29.949 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+14:49:29.949 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+14:49:32.684 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+14:49:33.872 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+14:49:38.972 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+14:50:11.699 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ux14xkpzeverhmzaypl1fuwiz37vlnytdiedu1dh to view build report, insights, and many more debugging information all at one place!
+
+14:50:11.699 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+14:50:16.940 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/e5168d14ccb0625d8393d1601665a442df42cb30
+14:50:16.940 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+14:52:45.745 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+14:52:45.748 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+14:52:46.002 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+14:52:46.003 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+14:52:46.079 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+14:52:47.413 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+14:52:51.878 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+14:52:51.878 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+14:52:51.878 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+14:52:55.473 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+14:52:56.691 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+14:53:01.839 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+14:53:05.135 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/nptptvsdcfbpchbjtjxfsyjtwb6riixewxrcfohd to view build report, insights, and many more debugging information all at one place!
+
+14:53:05.135 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+14:54:34.765 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+14:54:34.769 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+14:54:35.033 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+14:54:35.034 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+14:54:35.114 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+14:54:36.458 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+14:54:40.703 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+14:54:40.704 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+14:54:40.704 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+14:54:43.797 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+14:54:45.048 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+14:54:52.345 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+14:54:55.427 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ynbdpu9trpvs90hdpisgkbiicfbvibkmlpj9cthk to view build report, insights, and many more debugging information all at one place!
+
+14:54:55.427 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:06:40.398 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:06:40.401 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+08:06:40.672 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+08:06:40.674 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+08:06:40.741 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:06:42.090 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+08:06:45.328 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+08:06:45.329 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+08:06:45.329 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:06:48.398 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+08:06:49.718 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:06:56.982 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:06:59.721 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/76em4fzfpjfxifdbkbzolc05lidgfbqr1efkalol to view build report, insights, and many more debugging information all at one place!
+
+08:06:59.721 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:08:29.490 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:08:29.493 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+08:08:29.756 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+08:08:29.757 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+08:08:29.828 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:08:31.187 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+08:08:35.019 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+08:08:35.020 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+08:08:35.020 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:08:38.116 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+08:08:39.297 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:08:44.029 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:09:15.843 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/jjetv3jomedzqcsbpy0debr17gh0xcytutpz8fgs to view build report, insights, and many more debugging information all at one place!
+
+08:09:15.843 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:09:21.219 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/8bdffe36dde0a50b0e9e032f0198508eb0e5ab6c
+08:09:21.219 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:24:44.393 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:24:44.395 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+08:24:44.670 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+08:24:44.671 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+08:24:44.741 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:24:46.090 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+08:24:49.456 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+08:24:49.457 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+08:24:49.457 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:24:52.535 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+08:24:53.760 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:24:58.617 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:25:24.069 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ueexqvpgtplhxjvbpadldczv9pp3pk6octjnohpd to view build report, insights, and many more debugging information all at one place!
+
+08:25:24.069 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:25:28.456 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/9cb5c21e5cd59bd802bd304fb2656a2d3111c927
+08:25:28.456 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:43:49.726 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:43:49.730 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+08:43:50.020 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+08:43:50.021 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+08:43:50.085 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:43:51.524 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+08:43:54.863 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+08:43:54.864 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+08:43:54.864 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:43:58.650 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+08:43:59.912 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:44:06.012 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:44:37.261 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/8g147cqubxcsumeufgkdit0sfihlbtsoexzh8sr6 to view build report, insights, and many more debugging information all at one place!
+
+08:44:37.261 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:44:41.922 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/cc008fcecf40904d8f079ff52842d4c9ce4365ac
+08:44:41.922 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:01:35.802 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:01:35.806 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:01:36.023 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:01:36.024 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:01:36.086 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:01:37.596 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:01:40.562 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+09:01:40.563 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+09:01:40.563 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:01:43.726 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:01:44.811 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:01:50.021 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:02:22.008 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ggjt0ba17jbyso7h9yd1osx3bn2ucdg7h760cn6a to view build report, insights, and many more debugging information all at one place!
+
+09:02:22.008 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:02:26.606 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/0836fc21937640b2d5412cb75080da3c2d602696
+09:02:26.606 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:05:14.832 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:05:14.836 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:05:15.082 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:05:15.083 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:05:15.146 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:05:16.458 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:05:20.734 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d149133b8247eb44f302779d2f813cc56b7540b1"}
+09:05:20.735 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d149133b8247eb44f302779d2f813cc56b7540b1]
+09:05:20.735 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:05:23.928 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:05:25.007 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:05:30.361 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:06:23.760 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/wqipfddqh7tzflhqb3bprxi2qtle9bsdgbrm6fyl to view build report, insights, and many more debugging information all at one place!
+
+09:06:23.760 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:06:28.497 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/d392745c612dd48a322c3f1843a7af48c0b95edf
+09:06:28.497 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:07:55.992 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:07:55.996 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:07:56.295 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:07:56.297 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:07:56.379 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:07:57.894 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./MakeMyTrip.apk to browserstack
+09:08:03.858 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/a2faf54a428ab5902ca4adb13190b61bb2977553"}
+09:08:03.859 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://a2faf54a428ab5902ca4adb13190b61bb2977553]
+09:08:03.859 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:08:07.221 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:08:08.426 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:08:14.671 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:09:11.893 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/kfhtjvk59lkwko90m40yje9rqymyrlv7hv1rmljy to view build report, insights, and many more debugging information all at one place!
+
+09:09:11.893 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:09:17.102 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/a0f0eeb1a16209eab600c30e08f8609fdbe3d3f6
+09:09:17.102 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:10:58.689 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:10:58.692 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:10:58.930 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:10:58.932 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:10:58.998 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:11:00.331 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./MakeMyTrip.apk to browserstack
+09:11:02.800 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/a2faf54a428ab5902ca4adb13190b61bb2977553"}
+09:11:02.801 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://a2faf54a428ab5902ca4adb13190b61bb2977553]
+09:11:02.801 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:11:05.902 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:11:07.003 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:11:12.717 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:12:07.136 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/qsnzkxt9rz3g6jnx4m6btjjpzw6cwlxfw1wtptir to view build report, insights, and many more debugging information all at one place!
+
+09:12:07.137 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:12:12.281 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/2a0a4f0e989f9e52258e70317788bae8535450ad
+09:12:12.281 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:14:22.109 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:14:22.112 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:14:22.390 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:14:22.391 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:14:22.454 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:14:23.796 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+09:14:23.797 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:14:27.279 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:14:28.587 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:14:33.724 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:15:40.497 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/iwyqerqwkkof2dzh8ternkfjlboxcu9buglpgkok to view build report, insights, and many more debugging information all at one place!
+
+09:15:40.497 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:15:46.192 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/882b2f44db55e742948652681c17aabf3fe9067b
+09:15:46.192 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:34:36.091 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:34:36.096 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:34:36.334 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:34:36.335 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:34:36.399 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:34:37.799 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+09:34:37.799 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:34:41.759 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:34:42.903 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:34:47.963 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:35:17.966 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/8jasta3dzkasr9dtcfhpsncnagotxgdg6ybwwkzj to view build report, insights, and many more debugging information all at one place!
+
+09:35:17.966 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:35:22.857 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/1cf982702b657213fb7a2284c70ac28de393dcba
+09:35:22.858 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:39:39.613 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:39:39.616 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:39:39.860 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:39:39.861 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:39:39.924 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:39:41.252 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+09:39:41.252 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:39:44.543 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:39:45.739 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:39:50.716 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:40:20.342 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/zsuctnrigf5ftivxfif7ybosktahlqt4wsdxld3o to view build report, insights, and many more debugging information all at one place!
+
+09:40:20.342 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:40:26.095 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/8aa5266b2aebf3e15d0156469da0b189386ead08
+09:40:26.096 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:43:23.408 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:43:23.412 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:43:23.674 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:43:23.676 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:43:23.747 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:43:25.344 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+09:43:25.344 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:43:28.819 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:43:30.001 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:43:34.792 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:44:03.278 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/e1b3ocdefvkv8q5y0e1hkwutgm3dbkiqobsu8g0h to view build report, insights, and many more debugging information all at one place!
+
+09:44:03.279 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:44:08.512 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/32bff3a8413c17f1264c09c83f6deebfc5c7a86d
+09:44:08.512 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:45:13.527 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:45:13.531 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:45:13.771 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:45:13.772 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:45:13.836 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:45:15.160 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+09:45:15.160 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:45:18.693 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:45:19.761 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:45:24.692 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:46:22.813 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/xgeziqoszgdsumzcixutilbty3ngcj0dzk1aj2ln to view build report, insights, and many more debugging information all at one place!
+
+09:46:22.814 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:46:28.207 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/8ddbb045a1d92455753525dbc322e7af59acca94
+09:46:28.207 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:49:05.162 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:49:05.166 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:49:05.425 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:49:05.426 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:49:05.488 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:49:06.808 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+09:49:06.809 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:49:10.350 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:49:11.578 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:49:16.240 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:50:17.339 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/gglhxydhjuyuc7kyffxmr5xv1jyznnmbum2gwmr8 to view build report, insights, and many more debugging information all at one place!
+
+09:50:17.339 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:50:22.947 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/6ce3b5f34fa14e7bec30569cb30b2d8745d8783b
+09:50:22.947 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:54:22.886 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:54:22.890 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:54:23.139 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:54:23.141 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:54:23.221 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:54:24.594 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+09:54:24.594 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:54:28.285 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:54:29.497 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:54:34.231 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:55:32.234 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/dnlbs7ti9koteaeqavtdnjhc9ib1icgpva4a384c to view build report, insights, and many more debugging information all at one place!
+
+09:55:32.234 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:55:37.239 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/76d5c47130012001eed921fe078c01161696f1ab
+09:55:37.239 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:05:06.753 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:05:06.757 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:05:07.061 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:05:07.063 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:05:07.147 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:05:08.671 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+11:05:08.671 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:05:12.816 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:05:14.246 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:05:19.720 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:06:31.895 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/nfe4x3clrfndttdmgadnsrrnurta9vkbnijrm9gz to view build report, insights, and many more debugging information all at one place!
+
+11:06:31.895 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:06:37.011 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/dfa1261aa2208178886869ce04d2d148ca8352c5
+11:06:37.011 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:08:02.852 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:08:02.855 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:08:03.139 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:08:03.141 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:08:03.215 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:08:04.536 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+11:08:04.536 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:08:08.226 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:08:09.365 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:08:15.441 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:09:12.935 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/phkraipejruhm5dr8jjwvovx9oh0vxsfpjoexmfo to view build report, insights, and many more debugging information all at one place!
+
+11:09:12.935 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:09:18.000 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/9ea7447731dacd62dc88aa4e10fd0a7b897d75a0
+11:09:18.000 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:11:05.177 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:11:05.180 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:11:05.463 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:11:05.465 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:11:05.531 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:11:06.932 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+11:11:06.932 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:11:10.456 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:11:11.524 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:11:16.486 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:12:22.065 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/y6l2nws70sikbixrta3vtrvekrhr3jzgumhmexll to view build report, insights, and many more debugging information all at one place!
+
+11:12:22.065 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:12:28.218 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/e5cb7d9668d7704c26316c77e3746e743234f649
+11:12:28.219 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:25:18.758 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:25:18.761 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:25:19.016 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:25:19.018 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:25:19.091 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:25:20.797 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+11:25:20.797 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:25:24.215 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:25:25.551 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:25:31.661 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:26:37.696 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/c8tttn0ob5nqmoomrfbfggdziouoev8fjvhmjycp to view build report, insights, and many more debugging information all at one place!
+
+11:26:37.696 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:26:43.056 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/f214cab7ef06bfecb298e97d3f986ca15bac4382
+11:26:43.057 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:28:35.692 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:28:35.695 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:28:35.932 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:28:35.933 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:28:36.002 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:28:37.735 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+11:28:37.735 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:28:41.635 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:28:42.748 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:28:48.997 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:29:55.000 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/kj6vmzeyhhu0cu2iumxdaookvocpgqxldefsaoer to view build report, insights, and many more debugging information all at one place!
+
+11:29:55.000 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:30:01.440 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/cf82857a33a96882705abc81f9042701149aca9e
+11:30:01.440 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+17:56:48.820 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+17:56:48.823 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+17:56:49.112 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+17:56:49.114 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+17:56:49.193 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+17:56:51.168 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://bcf3b77a34ad37daa7e60f4b07b999ad7a5ec47f]
+17:56:51.169 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+17:56:55.205 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+17:56:56.426 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+17:57:03.740 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+17:57:10.092 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/qek7mmfwao3l40ezv5eoh3mo8nxolnlphhad1fez to view build report, insights, and many more debugging information all at one place!
+
+17:57:10.092 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:37:53.439 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:37:53.444 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:37:53.772 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:37:53.774 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:37:53.858 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:37:55.284 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:37:59.238 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"error":"Invalid username or password."}
+09:37:59.239 [main] ERROR c.browserstack.BrowserStackJavaAgent - App upload failed with error: Invalid username or password.
+09:37:59.239 [main] INFO  c.b.config.BrowserStackConfig - INFO
+09:38:37.804 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:38:37.807 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:38:38.047 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:38:38.049 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:38:38.124 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:38:39.430 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:38:43.322 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+09:38:43.323 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+09:38:43.323 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:38:46.511 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:38:47.825 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:38:53.941 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:39:48.248 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/zmyomfvrcf2vrbqmmkj6vo2fhdt7azjknw28pgtv to view build report, insights, and many more debugging information all at one place!
+
+09:39:48.248 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:39:53.128 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/f973ab4e1a8386be2443d588bf32654f0c180386
+09:39:53.128 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:42:21.427 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:42:21.431 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:42:21.644 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:42:21.645 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:42:21.714 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:42:23.000 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:42:27.842 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+09:42:27.843 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+09:42:27.843 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:42:31.367 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:42:32.634 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:42:39.045 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:43:02.941 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/dgsqeejduf0dxx11zky5umflo6cotvakrzijszmx to view build report, insights, and many more debugging information all at one place!
+
+09:43:02.941 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:43:07.866 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/7095c194baeb4c52c46ce9e10d4717f3e3f982ba
+09:43:07.866 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:44:12.709 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:44:12.714 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:44:12.970 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:44:12.971 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:44:13.035 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:44:14.341 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:44:17.605 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+09:44:17.607 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+09:44:17.607 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:44:20.745 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:44:21.918 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:44:28.873 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:44:30.176 [SIGINT handler] INFO  c.b.utils.ExitSignalHandler - Shutdown triggered by: INT 2
+09:44:30.439 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/voii49tdpn6tnbobt3hriptjxkc9kvnt7hdjefz4 to view build report, insights, and many more debugging information all at one place!
+
+09:44:30.439 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:44:36.751 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/fd1a470cb55838451755dd52d82e86b54575e361
+09:44:36.751 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:44:56.297 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:44:56.301 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:44:56.556 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:44:56.557 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:44:56.620 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:44:57.938 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:45:01.053 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+09:45:01.053 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+09:45:01.054 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:45:03.888 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:45:05.033 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:45:10.364 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:45:42.125 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/6cfs4s8luu351o67pgtvkyc0lzvopr6a5xefrvv6 to view build report, insights, and many more debugging information all at one place!
+
+09:45:42.125 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:45:46.924 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/4fe8047a0fd562c00f81f0a29e736f96b85623f9
+09:45:46.925 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:47:33.403 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:47:33.408 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:47:33.665 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:47:33.669 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:47:33.738 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:47:35.042 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:47:38.229 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+09:47:38.230 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+09:47:38.230 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:47:41.370 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:47:42.475 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:47:47.808 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:48:40.808 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/gsjqqqho2eowr51bfuxglnqugacec8ts5xgtpz9t to view build report, insights, and many more debugging information all at one place!
+
+09:48:40.808 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:48:45.391 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/13070616f7575589c549ebf0e7137ef9784fdbf8
+09:48:45.392 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:51:04.752 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:51:04.754 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:51:04.981 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:51:04.983 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:51:05.046 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:51:06.398 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+09:51:09.459 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+09:51:09.460 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+09:51:09.460 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:51:12.497 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:51:13.751 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:51:18.541 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:51:41.629 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/hdvzrmmmppiuzq7rxy14gr84y58vmggahclzeejf to view build report, insights, and many more debugging information all at one place!
+
+09:51:41.629 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:51:46.823 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/d909ca2c690d8ed16c073633a7bf96c23b0ab574
+09:51:46.823 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:05:59.485 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+10:05:59.490 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+10:05:59.774 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:05:59.776 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+10:05:59.847 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:06:01.194 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+10:06:05.221 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+10:06:05.222 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+10:06:05.222 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:06:08.996 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:06:10.243 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:06:15.208 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:06:38.992 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/tiw7f4wct0elkpheciiw197uviudddu2mcdzwuku to view build report, insights, and many more debugging information all at one place!
+
+10:06:38.992 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:06:43.714 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/dd92edda7b5f3d09b8b373035a0ddcd8ccf9167d
+10:06:43.714 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:09:53.662 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+10:09:53.665 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+10:09:53.930 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:09:53.932 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+10:09:53.998 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:09:55.298 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+10:09:59.564 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+10:09:59.565 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+10:09:59.565 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:10:02.603 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:10:03.670 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:10:08.567 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:10:35.872 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/yyduhojpcvolicigs7nmjjwwvjbirdfjjiwvx7d4 to view build report, insights, and many more debugging information all at one place!
+
+10:10:35.872 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:10:41.181 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/76ec3a9b2fd4305a03cf74462d8fb06c1db0b8b4
+10:10:41.182 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:11:32.491 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+10:11:32.494 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+10:11:32.748 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:11:32.749 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+10:11:32.812 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:11:34.175 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+10:11:40.707 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+10:11:40.708 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+10:11:40.708 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:11:43.848 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:11:45.265 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:11:50.117 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:12:16.683 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/zyrgzf6vhyaxrvsezp0wucdyg6rfga2xxvja0m8c to view build report, insights, and many more debugging information all at one place!
+
+10:12:16.683 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:12:21.589 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/27b54a6122ca02fe28d224fe9f0369c185102dc9
+10:12:21.590 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:22:20.273 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+10:22:20.278 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+10:22:20.544 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:22:20.545 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+10:22:20.616 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:22:21.956 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+10:22:25.452 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+10:22:25.453 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+10:22:25.453 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:22:28.791 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:22:30.078 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:22:35.591 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:23:00.572 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/ar7byklzdzep5kzvczhingnlyo25eaeuherasksy to view build report, insights, and many more debugging information all at one place!
+
+10:23:00.573 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:23:05.493 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/cfc8ea5aff0743445fb83e0d513f2b7bce5dc3b4
+10:23:05.493 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:34:25.162 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+10:34:25.165 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+10:34:25.406 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:34:25.409 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+10:34:25.469 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:34:26.762 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+10:34:30.231 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+10:34:30.232 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+10:34:30.232 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:34:33.311 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:34:34.772 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:34:39.590 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:35:05.470 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/p9ifbjeqjicgel9fxbf3kxfkj2wlcwpvix8a57uz to view build report, insights, and many more debugging information all at one place!
+
+10:35:05.470 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:35:10.335 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/8bcb106f4a62211cd12df35ef5d43ce8b95e77dc
+10:35:10.335 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:43:14.612 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+10:43:14.615 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+10:43:14.833 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+10:43:14.834 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+10:43:14.896 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+10:43:16.224 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+10:43:20.913 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+10:43:20.914 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+10:43:20.914 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+10:43:24.087 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+10:43:25.375 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+10:43:31.069 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+10:43:59.283 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/tajeaplcqidkdt9a2aiu3vitcndtpjasjgohmigw to view build report, insights, and many more debugging information all at one place!
+
+10:43:59.283 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+10:44:03.785 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/68e7c580d1f939051e1f66dbf0fa263551b0bb33
+10:44:03.785 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:00:00.141 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:00:00.144 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:00:00.385 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:00:00.386 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:00:00.452 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:00:02.049 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:00:05.610 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+11:00:05.611 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+11:00:05.611 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:00:08.749 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:00:09.997 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:00:16.022 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:00:48.506 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/6dad4sq7lu8dmqqommfskjjqfclabqjybwmzlglc to view build report, insights, and many more debugging information all at one place!
+
+11:00:48.506 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:00:53.891 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/dab49e7b2c4b04ab870d725ead058b4282516fc6
+11:00:53.891 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:02:35.229 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:02:35.234 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:02:35.493 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:02:35.495 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:02:35.558 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:02:36.944 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:02:40.715 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+11:02:40.716 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+11:02:40.716 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:02:43.891 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:02:45.068 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:02:52.252 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:03:24.529 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/pniewcmginwzpicin2gelfkbyu03gs32fz50thft to view build report, insights, and many more debugging information all at one place!
+
+11:03:24.530 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:03:30.743 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/bc6737f8873e12e6f337eedf217730938b2d6e66
+11:03:30.744 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:06:53.641 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:06:53.660 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:06:53.911 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:06:53.913 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:06:53.977 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:06:55.274 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:06:58.525 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+11:06:58.526 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+11:06:58.526 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:07:01.760 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:07:02.911 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:07:07.882 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:07:54.074 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/u64warqjvpj6c7ewftl98ozcakvlz4rw0lqiub7z to view build report, insights, and many more debugging information all at one place!
+
+11:07:54.074 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:07:58.954 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/9d17c50cd395ba7d9673ee95d6996991e79caa00
+11:07:58.955 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:09:54.175 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:09:54.180 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:09:54.617 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:09:54.621 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:09:54.717 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:09:56.210 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:09:59.770 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+11:09:59.771 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+11:09:59.771 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:10:02.917 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:10:04.096 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:10:09.868 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:10:47.120 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/cvwxcx2bce3hhzozei5n0yd5mrvzxcrse9gadbmo to view build report, insights, and many more debugging information all at one place!
+
+11:10:47.120 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:10:52.304 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/9f4892bb7219bdd795c5d00a238b537768d340de
+11:10:52.305 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:57:24.427 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+08:57:24.435 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+08:57:24.857 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+08:57:24.860 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+08:57:24.951 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+08:57:27.075 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+08:57:31.089 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/4a2030d7001188b6e6a7afced7261bb6e3997675"}
+08:57:31.090 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://4a2030d7001188b6e6a7afced7261bb6e3997675]
+08:57:31.090 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+08:57:34.438 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+08:57:35.949 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+08:57:44.461 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+08:58:20.830 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/c1l23ohl9wlgcik6oebxfrz6r2rstzda7rlflgzx to view build report, insights, and many more debugging information all at one place!
+
+08:58:20.831 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+08:58:27.477 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/fda1f1e8b5651025ccf4d21ec1e3821538805655
+08:58:27.478 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:14:54.715 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+09:14:54.719 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+09:14:55.022 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+09:14:55.024 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+09:14:55.101 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+09:14:56.804 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://7125eb1078016cf2d037d8134cffe3acb1bcab14]
+09:14:56.804 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+09:15:00.524 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+09:15:02.035 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+09:15:08.478 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+09:15:42.208 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/gyjsxdoiuniwevwpty1xrybvkrtnkonn2baoq4va to view build report, insights, and many more debugging information all at one place!
+
+09:15:42.209 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+09:15:47.112 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/b9d086597829235cb982756bcf9b3cc9b00229bc
+09:15:47.112 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:06:59.066 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+11:06:59.069 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+11:06:59.310 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+11:06:59.312 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+11:06:59.377 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+11:07:00.578 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+11:07:12.047 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d2441528af19979bbc047e874e55b6b4b7144553"}
+11:07:12.048 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d2441528af19979bbc047e874e55b6b4b7144553]
+11:07:12.048 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+11:07:15.395 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+11:07:16.608 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+11:07:22.213 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+11:07:59.977 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/btuemm4ssk3ndblj9jat9ckgekclomivzvonbp1b to view build report, insights, and many more debugging information all at one place!
+
+11:07:59.977 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+11:08:04.673 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/b77fd42649686536467a7a39cd473f5978644fb2
+11:08:04.674 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+13:37:19.856 [main] INFO  c.browserstack.BrowserStackJavaAgent - Selenium version detected - 4.13.0
+13:37:19.858 [main] INFO  c.browserstack.BrowserStackJavaAgent - Appium version detected - 8.6.0
+13:37:20.077 [main] DEBUG c.b.config.BrowserStackConfig - Cli Config passed - {}
+13:37:20.078 [main] INFO  c.browserstack.utils.UtilityMethods - BrowserStack Yml Detected : C:\Users\Karthik\IdeaProjects\mobile_automation_anw\android\browserstack.yml
+13:37:20.137 [main] INFO  c.b.config.BrowserStackConfig - Detected Framework testng
+13:37:21.355 [main] INFO  c.browserstack.BrowserStackJavaAgent - uploading app ./WikipediaSample.apk to browserstack
+13:37:26.010 [main] INFO  c.browserstack.BrowserStackJavaAgent - app upload response: {"app_url":"bs:\/\/d2441528af19979bbc047e874e55b6b4b7144553"}
+13:37:26.011 [main] INFO  c.browserstack.BrowserStackJavaAgent - Using app: [bs://d2441528af19979bbc047e874e55b6b4b7144553]
+13:37:26.011 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to testng
+13:37:29.113 [main] INFO  c.browserstack.BrowserStackJavaAgent - Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+13:37:30.166 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+13:37:35.586 [main] INFO  com.browserstack.LocalFactory - BrowserStack Local Started Successfully.
+13:38:39.987 [Thread-0] INFO  c.browserstack.utils.LogReportingAPI - Visit https://observability.browserstack.com/builds/wzy0ikb2c58syr5cj5g6n09of6funltcttmdn6jg to view build report, insights, and many more debugging information all at one place!
+
+13:38:39.988 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
+13:38:44.674 [Thread-0] INFO  c.browserstack.utils.UtilityMethods - View build on BrowserStack dashboard: https://app-automate.browserstack.com/dashboard/v2/builds/6a4c150a0bf76632d889b2512a0081ba538cddc8
+13:38:44.675 [Thread-0] INFO  c.b.config.BrowserStackConfig - INFO
